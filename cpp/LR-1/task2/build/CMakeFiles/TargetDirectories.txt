@@ -1,0 +1,5 @@
+C:/VSprojects/lr-1/task2/build/CMakeFiles/main.dir
+C:/VSprojects/lr-1/task2/build/CMakeFiles/edit_cache.dir
+C:/VSprojects/lr-1/task2/build/CMakeFiles/rebuild_cache.dir
+C:/VSprojects/lr-1/task2/build/CMakeFiles/main_autogen_timestamp_deps.dir
+C:/VSprojects/lr-1/task2/build/CMakeFiles/main_autogen.dir
