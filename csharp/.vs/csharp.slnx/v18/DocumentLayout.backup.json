@@ -28,7 +28,7 @@
               "RelativeDocumentMoniker": "LR-3\\task1\\Program.cs",
               "ToolTip": "C:\\VSProjects\\csharp\\LR-3\\task1\\Program.cs",
               "RelativeToolTip": "LR-3\\task1\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-05T14:32:03.045Z",
               "EditorCaption": ""
@@ -37,14 +37,13 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "program2.cs",
-              "DocumentMoniker": "C:\\VSProjects\\csharp\\LR-3\\task1\\program2.cs",
-              "RelativeDocumentMoniker": "LR-3\\task1\\program2.cs",
-              "ToolTip": "C:\\VSProjects\\csharp\\LR-3\\task1\\program2.cs",
-              "RelativeToolTip": "LR-3\\task1\\program2.cs",
+              "DocumentMoniker": "C:\\VSProjects\\csharp\\LR-3\\task1\\Program2.cs",
+              "RelativeDocumentMoniker": "LR-3\\task1\\Program2.cs",
+              "ToolTip": "C:\\VSProjects\\csharp\\LR-3\\task1\\Program2.cs",
+              "RelativeToolTip": "LR-3\\task1\\Program2.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T14:32:57.319Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-05T14:32:57.319Z"
             }
           ]
         }
