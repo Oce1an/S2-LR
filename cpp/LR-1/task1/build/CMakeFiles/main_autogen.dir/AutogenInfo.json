@@ -1,16 +1,16 @@
 {
 	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
-	"BUILD_DIR" : "C:/VSprojects/lr-1/task1/build/main_autogen",
-	"CMAKE_BINARY_DIR" : "C:/VSprojects/lr-1/task1/build",
-	"CMAKE_CURRENT_BINARY_DIR" : "C:/VSprojects/lr-1/task1/build",
-	"CMAKE_CURRENT_SOURCE_DIR" : "C:/VSProjects/LR-1/task1",
+	"BUILD_DIR" : "C:/vsprojects/cpp/LR-1/task1/build/main_autogen",
+	"CMAKE_BINARY_DIR" : "C:/vsprojects/cpp/LR-1/task1/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/vsprojects/cpp/LR-1/task1/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/VSProjects/cpp/LR-1/task1",
 	"CMAKE_EXECUTABLE" : "C:/Program Files/CMake/bin/cmake.exe",
 	"CMAKE_LIST_FILES" : 
 	[
-		"C:/VSProjects/LR-1/task1/CMakeLists.txt",
+		"C:/VSProjects/cpp/LR-1/task1/CMakeLists.txt",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeSystem.cmake.in",
-		"C:/VSprojects/lr-1/task1/build/CMakeFiles/4.2.3/CMakeSystem.cmake",
+		"C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/4.2.3/CMakeSystem.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeNinjaFindMake.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Initialize.cmake",
@@ -68,7 +68,7 @@
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCCompiler.cmake.in",
-		"C:/VSprojects/lr-1/task1/build/CMakeFiles/4.2.3/CMakeCCompiler.cmake",
+		"C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/4.2.3/CMakeCCompiler.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Determine-CXX.cmake",
@@ -121,7 +121,7 @@
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXCompiler.cmake.in",
-		"C:/VSprojects/lr-1/task1/build/CMakeFiles/4.2.3/CMakeCXXCompiler.cmake",
+		"C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/4.2.3/CMakeCXXCompiler.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeGenericSystem.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake",
@@ -139,7 +139,7 @@
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-GNU.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineRCCompiler.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeRCCompiler.cmake.in",
-		"C:/VSprojects/lr-1/task1/build/CMakeFiles/4.2.3/CMakeRCCompiler.cmake",
+		"C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/4.2.3/CMakeRCCompiler.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeRCInformation.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-windres.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestRCCompiler.cmake",
@@ -156,7 +156,7 @@
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerSupport.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/FeatureTesting.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCCompiler.cmake.in",
-		"C:/VSprojects/lr-1/task1/build/CMakeFiles/4.2.3/CMakeCCompiler.cmake",
+		"C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/4.2.3/CMakeCCompiler.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-GNU-C-ABI.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCLinkerInformation.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake",
@@ -190,7 +190,7 @@
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-CXX-CXXImportStd.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-CXX-CXXImportStd.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXCompiler.cmake.in",
-		"C:/VSprojects/lr-1/task1/build/CMakeFiles/4.2.3/CMakeCXXCompiler.cmake",
+		"C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/4.2.3/CMakeCXXCompiler.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-GNU-CXX-ABI.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake",
@@ -470,34 +470,34 @@
 		"C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake",
 		"C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake"
 	],
-	"CMAKE_SOURCE_DIR" : "C:/VSProjects/LR-1/task1",
+	"CMAKE_SOURCE_DIR" : "C:/VSProjects/cpp/LR-1/task1",
 	"CROSS_CONFIG" : false,
-	"DEP_FILE" : "C:/VSprojects/lr-1/task1/build/main_autogen/deps",
+	"DEP_FILE" : "C:/vsprojects/cpp/LR-1/task1/build/main_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "main_autogen/timestamp",
 	"HEADERS" : 
 	[
 		[
-			"C:/VSProjects/LR-1/task1/car/car.h",
+			"C:/VSProjects/cpp/LR-1/task1/car/car.h",
 			"MU",
 			"ZBCNC4ZJTO/moc_car.cpp",
 			null
 		],
 		[
-			"C:/VSProjects/LR-1/task1/mainwindow/mainwindow.h",
+			"C:/VSProjects/cpp/LR-1/task1/mainwindow/mainwindow.h",
 			"MU",
 			"MIKB3U5ZOU/moc_mainwindow.cpp",
 			null
 		],
 		[
-			"C:/VSProjects/LR-1/task1/movingrect/movingrect.h",
+			"C:/VSProjects/cpp/LR-1/task1/movingrect/movingrect.h",
 			"MU",
 			"PSNNT7Z4GK/moc_movingrect.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "C:/VSprojects/lr-1/task1/build/main_autogen/include",
-	"MOC_COMPILATION_FILE" : "C:/VSprojects/lr-1/task1/build/main_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "C:/vsprojects/cpp/LR-1/task1/build/main_autogen/include",
+	"MOC_COMPILATION_FILE" : "C:/vsprojects/cpp/LR-1/task1/build/main_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"QT_CORE_LIB",
@@ -551,23 +551,23 @@
 		"-E",
 		"C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "C:/VSprojects/lr-1/task1/build/main_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "C:/vsprojects/cpp/LR-1/task1/build/main_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 6,
-	"PARSE_CACHE_FILE" : "C:/VSprojects/lr-1/task1/build/CMakeFiles/main_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/main_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "C:/Programming/msys2/clang64/share/qt6/bin/moc.exe",
 	"QT_UIC_EXECUTABLE" : "C:/Programming/msys2/clang64/share/qt6/bin/uic.exe",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 10,
-	"SETTINGS_FILE" : "C:/VSprojects/lr-1/task1/build/CMakeFiles/main_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/main_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "C:/VSProjects/LR-1/task1/car/car.cpp", "MU", null ],
-		[ "C:/VSProjects/LR-1/task1/main.cpp", "MU", null ],
-		[ "C:/VSProjects/LR-1/task1/mainwindow/mainwindow.cpp", "MU", null ],
-		[ "C:/VSProjects/LR-1/task1/movingrect/movingrect.cpp", "MU", null ]
+		[ "C:/VSProjects/cpp/LR-1/task1/car/car.cpp", "MU", null ],
+		[ "C:/VSProjects/cpp/LR-1/task1/main.cpp", "MU", null ],
+		[ "C:/VSProjects/cpp/LR-1/task1/mainwindow/mainwindow.cpp", "MU", null ],
+		[ "C:/VSProjects/cpp/LR-1/task1/movingrect/movingrect.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

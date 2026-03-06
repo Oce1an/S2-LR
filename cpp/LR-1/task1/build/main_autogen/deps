@@ -1147,17 +1147,17 @@ main_autogen/timestamp: \
 	C:/Programming/msys2/clang64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake \
 	C:/Programming/msys2/clang64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake \
 	C:/Programming/msys2/clang64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake \
-	C:/VSProjects/LR-1/task1/CMakeLists.txt \
-	C:/VSProjects/LR-1/task1/car/car.cpp \
-	C:/VSProjects/LR-1/task1/car/car.h \
-	C:/VSProjects/LR-1/task1/main.cpp \
-	C:/VSProjects/LR-1/task1/mainwindow/mainwindow.cpp \
-	C:/VSProjects/LR-1/task1/mainwindow/mainwindow.h \
-	C:/VSProjects/LR-1/task1/movingrect/movingrect.cpp \
-	C:/VSProjects/LR-1/task1/movingrect/movingrect.h \
-	C:/VSprojects/lr-1/task1/build/CMakeFiles/4.2.3/CMakeCCompiler.cmake \
-	C:/VSprojects/lr-1/task1/build/CMakeFiles/4.2.3/CMakeCXXCompiler.cmake \
-	C:/VSprojects/lr-1/task1/build/CMakeFiles/4.2.3/CMakeRCCompiler.cmake \
-	C:/VSprojects/lr-1/task1/build/CMakeFiles/4.2.3/CMakeSystem.cmake \
-	C:/VSprojects/lr-1/task1/build/main_autogen/moc_predefs.h \
+	C:/VSProjects/cpp/LR-1/task1/CMakeLists.txt \
+	C:/VSProjects/cpp/LR-1/task1/car/car.cpp \
+	C:/VSProjects/cpp/LR-1/task1/car/car.h \
+	C:/VSProjects/cpp/LR-1/task1/main.cpp \
+	C:/VSProjects/cpp/LR-1/task1/mainwindow/mainwindow.cpp \
+	C:/VSProjects/cpp/LR-1/task1/mainwindow/mainwindow.h \
+	C:/VSProjects/cpp/LR-1/task1/movingrect/movingrect.cpp \
+	C:/VSProjects/cpp/LR-1/task1/movingrect/movingrect.h \
+	C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/4.2.3/CMakeCCompiler.cmake \
+	C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/4.2.3/CMakeCXXCompiler.cmake \
+	C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/4.2.3/CMakeRCCompiler.cmake \
+	C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/4.2.3/CMakeSystem.cmake \
+	C:/vsprojects/cpp/LR-1/task1/build/main_autogen/moc_predefs.h \
 	C:/Program\ Files/CMake/bin/cmake.exe

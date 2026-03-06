@@ -35,7 +35,7 @@ set(__QT_DEPLOY_SYSTEM_NAME "Windows")
 set(__QT_DEPLOY_SHARED_LIBRARY_SUFFIX ".dll")
 set(__QT_DEPLOY_IS_SHARED_LIBS_BUILD "ON")
 set(__QT_DEPLOY_TOOL "C:/Programming/msys2/clang64/bin/windeployqt.exe")
-set(__QT_DEPLOY_IMPL_DIR "C:/VSprojects/lr-1/task1/build/.qt")
+set(__QT_DEPLOY_IMPL_DIR "C:/vsprojects/cpp/LR-1/task1/build/.qt")
 set(__QT_DEPLOY_VERBOSE "")
 set(__QT_CMAKE_EXPORT_NAMESPACE "Qt6")
 set(__QT_LIBINFIX "")
@@ -60,7 +60,7 @@ set(__QT_DEPLOY_QT_DEBUG_POSTFIX "")
 
 # Define the CMake commands to be made available during deployment.
 set(__qt_deploy_support_files
-    "C:/VSProjects/LR-1/task1/build/.qt/QtDeployTargets.cmake"
+    "C:/VSProjects/cpp/LR-1/task1/build/.qt/QtDeployTargets.cmake"
     "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreDeploySupport.cmake"
 )
 foreach(__qt_deploy_support_file IN LISTS __qt_deploy_support_files)

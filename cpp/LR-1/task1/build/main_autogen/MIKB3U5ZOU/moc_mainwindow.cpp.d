@@ -1,5 +1,5 @@
-C:/VSprojects/lr-1/task1/build/main_autogen/MIKB3U5ZOU/moc_mainwindow.cpp: C:/VSProjects/LR-1/task1/mainwindow/mainwindow.h \
-  C:/VSprojects/lr-1/task1/build/main_autogen/moc_predefs.h \
+C:/vsprojects/cpp/LR-1/task1/build/main_autogen/MIKB3U5ZOU/moc_mainwindow.cpp: C:/VSProjects/cpp/LR-1/task1/mainwindow/mainwindow.h \
+  C:/vsprojects/cpp/LR-1/task1/build/main_autogen/moc_predefs.h \
   C:/Programming/msys2/clang64/include/_mingw.h \
   C:/Programming/msys2/clang64/include/_mingw_mac.h \
   C:/Programming/msys2/clang64/include/_mingw_secapi.h \
@@ -829,5 +829,5 @@ C:/VSprojects/lr-1/task1/build/main_autogen/MIKB3U5ZOU/moc_mainwindow.cpp: C:/VS
   C:/Programming/msys2/clang64/lib/clang/21/include/stdarg.h \
   C:/Programming/msys2/clang64/lib/clang/21/include/stdint.h \
   C:/Programming/msys2/clang64/lib/clang/21/include/vadefs.h \
-  C:/VSProjects/LR-1/task1/car/car.h \
-  C:/VSProjects/LR-1/task1/movingrect/movingrect.h
+  C:/VSProjects/cpp/LR-1/task1/car/car.h \
+  C:/VSProjects/cpp/LR-1/task1/movingrect/movingrect.h

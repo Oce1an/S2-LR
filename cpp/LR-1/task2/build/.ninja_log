@@ -1,0 +1,20 @@
+# ninja log v7
+10	5531	7939986882045481	main_autogen/timestamp	a1e377898c592178
+10	5531	7939986882045481	main_autogen/mocs_compilation.cpp	a1e377898c592178
+10	5531	7939986882045481	C:/vsprojects/cpp/lr-1/task2/build/main_autogen/timestamp	a1e377898c592178
+10	5531	7939986882045481	C:/vsprojects/cpp/lr-1/task2/build/main_autogen/mocs_compilation.cpp	a1e377898c592178
+5539	9429	7939986882603173	CMakeFiles/main.dir/main_autogen/mocs_compilation.cpp.obj	acf7d4a046fa822e
+5548	12366	7939986882706207	CMakeFiles/main.dir/shape/shape.cpp.obj	568c7d070d42f39e
+5560	12378	7939986882819884	CMakeFiles/main.dir/circle/circle.cpp.obj	c6983f47b1144fc
+5576	12425	7939986882971303	CMakeFiles/main.dir/hexagon/hexagon.cpp.obj	b381bec80236efc1
+5568	12475	7939986882899401	CMakeFiles/main.dir/square/square.cpp.obj	a3373dc5b1a2099d
+5564	12541	7939986882857390	CMakeFiles/main.dir/rectangle/rectangle.cpp.obj	8b336f5551e9e1ae
+5583	12575	7939986883051535	CMakeFiles/main.dir/customshape/customshape.cpp.obj	a8d6884aa4d79bb6
+5555	12741	7939986882769480	CMakeFiles/main.dir/triangle/triangle.cpp.obj	2e6c76324d408996
+5552	12772	7939986882738776	CMakeFiles/main.dir/polygon/polygon.cpp.obj	443e709c153a29b7
+5572	12809	7939986882939288	CMakeFiles/main.dir/rhombus/rhombus.cpp.obj	643cb9bb9939f17
+5587	12878	7939986883081458	CMakeFiles/main.dir/shapemanager/shapemanager.cpp.obj	e317458fb04effe9
+5579	12887	7939986883011222	CMakeFiles/main.dir/star/star.cpp.obj	fd20a9b02d35d5ae
+5542	13277	7939986882644447	CMakeFiles/main.dir/main.cpp.obj	2bd128cd13a233a8
+5545	14850	7939986882665273	CMakeFiles/main.dir/mainwindow/mainwindow.cpp.obj	974dec68b795b0c8
+14851	15036	7939986975726428	main.exe	6ef3125ce3ca3986
