@@ -44,16 +44,20 @@ int ShapeManager::findShapeAtPoint(const Point& p) const {
     return -1;
 }
 
-QString ShapeManager::getShapeInfo(int index) const {
+QString ShapeManager::getShapeInfo(int index) const
+{
     auto shape = getShape(index);
     if (!shape) return QString();
 
     QString info;
+
+    auto c = shape->getCenter();
+
     info += QString("Area: %1\n").arg(shape->area());
     info += QString("Perimeter: %1\n").arg(shape->perimeter());
-    info += QString("Center: (%.1f, %.1f)\n").arg(shape->getCenter().x).arg(shape->getCenter().y);
-    info += QString("Rotation: %.1fo\n").arg(shape->getRotation() * 180 / M_PI);
-    info += QString("Scale: %.2f").arg(shape->getScale());
+    info += QString("Center: (%1, %2)\n").arg(c.x, 0, 'f', 1).arg(c.y, 0, 'f', 1);
+    info += QString("Rotation: %1deg\n").arg(shape->getRotation() * 180.0 / M_PI, 0, 'f', 1);
+    info += QString("Scale: %1").arg(shape->getScale(), 0, 'f', 2);
 
     return info;
 }

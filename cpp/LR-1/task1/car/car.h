@@ -3,29 +3,33 @@
 
 #include "../movingrect/movingrect.h"
 
-class Car : public MovingRect {
+class Car : public MovingRect
+{
+public:
+    static constexpr int WIDTH = 120;
+    static constexpr int HEIGHT = 60;
+
 private:
-    bool doorsOpen;     // Состояние дверей
-    bool headlightsOn;  // Состояние фар
+    bool doorsOpen{ false };
+    bool headlightsOn{ false };
 
 public:
     Car();
-    Car(int startX, int startY);
+    Car(int x, int y);
 
-    // Переопределение метода отрисовки
-    void draw(QPainter& painter) override;
+    void draw(QPainter& painter) const override;
 
-    // Новые методы для управления автомобилем
     void toggleDoors();
     void toggleHeadlights();
-    void openDoors();
-    void closeDoors();
-    void turnHeadlightsOn();
-    void turnHeadlightsOff();
 
-    // Геттеры для состояний
+    void openDoors() { doorsOpen = true; }
+    void closeDoors() { doorsOpen = false; }
+
+    void turnHeadlightsOn() { headlightsOn = true; }
+    void turnHeadlightsOff() { headlightsOn = false; }
+
     bool areDoorsOpen() const { return doorsOpen; }
     bool areHeadlightsOn() const { return headlightsOn; }
 };
 
-#endif // CAR_H
+#endif

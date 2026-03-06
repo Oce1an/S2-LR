@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SC:\VSProjects\cpp\LR-1\task2 -BC:\vsprojects\cpp\lr-1\task2\build
+  command = "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SC:\VSProjects\cpp\LR-1\task2 -BC:\vsprojects\cpp\LR-1\task2\build
   description = Re-running CMake...
   generator = 1
 

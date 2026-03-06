@@ -5,14 +5,14 @@ events:
     kind: "message-v1"
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:212 (message)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     message: |
       The system is: Windows - 10.0.26200 - AMD64
   -
     kind: "find-v1"
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeNinjaFindMake.cmake:5 (find_program)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_MAKE_PROGRAM"
     description: "Program used to build from build.ninja files."
@@ -254,7 +254,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake:63 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_C_COMPILER"
     description: "C compiler"
@@ -737,7 +737,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -789,7 +789,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
       Compiler: C:/Programming/msys2/clang64/bin/cc.exe 
@@ -803,14 +803,14 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
       
       The C compiler identification is Clang, found in:
-        C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/4.2.3/CompilerIdC/a.exe
+        C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/4.2.3/CompilerIdC/a.exe
       
   -
     kind: "find-v1"
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_AR"
     description: "Path to a program."
@@ -886,7 +886,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_RANLIB"
     description: "Path to a program."
@@ -962,7 +962,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_STRIP"
     description: "Path to a program."
@@ -1038,7 +1038,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_LINKER"
     description: "Path to a program."
@@ -1114,7 +1114,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_NM"
     description: "Path to a program."
@@ -1190,7 +1190,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_OBJDUMP"
     description: "Path to a program."
@@ -1266,7 +1266,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_OBJCOPY"
     description: "Path to a program."
@@ -1342,7 +1342,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_READELF"
     description: "Path to a program."
@@ -1418,7 +1418,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_DLLTOOL"
     description: "Path to a program."
@@ -1494,7 +1494,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_ADDR2LINE"
     description: "Path to a program."
@@ -1570,7 +1570,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_TAPI"
     description: "Path to a program."
@@ -1713,7 +1713,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake:26 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_C_COMPILER_AR"
     description: "LLVM archiver"
@@ -1998,7 +1998,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake:38 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_C_COMPILER_RANLIB"
     description: "Generate index for LLVM archive"
@@ -2283,7 +2283,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake:50 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_C_COMPILER_CLANG_SCAN_DEPS"
     description: "`clang-scan-deps` dependency scanner"
@@ -2568,7 +2568,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake:54 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER"
     description: "CXX compiler"
@@ -2629,7 +2629,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -2681,7 +2681,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler: C:/Programming/msys2/clang64/bin/c++.exe 
@@ -2695,14 +2695,14 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
       
       The CXX compiler identification is Clang, found in:
-        C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/4.2.3/CompilerIdCXX/a.exe
+        C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/4.2.3/CompilerIdCXX/a.exe
       
   -
     kind: "find-v1"
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake:26 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_AR"
     description: "LLVM archiver"
@@ -2987,7 +2987,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake:38 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_RANLIB"
     description: "Generate index for LLVM archive"
@@ -3272,7 +3272,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/Clang-FindBinUtils.cmake:50 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS"
     description: "`clang-scan-deps` dependency scanner"
@@ -3561,7 +3561,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang.cmake:291 (__windows_compiler_clang_base)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-Clang-C.cmake:2 (__windows_compiler_clang)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCInformation.cmake:48 (include)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     mode: "program"
     variable: "CMAKE_RC_COMPILER"
     description: "RC compiler"
@@ -3612,9 +3612,9 @@ events:
       - "C:/Program Files/CMake/bin/"
       - "C:/Program Files/CMake/sbin/"
       - "C:/Program Files/CMake/"
-      - "C:/Program Files (x86)/task1/bin/"
-      - "C:/Program Files (x86)/task1/sbin/"
-      - "C:/Program Files (x86)/task1/"
+      - "C:/Program Files (x86)/Car/bin/"
+      - "C:/Program Files (x86)/Car/sbin/"
+      - "C:/Program Files (x86)/Car/"
     searched_directories:
       - "C:/Users/just1/bin/windres.com"
       - "C:/Users/just1/bin/windres.exe"
@@ -3704,24 +3704,24 @@ events:
         - "C:\\Programming\\msys2\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/task1"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Car"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files/Git/mingw64"
         - "C:/Program Files"
         - "C:/Program Files (x86)"
         - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/task1"
+        - "C:/Program Files (x86)/Car"
   -
     kind: "try_compile-v1"
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-moich8"
-      binary: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-moich8"
+      source: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-35s1nr"
+      binary: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-35s1nr"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Programming/msys2/clang64/bin/clang-scan-deps.exe"
       CMAKE_C_FLAGS: ""
@@ -3731,16 +3731,16 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-moich8'
+        Change Dir: 'C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-35s1nr'
         
-        Run Build Command(s): C:/Users/just1/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/ninja.exe -v cmTC_606b6
-        [1/2] C:\\Programming\\msys2\\clang64\\bin\\cc.exe   -v -MD -MT CMakeFiles/cmTC_606b6.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_606b6.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles/cmTC_606b6.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCCompilerABI.c"
+        Run Build Command(s): C:/Users/just1/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/ninja.exe -v cmTC_6acdd
+        [1/2] C:\\Programming\\msys2\\clang64\\bin\\cc.exe   -v -MD -MT CMakeFiles/cmTC_6acdd.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_6acdd.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles/cmTC_6acdd.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCCompilerABI.c"
         clang version 21.1.8
         Target: x86_64-w64-windows-gnu
         Thread model: posix
         InstalledDir: C:/Programming/msys2/clang64/bin
          (in-process)
-         "C:/Programming/msys2/clang64/bin/cc.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-sized-deallocation -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-moich8 -v -fcoverage-compilation-dir=C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-moich8 -resource-dir C:/Programming/msys2/clang64/lib/clang/21 -dependency-file "CMakeFiles\\\\cmTC_606b6.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_606b6.dir/CMakeCCompilerABI.c.obj -sys-header-deps -internal-isystem C:/Programming/msys2/clang64/lib/clang/21/include -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/include -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/usr/include -internal-isystem C:/Programming/msys2/clang64/include -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -exception-model=seh -faddrsig -o CMakeFiles/cmTC_606b6.dir/CMakeCCompilerABI.c.obj -x c "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCCompilerABI.c"
+         "C:/Programming/msys2/clang64/bin/cc.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-sized-deallocation -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-35s1nr -v -fcoverage-compilation-dir=C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-35s1nr -resource-dir C:/Programming/msys2/clang64/lib/clang/21 -dependency-file "CMakeFiles\\\\cmTC_6acdd.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_6acdd.dir/CMakeCCompilerABI.c.obj -sys-header-deps -internal-isystem C:/Programming/msys2/clang64/lib/clang/21/include -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/include -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/usr/include -internal-isystem C:/Programming/msys2/clang64/include -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -exception-model=seh -faddrsig -o CMakeFiles/cmTC_6acdd.dir/CMakeCCompilerABI.c.obj -x c "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCCompilerABI.c"
         clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target x86_64-w64-windows-gnu
         ignoring nonexistent directory "C:/Programming/msys2/clang64/x86_64-w64-mingw32/include"
         ignoring nonexistent directory "C:/Programming/msys2/clang64/x86_64-w64-mingw32/usr/include"
@@ -3749,12 +3749,12 @@ events:
          C:/Programming/msys2/clang64/lib/clang/21/include
          C:/Programming/msys2/clang64/include
         End of search list.
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Programming\\msys2\\clang64\\bin\\cc.exe  -v -Wl,-v CMakeFiles/cmTC_606b6.dir/CMakeCCompilerABI.c.obj -o cmTC_606b6.exe -Wl,--out-implib,libcmTC_606b6.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Programming\\msys2\\clang64\\bin\\cc.exe  -v -Wl,-v CMakeFiles/cmTC_6acdd.dir/CMakeCCompilerABI.c.obj -o cmTC_6acdd.exe -Wl,--out-implib,libcmTC_6acdd.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
         clang version 21.1.8
         Target: x86_64-w64-windows-gnu
         Thread model: posix
         InstalledDir: C:/Programming/msys2/clang64/bin
-         "C:/Programming/msys2/clang64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_606b6.exe C:/Programming/msys2/clang64/lib/crt2.o C:/Programming/msys2/clang64/lib/crtbegin.o -LC:/Programming/msys2/clang64/x86_64-w64-mingw32/lib -LC:/Programming/msys2/clang64/x86_64-w64-mingw32/mingw/lib -LC:/Programming/msys2/clang64/lib -LC:/Programming/msys2/clang64/lib/clang/21/lib/windows -v CMakeFiles/cmTC_606b6.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_606b6.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 C:/Programming/msys2/clang64/lib/clang/21/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/Programming/msys2/clang64/lib/clang/21/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Programming/msys2/clang64/lib/crtend.o
+         "C:/Programming/msys2/clang64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_6acdd.exe C:/Programming/msys2/clang64/lib/crt2.o C:/Programming/msys2/clang64/lib/crtbegin.o -LC:/Programming/msys2/clang64/x86_64-w64-mingw32/lib -LC:/Programming/msys2/clang64/x86_64-w64-mingw32/mingw/lib -LC:/Programming/msys2/clang64/lib -LC:/Programming/msys2/clang64/lib/clang/21/lib/windows -v CMakeFiles/cmTC_6acdd.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_6acdd.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 C:/Programming/msys2/clang64/lib/clang/21/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/Programming/msys2/clang64/lib/clang/21/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Programming/msys2/clang64/lib/crtend.o
         LLD 21.1.8 (https://github.com/msys2/MINGW-packages cd1581c9800c7dbed6185443400f7fbb49300265) (compatible with GNU linkers)
         
       exitCode: 0
@@ -3763,7 +3763,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     message: |
       Parsed C implicit include dir info: rv=done
         found start of include info
@@ -3781,21 +3781,21 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-moich8']
+        ignore line: [Change Dir: 'C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-35s1nr']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/Users/just1/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/ninja.exe -v cmTC_606b6]
-        ignore line: [[1/2] C:\\Programming\\msys2\\clang64\\bin\\cc.exe   -v -MD -MT CMakeFiles/cmTC_606b6.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_606b6.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles/cmTC_606b6.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCCompilerABI.c"]
+        ignore line: [Run Build Command(s): C:/Users/just1/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/ninja.exe -v cmTC_6acdd]
+        ignore line: [[1/2] C:\\Programming\\msys2\\clang64\\bin\\cc.exe   -v -MD -MT CMakeFiles/cmTC_6acdd.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_6acdd.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles/cmTC_6acdd.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCCompilerABI.c"]
         ignore line: [clang version 21.1.8]
         ignore line: [Target: x86_64-w64-windows-gnu]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: C:/Programming/msys2/clang64/bin]
         ignore line: [ (in-process)]
-        ignore line: [ "C:/Programming/msys2/clang64/bin/cc.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-sized-deallocation -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-moich8 -v -fcoverage-compilation-dir=C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-moich8 -resource-dir C:/Programming/msys2/clang64/lib/clang/21 -dependency-file "CMakeFiles\\\\cmTC_606b6.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_606b6.dir/CMakeCCompilerABI.c.obj -sys-header-deps -internal-isystem C:/Programming/msys2/clang64/lib/clang/21/include -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/include -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/usr/include -internal-isystem C:/Programming/msys2/clang64/include -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -exception-model=seh -faddrsig -o CMakeFiles/cmTC_606b6.dir/CMakeCCompilerABI.c.obj -x c "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCCompilerABI.c"]
+        ignore line: [ "C:/Programming/msys2/clang64/bin/cc.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-sized-deallocation -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-35s1nr -v -fcoverage-compilation-dir=C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-35s1nr -resource-dir C:/Programming/msys2/clang64/lib/clang/21 -dependency-file "CMakeFiles\\\\cmTC_6acdd.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_6acdd.dir/CMakeCCompilerABI.c.obj -sys-header-deps -internal-isystem C:/Programming/msys2/clang64/lib/clang/21/include -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/include -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/usr/include -internal-isystem C:/Programming/msys2/clang64/include -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -exception-model=seh -faddrsig -o CMakeFiles/cmTC_6acdd.dir/CMakeCCompilerABI.c.obj -x c "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCCompilerABI.c"]
         ignore line: [clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target x86_64-w64-windows-gnu]
         ignore line: [ignoring nonexistent directory "C:/Programming/msys2/clang64/x86_64-w64-mingw32/include"]
         ignore line: [ignoring nonexistent directory "C:/Programming/msys2/clang64/x86_64-w64-mingw32/usr/include"]
@@ -3804,18 +3804,18 @@ events:
         ignore line: [ C:/Programming/msys2/clang64/lib/clang/21/include]
         ignore line: [ C:/Programming/msys2/clang64/include]
         ignore line: [End of search list.]
-        ignore line: [[2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Programming\\msys2\\clang64\\bin\\cc.exe  -v -Wl -v CMakeFiles/cmTC_606b6.dir/CMakeCCompilerABI.c.obj -o cmTC_606b6.exe -Wl --out-implib libcmTC_606b6.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+        ignore line: [[2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Programming\\msys2\\clang64\\bin\\cc.exe  -v -Wl -v CMakeFiles/cmTC_6acdd.dir/CMakeCCompilerABI.c.obj -o cmTC_6acdd.exe -Wl --out-implib libcmTC_6acdd.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
         ignore line: [clang version 21.1.8]
         ignore line: [Target: x86_64-w64-windows-gnu]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: C:/Programming/msys2/clang64/bin]
-        link line: [ "C:/Programming/msys2/clang64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_606b6.exe C:/Programming/msys2/clang64/lib/crt2.o C:/Programming/msys2/clang64/lib/crtbegin.o -LC:/Programming/msys2/clang64/x86_64-w64-mingw32/lib -LC:/Programming/msys2/clang64/x86_64-w64-mingw32/mingw/lib -LC:/Programming/msys2/clang64/lib -LC:/Programming/msys2/clang64/lib/clang/21/lib/windows -v CMakeFiles/cmTC_606b6.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_606b6.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 C:/Programming/msys2/clang64/lib/clang/21/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/Programming/msys2/clang64/lib/clang/21/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Programming/msys2/clang64/lib/crtend.o]
+        link line: [ "C:/Programming/msys2/clang64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_6acdd.exe C:/Programming/msys2/clang64/lib/crt2.o C:/Programming/msys2/clang64/lib/crtbegin.o -LC:/Programming/msys2/clang64/x86_64-w64-mingw32/lib -LC:/Programming/msys2/clang64/x86_64-w64-mingw32/mingw/lib -LC:/Programming/msys2/clang64/lib -LC:/Programming/msys2/clang64/lib/clang/21/lib/windows -v CMakeFiles/cmTC_6acdd.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_6acdd.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 C:/Programming/msys2/clang64/lib/clang/21/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/Programming/msys2/clang64/lib/clang/21/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Programming/msys2/clang64/lib/crtend.o]
           arg [C:/Programming/msys2/clang64/bin/ld.lld] ==> ignore
           arg [-m] ==> ignore
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_606b6.exe] ==> ignore
+          arg [cmTC_6acdd.exe] ==> ignore
           arg [C:/Programming/msys2/clang64/lib/crt2.o] ==> obj [C:/Programming/msys2/clang64/lib/crt2.o]
           arg [C:/Programming/msys2/clang64/lib/crtbegin.o] ==> obj [C:/Programming/msys2/clang64/lib/crtbegin.o]
           arg [-LC:/Programming/msys2/clang64/x86_64-w64-mingw32/lib] ==> dir [C:/Programming/msys2/clang64/x86_64-w64-mingw32/lib]
@@ -3823,9 +3823,9 @@ events:
           arg [-LC:/Programming/msys2/clang64/lib] ==> dir [C:/Programming/msys2/clang64/lib]
           arg [-LC:/Programming/msys2/clang64/lib/clang/21/lib/windows] ==> dir [C:/Programming/msys2/clang64/lib/clang/21/lib/windows]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_606b6.dir/CMakeCCompilerABI.c.obj] ==> ignore
+          arg [CMakeFiles/cmTC_6acdd.dir/CMakeCCompilerABI.c.obj] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_606b6.dll.a] ==> ignore
+          arg [libcmTC_6acdd.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -3869,7 +3869,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     message: |
       Running the C compiler's linker: "C:/Programming/msys2/clang64/bin/ld.lld" "-v"
       LLD 21.1.8 (https://github.com/msys2/MINGW-packages cd1581c9800c7dbed6185443400f7fbb49300265) (compatible with GNU linkers)
@@ -3878,12 +3878,12 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-e38r3l"
-      binary: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-e38r3l"
+      source: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-d910nq"
+      binary: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-d910nq"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Programming/msys2/clang64/bin/clang-scan-deps.exe"
       CMAKE_CXX_FLAGS: ""
@@ -3894,16 +3894,16 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-e38r3l'
+        Change Dir: 'C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-d910nq'
         
-        Run Build Command(s): C:/Users/just1/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/ninja.exe -v cmTC_6c8fd
-        [1/2] C:\\Programming\\msys2\\clang64\\bin\\c++.exe   -v -MD -MT CMakeFiles/cmTC_6c8fd.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_6c8fd.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles/cmTC_6c8fd.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp"
+        Run Build Command(s): C:/Users/just1/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/ninja.exe -v cmTC_a4ab6
+        [1/2] C:\\Programming\\msys2\\clang64\\bin\\c++.exe   -v -MD -MT CMakeFiles/cmTC_a4ab6.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_a4ab6.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles/cmTC_a4ab6.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp"
         clang version 21.1.8
         Target: x86_64-w64-windows-gnu
         Thread model: posix
         InstalledDir: C:/Programming/msys2/clang64/bin
          (in-process)
-         "C:/Programming/msys2/clang64/bin/c++.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-sized-deallocation -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-e38r3l -v -fcoverage-compilation-dir=C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-e38r3l -resource-dir C:/Programming/msys2/clang64/lib/clang/21 -dependency-file "CMakeFiles\\\\cmTC_6c8fd.dir\\\\CMakeCXXCompilerABI.cpp.obj.d" -MT CMakeFiles/cmTC_6c8fd.dir/CMakeCXXCompilerABI.cpp.obj -sys-header-deps -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/include/c++/v1 -internal-isystem C:/Programming/msys2/clang64/include/c++/v1 -internal-isystem C:/Programming/msys2/clang64/lib/clang/21/include -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/include -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/usr/include -internal-isystem C:/Programming/msys2/clang64/include -fdeprecated-macro -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -exception-model=seh -faddrsig -o CMakeFiles/cmTC_6c8fd.dir/CMakeCXXCompilerABI.cpp.obj -x c++ "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp"
+         "C:/Programming/msys2/clang64/bin/c++.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-sized-deallocation -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-d910nq -v -fcoverage-compilation-dir=C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-d910nq -resource-dir C:/Programming/msys2/clang64/lib/clang/21 -dependency-file "CMakeFiles\\\\cmTC_a4ab6.dir\\\\CMakeCXXCompilerABI.cpp.obj.d" -MT CMakeFiles/cmTC_a4ab6.dir/CMakeCXXCompilerABI.cpp.obj -sys-header-deps -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/include/c++/v1 -internal-isystem C:/Programming/msys2/clang64/include/c++/v1 -internal-isystem C:/Programming/msys2/clang64/lib/clang/21/include -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/include -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/usr/include -internal-isystem C:/Programming/msys2/clang64/include -fdeprecated-macro -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -exception-model=seh -faddrsig -o CMakeFiles/cmTC_a4ab6.dir/CMakeCXXCompilerABI.cpp.obj -x c++ "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp"
         clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target x86_64-w64-windows-gnu
         ignoring nonexistent directory "C:/Programming/msys2/clang64/x86_64-w64-mingw32/include/c++/v1"
         ignoring nonexistent directory "C:/Programming/msys2/clang64/x86_64-w64-mingw32/include"
@@ -3914,12 +3914,12 @@ events:
          C:/Programming/msys2/clang64/lib/clang/21/include
          C:/Programming/msys2/clang64/include
         End of search list.
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Programming\\msys2\\clang64\\bin\\c++.exe  -v -Wl,-v CMakeFiles/cmTC_6c8fd.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_6c8fd.exe -Wl,--out-implib,libcmTC_6c8fd.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Programming\\msys2\\clang64\\bin\\c++.exe  -v -Wl,-v CMakeFiles/cmTC_a4ab6.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_a4ab6.exe -Wl,--out-implib,libcmTC_a4ab6.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
         clang version 21.1.8
         Target: x86_64-w64-windows-gnu
         Thread model: posix
         InstalledDir: C:/Programming/msys2/clang64/bin
-         "C:/Programming/msys2/clang64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_6c8fd.exe C:/Programming/msys2/clang64/lib/crt2.o C:/Programming/msys2/clang64/lib/crtbegin.o -LC:/Programming/msys2/clang64/x86_64-w64-mingw32/lib -LC:/Programming/msys2/clang64/x86_64-w64-mingw32/mingw/lib -LC:/Programming/msys2/clang64/lib -LC:/Programming/msys2/clang64/lib/clang/21/lib/windows -v CMakeFiles/cmTC_6c8fd.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_6c8fd.dll.a --major-image-version 0 --minor-image-version 0 -lc++ -lmingw32 C:/Programming/msys2/clang64/lib/clang/21/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/Programming/msys2/clang64/lib/clang/21/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Programming/msys2/clang64/lib/crtend.o
+         "C:/Programming/msys2/clang64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_a4ab6.exe C:/Programming/msys2/clang64/lib/crt2.o C:/Programming/msys2/clang64/lib/crtbegin.o -LC:/Programming/msys2/clang64/x86_64-w64-mingw32/lib -LC:/Programming/msys2/clang64/x86_64-w64-mingw32/mingw/lib -LC:/Programming/msys2/clang64/lib -LC:/Programming/msys2/clang64/lib/clang/21/lib/windows -v CMakeFiles/cmTC_a4ab6.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_a4ab6.dll.a --major-image-version 0 --minor-image-version 0 -lc++ -lmingw32 C:/Programming/msys2/clang64/lib/clang/21/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/Programming/msys2/clang64/lib/clang/21/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Programming/msys2/clang64/lib/crtend.o
         LLD 21.1.8 (https://github.com/msys2/MINGW-packages cd1581c9800c7dbed6185443400f7fbb49300265) (compatible with GNU linkers)
         
       exitCode: 0
@@ -3928,7 +3928,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     message: |
       Parsed CXX implicit include dir info: rv=done
         found start of include info
@@ -3948,21 +3948,21 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-e38r3l']
+        ignore line: [Change Dir: 'C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-d910nq']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/Users/just1/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/ninja.exe -v cmTC_6c8fd]
-        ignore line: [[1/2] C:\\Programming\\msys2\\clang64\\bin\\c++.exe   -v -MD -MT CMakeFiles/cmTC_6c8fd.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_6c8fd.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles/cmTC_6c8fd.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp"]
+        ignore line: [Run Build Command(s): C:/Users/just1/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/ninja.exe -v cmTC_a4ab6]
+        ignore line: [[1/2] C:\\Programming\\msys2\\clang64\\bin\\c++.exe   -v -MD -MT CMakeFiles/cmTC_a4ab6.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles\\cmTC_a4ab6.dir\\CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles/cmTC_a4ab6.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp"]
         ignore line: [clang version 21.1.8]
         ignore line: [Target: x86_64-w64-windows-gnu]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: C:/Programming/msys2/clang64/bin]
         ignore line: [ (in-process)]
-        ignore line: [ "C:/Programming/msys2/clang64/bin/c++.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-sized-deallocation -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-e38r3l -v -fcoverage-compilation-dir=C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-e38r3l -resource-dir C:/Programming/msys2/clang64/lib/clang/21 -dependency-file "CMakeFiles\\\\cmTC_6c8fd.dir\\\\CMakeCXXCompilerABI.cpp.obj.d" -MT CMakeFiles/cmTC_6c8fd.dir/CMakeCXXCompilerABI.cpp.obj -sys-header-deps -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/include/c++/v1 -internal-isystem C:/Programming/msys2/clang64/include/c++/v1 -internal-isystem C:/Programming/msys2/clang64/lib/clang/21/include -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/include -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/usr/include -internal-isystem C:/Programming/msys2/clang64/include -fdeprecated-macro -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -exception-model=seh -faddrsig -o CMakeFiles/cmTC_6c8fd.dir/CMakeCXXCompilerABI.cpp.obj -x c++ "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp"]
+        ignore line: [ "C:/Programming/msys2/clang64/bin/c++.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-sized-deallocation -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-d910nq -v -fcoverage-compilation-dir=C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-d910nq -resource-dir C:/Programming/msys2/clang64/lib/clang/21 -dependency-file "CMakeFiles\\\\cmTC_a4ab6.dir\\\\CMakeCXXCompilerABI.cpp.obj.d" -MT CMakeFiles/cmTC_a4ab6.dir/CMakeCXXCompilerABI.cpp.obj -sys-header-deps -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/include/c++/v1 -internal-isystem C:/Programming/msys2/clang64/include/c++/v1 -internal-isystem C:/Programming/msys2/clang64/lib/clang/21/include -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/include -internal-isystem C:/Programming/msys2/clang64/x86_64-w64-mingw32/usr/include -internal-isystem C:/Programming/msys2/clang64/include -fdeprecated-macro -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -exception-model=seh -faddrsig -o CMakeFiles/cmTC_a4ab6.dir/CMakeCXXCompilerABI.cpp.obj -x c++ "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp"]
         ignore line: [clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target x86_64-w64-windows-gnu]
         ignore line: [ignoring nonexistent directory "C:/Programming/msys2/clang64/x86_64-w64-mingw32/include/c++/v1"]
         ignore line: [ignoring nonexistent directory "C:/Programming/msys2/clang64/x86_64-w64-mingw32/include"]
@@ -3973,18 +3973,18 @@ events:
         ignore line: [ C:/Programming/msys2/clang64/lib/clang/21/include]
         ignore line: [ C:/Programming/msys2/clang64/include]
         ignore line: [End of search list.]
-        ignore line: [[2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Programming\\msys2\\clang64\\bin\\c++.exe  -v -Wl -v CMakeFiles/cmTC_6c8fd.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_6c8fd.exe -Wl --out-implib libcmTC_6c8fd.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+        ignore line: [[2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Programming\\msys2\\clang64\\bin\\c++.exe  -v -Wl -v CMakeFiles/cmTC_a4ab6.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_a4ab6.exe -Wl --out-implib libcmTC_a4ab6.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
         ignore line: [clang version 21.1.8]
         ignore line: [Target: x86_64-w64-windows-gnu]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: C:/Programming/msys2/clang64/bin]
-        link line: [ "C:/Programming/msys2/clang64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_6c8fd.exe C:/Programming/msys2/clang64/lib/crt2.o C:/Programming/msys2/clang64/lib/crtbegin.o -LC:/Programming/msys2/clang64/x86_64-w64-mingw32/lib -LC:/Programming/msys2/clang64/x86_64-w64-mingw32/mingw/lib -LC:/Programming/msys2/clang64/lib -LC:/Programming/msys2/clang64/lib/clang/21/lib/windows -v CMakeFiles/cmTC_6c8fd.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_6c8fd.dll.a --major-image-version 0 --minor-image-version 0 -lc++ -lmingw32 C:/Programming/msys2/clang64/lib/clang/21/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/Programming/msys2/clang64/lib/clang/21/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Programming/msys2/clang64/lib/crtend.o]
+        link line: [ "C:/Programming/msys2/clang64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_a4ab6.exe C:/Programming/msys2/clang64/lib/crt2.o C:/Programming/msys2/clang64/lib/crtbegin.o -LC:/Programming/msys2/clang64/x86_64-w64-mingw32/lib -LC:/Programming/msys2/clang64/x86_64-w64-mingw32/mingw/lib -LC:/Programming/msys2/clang64/lib -LC:/Programming/msys2/clang64/lib/clang/21/lib/windows -v CMakeFiles/cmTC_a4ab6.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_a4ab6.dll.a --major-image-version 0 --minor-image-version 0 -lc++ -lmingw32 C:/Programming/msys2/clang64/lib/clang/21/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/Programming/msys2/clang64/lib/clang/21/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/Programming/msys2/clang64/lib/crtend.o]
           arg [C:/Programming/msys2/clang64/bin/ld.lld] ==> ignore
           arg [-m] ==> ignore
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_6c8fd.exe] ==> ignore
+          arg [cmTC_a4ab6.exe] ==> ignore
           arg [C:/Programming/msys2/clang64/lib/crt2.o] ==> obj [C:/Programming/msys2/clang64/lib/crt2.o]
           arg [C:/Programming/msys2/clang64/lib/crtbegin.o] ==> obj [C:/Programming/msys2/clang64/lib/crtbegin.o]
           arg [-LC:/Programming/msys2/clang64/x86_64-w64-mingw32/lib] ==> dir [C:/Programming/msys2/clang64/x86_64-w64-mingw32/lib]
@@ -3992,9 +3992,9 @@ events:
           arg [-LC:/Programming/msys2/clang64/lib] ==> dir [C:/Programming/msys2/clang64/lib]
           arg [-LC:/Programming/msys2/clang64/lib/clang/21/lib/windows] ==> dir [C:/Programming/msys2/clang64/lib/clang/21/lib/windows]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_6c8fd.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+          arg [CMakeFiles/cmTC_a4ab6.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_6c8fd.dll.a] ==> ignore
+          arg [libcmTC_a4ab6.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -4039,7 +4039,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
       - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:2 (project)"
+      - "CMakeLists.txt:3 (project)"
     message: |
       Running the CXX compiler's linker: "C:/Programming/msys2/clang64/bin/ld.lld" "-v"
       LLD 21.1.8 (https://github.com/msys2/MINGW-packages cd1581c9800c7dbed6185443400f7fbb49300265) (compatible with GNU linkers)
@@ -4055,12 +4055,12 @@ events:
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Dependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:176 (include)"
-      - "CMakeLists.txt:12 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-hdrsba"
-      binary: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-hdrsba"
+      source: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-ivetr6"
+      binary: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-ivetr6"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Programming/msys2/clang64/bin/clang-scan-deps.exe"
       CMAKE_C_FLAGS: ""
@@ -4071,27 +4071,27 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-hdrsba'
+        Change Dir: 'C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-ivetr6'
         
-        Run Build Command(s): C:/Users/just1/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/ninja.exe -v cmTC_5b8c5
-        [1/2] C:\\Programming\\msys2\\clang64\\bin\\cc.exe -DCMAKE_HAVE_LIBC_PTHREAD   -MD -MT CMakeFiles/cmTC_5b8c5.dir/src.c.obj -MF CMakeFiles\\cmTC_5b8c5.dir\\src.c.obj.d -o CMakeFiles/cmTC_5b8c5.dir/src.c.obj -c C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-hdrsba/src.c
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Programming\\msys2\\clang64\\bin\\cc.exe   CMakeFiles/cmTC_5b8c5.dir/src.c.obj -o cmTC_5b8c5.exe -Wl,--out-implib,libcmTC_5b8c5.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
-        FAILED: [code=1] cmTC_5b8c5.exe 
-        C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Programming\\msys2\\clang64\\bin\\cc.exe   CMakeFiles/cmTC_5b8c5.dir/src.c.obj -o cmTC_5b8c5.exe -Wl,--out-implib,libcmTC_5b8c5.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        Run Build Command(s): C:/Users/just1/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/ninja.exe -v cmTC_c2bcd
+        [1/2] C:\\Programming\\msys2\\clang64\\bin\\cc.exe -DCMAKE_HAVE_LIBC_PTHREAD   -MD -MT CMakeFiles/cmTC_c2bcd.dir/src.c.obj -MF CMakeFiles\\cmTC_c2bcd.dir\\src.c.obj.d -o CMakeFiles/cmTC_c2bcd.dir/src.c.obj -c C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-ivetr6/src.c
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Programming\\msys2\\clang64\\bin\\cc.exe   CMakeFiles/cmTC_c2bcd.dir/src.c.obj -o cmTC_c2bcd.exe -Wl,--out-implib,libcmTC_c2bcd.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        FAILED: [code=1] cmTC_c2bcd.exe 
+        C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Programming\\msys2\\clang64\\bin\\cc.exe   CMakeFiles/cmTC_c2bcd.dir/src.c.obj -o cmTC_c2bcd.exe -Wl,--out-implib,libcmTC_c2bcd.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
         ld.lld: error: undefined symbol: pthread_create
-        >>> referenced by CMakeFiles/cmTC_5b8c5.dir/src.c.obj:(main)
+        >>> referenced by CMakeFiles/cmTC_c2bcd.dir/src.c.obj:(main)
         
         ld.lld: error: undefined symbol: pthread_detach
-        >>> referenced by CMakeFiles/cmTC_5b8c5.dir/src.c.obj:(main)
+        >>> referenced by CMakeFiles/cmTC_c2bcd.dir/src.c.obj:(main)
         
         ld.lld: error: undefined symbol: pthread_cancel
-        >>> referenced by CMakeFiles/cmTC_5b8c5.dir/src.c.obj:(main)
+        >>> referenced by CMakeFiles/cmTC_c2bcd.dir/src.c.obj:(main)
         
         ld.lld: error: undefined symbol: pthread_join
-        >>> referenced by CMakeFiles/cmTC_5b8c5.dir/src.c.obj:(main)
+        >>> referenced by CMakeFiles/cmTC_c2bcd.dir/src.c.obj:(main)
         
         ld.lld: error: undefined symbol: pthread_exit
-        >>> referenced by CMakeFiles/cmTC_5b8c5.dir/src.c.obj:(main)
+        >>> referenced by CMakeFiles/cmTC_c2bcd.dir/src.c.obj:(main)
         cc: error: linker command failed with exit code 1 (use -v to see invocation)
         ninja: build stopped: subcommand failed.
         
@@ -4106,12 +4106,12 @@ events:
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Dependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:176 (include)"
-      - "CMakeLists.txt:12 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
     checks:
       - "Check if compiler accepts -pthread"
     directories:
-      source: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-rlfanz"
-      binary: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-rlfanz"
+      source: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-cp7fmi"
+      binary: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-cp7fmi"
     cmakeVariables:
       CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Programming/msys2/clang64/bin/clang-scan-deps.exe"
       CMAKE_C_FLAGS: ""
@@ -4122,56 +4122,24 @@ events:
       variable: "THREADS_HAVE_PTHREAD_ARG"
       cached: true
       stdout: |
-        Change Dir: 'C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-rlfanz'
+        Change Dir: 'C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-cp7fmi'
         
-        Run Build Command(s): C:/Users/just1/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/ninja.exe -v cmTC_e7738
-        [1/2] C:\\Programming\\msys2\\clang64\\bin\\cc.exe    -MD -MT CMakeFiles/cmTC_e7738.dir/CheckForPthreads.c.obj -MF CMakeFiles\\cmTC_e7738.dir\\CheckForPthreads.c.obj.d -o CMakeFiles/cmTC_e7738.dir/CheckForPthreads.c.obj -c C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-rlfanz/CheckForPthreads.c
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Programming\\msys2\\clang64\\bin\\cc.exe   CMakeFiles/cmTC_e7738.dir/CheckForPthreads.c.obj -o cmTC_e7738.exe -Wl,--out-implib,libcmTC_e7738.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -pthread  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
-        
-      exitCode: 0
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
-      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
-      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/FindWrapAtomic.cmake:36 (check_cxx_source_compiles)"
-      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
-      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
-      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:36 (_qt_internal_find_third_party_dependencies)"
-      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:42 (include)"
-      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:237 (find_package)"
-      - "CMakeLists.txt:12 (find_package)"
-    checks:
-      - "Performing Test HAVE_STDATOMIC"
-    directories:
-      source: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-79zuzh"
-      binary: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-79zuzh"
-    cmakeVariables:
-      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Programming/msys2/clang64/bin/clang-scan-deps.exe"
-      CMAKE_CXX_FLAGS: ""
-      CMAKE_CXX_FLAGS_DEBUG: "-g"
-      CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "C:/Programming/msys2/clang64/lib/cmake/Qt6;C:/Programming/msys2/clang64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;C:/Programming/msys2/clang64/lib/cmake/Qt6/3rdparty/kwin"
-    buildResult:
-      variable: "HAVE_STDATOMIC"
-      cached: true
-      stdout: |
-        Change Dir: 'C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-79zuzh'
-        
-        Run Build Command(s): C:/Users/just1/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/ninja.exe -v cmTC_75e05
-        [1/2] C:\\Programming\\msys2\\clang64\\bin\\c++.exe -DHAVE_STDATOMIC  -std=gnu++17 -MD -MT CMakeFiles/cmTC_75e05.dir/src.cxx.obj -MF CMakeFiles\\cmTC_75e05.dir\\src.cxx.obj.d -o CMakeFiles/cmTC_75e05.dir/src.cxx.obj -c C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/CMakeScratch/TryCompile-79zuzh/src.cxx
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Programming\\msys2\\clang64\\bin\\c++.exe   CMakeFiles/cmTC_75e05.dir/src.cxx.obj -o cmTC_75e05.exe -Wl,--out-implib,libcmTC_75e05.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        Run Build Command(s): C:/Users/just1/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/ninja.exe -v cmTC_44f97
+        [1/2] C:\\Programming\\msys2\\clang64\\bin\\cc.exe    -MD -MT CMakeFiles/cmTC_44f97.dir/CheckForPthreads.c.obj -MF CMakeFiles\\cmTC_44f97.dir\\CheckForPthreads.c.obj.d -o CMakeFiles/cmTC_44f97.dir/CheckForPthreads.c.obj -c C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-cp7fmi/CheckForPthreads.c
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Programming\\msys2\\clang64\\bin\\cc.exe   CMakeFiles/cmTC_44f97.dir/CheckForPthreads.c.obj -o cmTC_44f97.exe -Wl,--out-implib,libcmTC_44f97.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -pthread  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
         
       exitCode: 0
   -
     kind: "find_package-v1"
     backtrace:
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:100 (find_package)"
-      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:43 (_qt_internal_find_tool_dependencies)"
-      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:42 (include)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake:14 (_qt_internal_find_tool_dependencies)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake:36 (include)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:100 (find_package)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:42 (_qt_internal_find_tool_dependencies)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:237 (find_package)"
-      - "CMakeLists.txt:12 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
     name: "Qt6CoreTools"
     configs:
       -
@@ -4193,7 +4161,7 @@ events:
       names:
         - "Qt6CoreTools"
       search_paths:
-        - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/.."
+        - "C:/Programming/msys2/clang64/lib/cmake/Qt6WidgetsTools/.."
         - "C:/Programming/msys2/clang64/lib/cmake"
       path_suffixes:
         - ""
@@ -4209,11 +4177,11 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/pkgRedirects/Qt6CoreToolsConfig.cmake"
+        path: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/pkgRedirects/Qt6CoreToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/pkgRedirects/qt6coretools-config.cmake"
+        path: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/pkgRedirects/qt6coretools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
@@ -4385,340 +4353,13 @@ events:
         - "C:\\Programming\\msys2\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/task1"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Car"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files/Git/mingw64"
         - "C:/Program Files"
         - "C:/Program Files (x86)"
         - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/task1"
-  -
-    kind: "find_package-v1"
-    backtrace:
-      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
-      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
-      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
-      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:42 (include)"
-      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:237 (find_package)"
-      - "CMakeLists.txt:12 (find_package)"
-    name: "Qt6EntryPointPrivate"
-    configs:
-      -
-        filename: "Qt6EntryPointPrivateConfig.cmake"
-        kind: "cmake"
-      -
-        filename: "qt6entrypointprivate-config.cmake"
-        kind: "cmake"
-    version_request:
-      version: "6.10.1"
-      version_complete: "6.10.1"
-      exact: false
-    settings:
-      required: "optional"
-      quiet: false
-      global: false
-      policy_scope: true
-      bypass_provider: false
-      names:
-        - "Qt6EntryPointPrivate"
-      search_paths:
-        - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/.."
-        - "C:/Programming/msys2/clang64/lib/cmake"
-      path_suffixes:
-        - ""
-      paths:
-        CMAKE_FIND_USE_CMAKE_PATH: false
-        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-        CMAKE_FIND_USE_INSTALL_PREFIX: true
-        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
-        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
-        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
-        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
-    candidates:
-      -
-        path: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/pkgRedirects/Qt6EntryPointPrivateConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/pkgRedirects/qt6entrypointprivate-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6EntryPointPrivateConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Programming/msys2/clang64/lib/cmake/qt6entrypointprivate-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-    found:
-      path: "C:/Programming/msys2/clang64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake"
-      mode: "config"
-      version: "6.10.1"
-    search_context:
-      ENV{PATH}:
-        - "C:\\Users\\just1\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\local\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\just1\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
-        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
-        - "C:\\Windows\\System32\\OpenSSH"
-        - "C:\\Program Files\\dotnet"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Users\\just1\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "C:\\Users\\just1\\.dotnet\\tools"
-        - "C:\\Users\\just1\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\Users\\just1\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
-        - "C:\\Programming\\msys2\\clang64\\bin"
-        - "C:\\Programming\\msys2\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
-        - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/task1"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "C:/Program Files/Git/mingw64"
-        - "C:/Program Files"
-        - "C:/Program Files (x86)"
-        - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/task1"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:3134 (find_program)"
-      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake:30 (_qt_internal_setup_deploy_support)"
-      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:190 (include)"
-      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:237 (find_package)"
-      - "CMakeLists.txt:12 (find_package)"
-    mode: "program"
-    variable: "WINDEPLOYQT_EXECUTABLE"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "windeployqt"
-    candidate_directories:
-      - "C:/Programming/msys2/clang64/bin/"
-      - "C:/Users/just1/bin/"
-      - "C:/Program Files/Git/mingw64/bin/"
-      - "C:/Program Files/Git/usr/local/bin/"
-      - "C:/Program Files/Git/usr/bin/"
-      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
-      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
-      - "C:/Windows/System32/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/dotnet/"
-      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Users/just1/AppData/Local/Microsoft/WindowsApps/"
-      - "C:/Users/just1/.dotnet/tools/"
-      - "C:/Users/just1/AppData/Local/Programs/Microsoft VS Code/bin/"
-      - "C:/Users/just1/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/"
-      - "C:/Programming/msys2/mingw64/bin/"
-      - "C:/Program Files/Git/usr/bin/vendor_perl/"
-      - "C:/Program Files/Git/usr/bin/core_perl/"
-      - "C:/Program Files/Git/mingw64/bin/"
-      - "C:/Program Files/Git/mingw64/sbin/"
-      - "C:/Program Files/Git/mingw64/"
-      - "C:/Program Files/bin/"
-      - "C:/Program Files/sbin/"
-      - "C:/Program Files/"
-      - "C:/Program Files (x86)/bin/"
-      - "C:/Program Files (x86)/sbin/"
-      - "C:/Program Files (x86)/"
-      - "C:/Program Files/CMake/bin/"
-      - "C:/Program Files/CMake/sbin/"
-      - "C:/Program Files/CMake/"
-      - "C:/Program Files (x86)/task1/bin/"
-      - "C:/Program Files (x86)/task1/sbin/"
-      - "C:/Program Files (x86)/task1/"
-    searched_directories:
-      - "C:/Programming/msys2/clang64/bin/windeployqt.com"
-    found: "C:/Programming/msys2/clang64/bin/windeployqt.exe"
-    search_context:
-      ENV{PATH}:
-        - "C:\\Users\\just1\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\local\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\just1\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
-        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
-        - "C:\\Windows\\System32\\OpenSSH"
-        - "C:\\Program Files\\dotnet"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Users\\just1\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "C:\\Users\\just1\\.dotnet\\tools"
-        - "C:\\Users\\just1\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\Users\\just1\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
-        - "C:\\Programming\\msys2\\clang64\\bin"
-        - "C:\\Programming\\msys2\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
-        - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/task1"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "C:/Program Files/Git/mingw64"
-        - "C:/Program Files"
-        - "C:/Program Files (x86)"
-        - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/task1"
-  -
-    kind: "find_package-v1"
-    backtrace:
-      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:237 (find_package)"
-      - "CMakeLists.txt:12 (find_package)"
-    name: "Qt6Core"
-    configs:
-      -
-        filename: "Qt6CoreConfig.cmake"
-        kind: "cmake"
-      -
-        filename: "qt6core-config.cmake"
-        kind: "cmake"
-    version_request:
-      exact: false
-    settings:
-      required: "optional"
-      quiet: false
-      global: false
-      policy_scope: true
-      bypass_provider: false
-      names:
-        - "Qt6Core"
-      search_paths:
-        - "C:/Programming/msys2/clang64/lib/cmake"
-      path_suffixes:
-        - ""
-      paths:
-        CMAKE_FIND_USE_CMAKE_PATH: false
-        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-        CMAKE_FIND_USE_INSTALL_PREFIX: true
-        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
-        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
-        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
-        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
-    candidates:
-      -
-        path: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/pkgRedirects/Qt6CoreConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/pkgRedirects/qt6core-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6CoreConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Programming/msys2/clang64/lib/cmake/qt6core-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6CoreTools/Qt6CoreConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6CoreTools/qt6core-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6CorePrivate/Qt6CoreConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6CorePrivate/qt6core-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6Core5CompatPrivate/Qt6CoreConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6Core5CompatPrivate/qt6core-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6Core5Compat/Qt6CoreConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6Core5Compat/qt6core-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-    found:
-      path: "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake"
-      mode: "config"
-      version: "6.10.1"
-    search_context:
-      ENV{PATH}:
-        - "C:\\Users\\just1\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\local\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\just1\\bin"
-        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
-        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
-        - "C:\\Windows\\System32\\OpenSSH"
-        - "C:\\Program Files\\dotnet"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\CMake\\bin"
-        - "C:\\Users\\just1\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "C:\\Users\\just1\\.dotnet\\tools"
-        - "C:\\Users\\just1\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\Users\\just1\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
-        - "C:\\Programming\\msys2\\clang64\\bin"
-        - "C:\\Programming\\msys2\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
-        - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/task1"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "C:/Program Files/Git/mingw64"
-        - "C:/Program Files"
-        - "C:/Program Files (x86)"
-        - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/task1"
+        - "C:/Program Files (x86)/Car"
   -
     kind: "find_package-v1"
     backtrace:
@@ -4729,7 +4370,7 @@ events:
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:42 (_qt_internal_find_tool_dependencies)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:237 (find_package)"
-      - "CMakeLists.txt:12 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
     name: "Qt6GuiTools"
     configs:
       -
@@ -4767,11 +4408,11 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/pkgRedirects/Qt6GuiToolsConfig.cmake"
+        path: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/pkgRedirects/Qt6GuiToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/pkgRedirects/qt6guitools-config.cmake"
+        path: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/pkgRedirects/qt6guitools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
@@ -4943,13 +4584,13 @@ events:
         - "C:\\Programming\\msys2\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/task1"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Car"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files/Git/mingw64"
         - "C:/Program Files"
         - "C:/Program Files (x86)"
         - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/task1"
+        - "C:/Program Files (x86)/Car"
   -
     kind: "find_package-v1"
     backtrace:
@@ -4957,7 +4598,7 @@ events:
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:42 (_qt_internal_find_tool_dependencies)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:237 (find_package)"
-      - "CMakeLists.txt:12 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
     name: "Qt6WidgetsTools"
     configs:
       -
@@ -4995,11 +4636,11 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/pkgRedirects/Qt6WidgetsToolsConfig.cmake"
+        path: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/pkgRedirects/Qt6WidgetsToolsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/pkgRedirects/qt6widgetstools-config.cmake"
+        path: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/pkgRedirects/qt6widgetstools-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
@@ -5171,13 +4812,398 @@ events:
         - "C:\\Programming\\msys2\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/task1"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Car"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files/Git/mingw64"
         - "C:/Program Files"
         - "C:/Program Files (x86)"
         - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/task1"
+        - "C:/Program Files (x86)/Car"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/FindWrapAtomic.cmake:36 (check_cxx_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:36 (_qt_internal_find_third_party_dependencies)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:42 (include)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:237 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
+    checks:
+      - "Performing Test HAVE_STDATOMIC"
+    directories:
+      source: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-1v4p5e"
+      binary: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-1v4p5e"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/Programming/msys2/clang64/bin/clang-scan-deps.exe"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Programming/msys2/clang64/lib/cmake/Qt6;C:/Programming/msys2/clang64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;C:/Programming/msys2/clang64/lib/cmake/Qt6/3rdparty/kwin"
+    buildResult:
+      variable: "HAVE_STDATOMIC"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-1v4p5e'
+        
+        Run Build Command(s): C:/Users/just1/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/ninja.exe -v cmTC_d3ea5
+        [1/2] C:\\Programming\\msys2\\clang64\\bin\\c++.exe -DHAVE_STDATOMIC  -std=gnu++17 -MD -MT CMakeFiles/cmTC_d3ea5.dir/src.cxx.obj -MF CMakeFiles\\cmTC_d3ea5.dir\\src.cxx.obj.d -o CMakeFiles/cmTC_d3ea5.dir/src.cxx.obj -c C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/CMakeScratch/TryCompile-1v4p5e/src.cxx
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Programming\\msys2\\clang64\\bin\\c++.exe   CMakeFiles/cmTC_d3ea5.dir/src.cxx.obj -o cmTC_d3ea5.exe -Wl,--out-implib,libcmTC_d3ea5.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+        
+      exitCode: 0
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:42 (include)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:237 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
+    name: "Qt6EntryPointPrivate"
+    configs:
+      -
+        filename: "Qt6EntryPointPrivateConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "qt6entrypointprivate-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "6.10.1"
+      version_complete: "6.10.1"
+      exact: false
+    settings:
+      required: "optional"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Qt6EntryPointPrivate"
+      search_paths:
+        - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/.."
+        - "C:/Programming/msys2/clang64/lib/cmake"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: false
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/pkgRedirects/Qt6EntryPointPrivateConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/pkgRedirects/qt6entrypointprivate-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6EntryPointPrivateConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Programming/msys2/clang64/lib/cmake/qt6entrypointprivate-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "C:/Programming/msys2/clang64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake"
+      mode: "config"
+      version: "6.10.1"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\just1\\bin"
+        - "C:\\Program Files\\Git\\mingw64\\bin"
+        - "C:\\Program Files\\Git\\usr\\local\\bin"
+        - "C:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Program Files\\Git\\mingw64\\bin"
+        - "C:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Users\\just1\\bin"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\Windows\\System32\\OpenSSH"
+        - "C:\\Program Files\\dotnet"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\just1\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\just1\\.dotnet\\tools"
+        - "C:\\Users\\just1\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\just1\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Programming\\msys2\\clang64\\bin"
+        - "C:\\Programming\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
+        - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Car"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files/Git/mingw64"
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/Car"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:3134 (find_program)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake:30 (_qt_internal_setup_deploy_support)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:190 (include)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:237 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
+    mode: "program"
+    variable: "WINDEPLOYQT_EXECUTABLE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "windeployqt"
+    candidate_directories:
+      - "C:/Programming/msys2/clang64/bin/"
+      - "C:/Users/just1/bin/"
+      - "C:/Program Files/Git/mingw64/bin/"
+      - "C:/Program Files/Git/usr/local/bin/"
+      - "C:/Program Files/Git/usr/bin/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/just1/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/just1/.dotnet/tools/"
+      - "C:/Users/just1/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/just1/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Programming/msys2/mingw64/bin/"
+      - "C:/Program Files/Git/usr/bin/vendor_perl/"
+      - "C:/Program Files/Git/usr/bin/core_perl/"
+      - "C:/Program Files/Git/mingw64/bin/"
+      - "C:/Program Files/Git/mingw64/sbin/"
+      - "C:/Program Files/Git/mingw64/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/Car/bin/"
+      - "C:/Program Files (x86)/Car/sbin/"
+      - "C:/Program Files (x86)/Car/"
+    searched_directories:
+      - "C:/Programming/msys2/clang64/bin/windeployqt.com"
+    found: "C:/Programming/msys2/clang64/bin/windeployqt.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\just1\\bin"
+        - "C:\\Program Files\\Git\\mingw64\\bin"
+        - "C:\\Program Files\\Git\\usr\\local\\bin"
+        - "C:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Program Files\\Git\\mingw64\\bin"
+        - "C:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Users\\just1\\bin"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\Windows\\System32\\OpenSSH"
+        - "C:\\Program Files\\dotnet"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\just1\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\just1\\.dotnet\\tools"
+        - "C:\\Users\\just1\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\just1\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Programming\\msys2\\clang64\\bin"
+        - "C:\\Programming\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
+        - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Car"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files/Git/mingw64"
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/Car"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
+      - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:237 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
+    name: "Qt6Core"
+    configs:
+      -
+        filename: "Qt6CoreConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "qt6core-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "6.10.1"
+      version_complete: "6.10.1"
+      exact: false
+    settings:
+      required: "optional"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Qt6Core"
+      search_paths:
+        - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/.."
+        - "C:/Programming/msys2/clang64/lib/cmake"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: false
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/pkgRedirects/Qt6CoreConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/pkgRedirects/qt6core-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6CoreConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Programming/msys2/clang64/lib/cmake/qt6core-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6CoreTools/Qt6CoreConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6CoreTools/qt6core-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6CorePrivate/Qt6CoreConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6CorePrivate/qt6core-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6Core5CompatPrivate/Qt6CoreConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6Core5CompatPrivate/qt6core-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6Core5Compat/Qt6CoreConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Programming/msys2/clang64/lib/cmake/Qt6Core5Compat/qt6core-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake"
+      mode: "config"
+      version: "6.10.1"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Users\\just1\\bin"
+        - "C:\\Program Files\\Git\\mingw64\\bin"
+        - "C:\\Program Files\\Git\\usr\\local\\bin"
+        - "C:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Program Files\\Git\\mingw64\\bin"
+        - "C:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Users\\just1\\bin"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\Windows\\System32\\OpenSSH"
+        - "C:\\Program Files\\dotnet"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\just1\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\just1\\.dotnet\\tools"
+        - "C:\\Users\\just1\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\just1\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Programming\\msys2\\clang64\\bin"
+        - "C:\\Programming\\msys2\\mingw64\\bin"
+        - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
+        - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Car"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files/Git/mingw64"
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/Car"
   -
     kind: "find-v1"
     backtrace:
@@ -5192,7 +5218,7 @@ events:
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:237 (find_package)"
-      - "CMakeLists.txt:12 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
     mode: "path"
     variable: "Vulkan_INCLUDE_DIR"
     description: "Path to a file."
@@ -5239,8 +5265,8 @@ events:
       - "C:/Program Files (x86)/"
       - "C:/Program Files/CMake/include/"
       - "C:/Program Files/CMake/"
-      - "C:/Program Files (x86)/task1/include/"
-      - "C:/Program Files (x86)/task1/"
+      - "C:/Program Files (x86)/Car/include/"
+      - "C:/Program Files (x86)/Car/"
     searched_directories:
       - "/include/vulkan/vulkan.h"
       - "C:/Users/just1/bin/vulkan/vulkan.h"
@@ -5274,8 +5300,8 @@ events:
       - "C:/Program Files (x86)/vulkan/vulkan.h"
       - "C:/Program Files/CMake/include/vulkan/vulkan.h"
       - "C:/Program Files/CMake/vulkan/vulkan.h"
-      - "C:/Program Files (x86)/task1/include/vulkan/vulkan.h"
-      - "C:/Program Files (x86)/task1/vulkan/vulkan.h"
+      - "C:/Program Files (x86)/Car/include/vulkan/vulkan.h"
+      - "C:/Program Files (x86)/Car/vulkan/vulkan.h"
     found: false
     search_context:
       ENV{PATH}:
@@ -5306,13 +5332,13 @@ events:
         - "C:\\Programming\\msys2\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/task1"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Car"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files/Git/mingw64"
         - "C:/Program Files"
         - "C:/Program Files (x86)"
         - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/task1"
+        - "C:/Program Files (x86)/Car"
   -
     kind: "find-v1"
     backtrace:
@@ -5327,7 +5353,7 @@ events:
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:237 (find_package)"
-      - "CMakeLists.txt:12 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
     mode: "library"
     variable: "Vulkan_LIBRARY"
     description: "Path to a library."
@@ -5375,9 +5401,9 @@ events:
       - "C:/Program Files (x86)/"
       - "C:/Program Files/CMake/lib/"
       - "C:/Program Files/CMake/"
-      - "C:/Program Files (x86)/task1/lib/"
-      - "C:/Program Files (x86)/task1/"
-      - "C:/Program Files (x86)/task1/bin/"
+      - "C:/Program Files (x86)/Car/lib/"
+      - "C:/Program Files (x86)/Car/"
+      - "C:/Program Files (x86)/Car/bin/"
     searched_directories:
       - "/lib/"
       - "/bin/"
@@ -5412,9 +5438,9 @@ events:
       - "C:/Program Files (x86)/"
       - "C:/Program Files/CMake/lib/"
       - "C:/Program Files/CMake/"
-      - "C:/Program Files (x86)/task1/lib/"
-      - "C:/Program Files (x86)/task1/"
-      - "C:/Program Files (x86)/task1/bin/"
+      - "C:/Program Files (x86)/Car/lib/"
+      - "C:/Program Files (x86)/Car/"
+      - "C:/Program Files (x86)/Car/bin/"
     found: false
     search_context:
       ENV{PATH}:
@@ -5445,15 +5471,15 @@ events:
         - "C:\\Programming\\msys2\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/task1"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Car"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files/Git/mingw64"
         - "C:/Program Files"
         - "C:/Program Files (x86)"
         - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/task1"
+        - "C:/Program Files (x86)/Car"
       CMAKE_SYSTEM_LIBRARY_PATH:
-        - "C:/Program Files (x86)/task1/bin"
+        - "C:/Program Files (x86)/Car/bin"
         - "C:/Program Files/CMake/bin"
         - "/bin"
   -
@@ -5470,7 +5496,7 @@ events:
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:237 (find_package)"
-      - "CMakeLists.txt:12 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
     mode: "program"
     variable: "Vulkan_GLSLC_EXECUTABLE"
     description: "Path to a program."
@@ -5521,9 +5547,9 @@ events:
       - "C:/Program Files/CMake/bin/"
       - "C:/Program Files/CMake/sbin/"
       - "C:/Program Files/CMake/"
-      - "C:/Program Files (x86)/task1/bin/"
-      - "C:/Program Files (x86)/task1/sbin/"
-      - "C:/Program Files (x86)/task1/"
+      - "C:/Program Files (x86)/Car/bin/"
+      - "C:/Program Files (x86)/Car/sbin/"
+      - "C:/Program Files (x86)/Car/"
     searched_directories:
       - "/bin/glslc.com"
       - "/bin/glslc.exe"
@@ -5616,13 +5642,13 @@ events:
         - "C:\\Programming\\msys2\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/task1"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Car"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files/Git/mingw64"
         - "C:/Program Files"
         - "C:/Program Files (x86)"
         - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/task1"
+        - "C:/Program Files (x86)/Car"
   -
     kind: "find-v1"
     backtrace:
@@ -5637,7 +5663,7 @@ events:
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:237 (find_package)"
-      - "CMakeLists.txt:12 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
     mode: "program"
     variable: "Vulkan_GLSLANG_VALIDATOR_EXECUTABLE"
     description: "Path to a program."
@@ -5688,9 +5714,9 @@ events:
       - "C:/Program Files/CMake/bin/"
       - "C:/Program Files/CMake/sbin/"
       - "C:/Program Files/CMake/"
-      - "C:/Program Files (x86)/task1/bin/"
-      - "C:/Program Files (x86)/task1/sbin/"
-      - "C:/Program Files (x86)/task1/"
+      - "C:/Program Files (x86)/Car/bin/"
+      - "C:/Program Files (x86)/Car/sbin/"
+      - "C:/Program Files (x86)/Car/"
     searched_directories:
       - "/bin/glslangValidator.com"
       - "/bin/glslangValidator.exe"
@@ -5783,13 +5809,13 @@ events:
         - "C:\\Programming\\msys2\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/task1"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Car"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files/Git/mingw64"
         - "C:/Program Files"
         - "C:/Program Files (x86)"
         - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/task1"
+        - "C:/Program Files (x86)/Car"
   -
     kind: "find_package-v1"
     backtrace:
@@ -5799,7 +5825,7 @@ events:
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:237 (find_package)"
-      - "CMakeLists.txt:12 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
     name: "Qt6Gui"
     configs:
       -
@@ -5837,11 +5863,11 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/pkgRedirects/Qt6GuiConfig.cmake"
+        path: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/pkgRedirects/Qt6GuiConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/pkgRedirects/qt6gui-config.cmake"
+        path: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/pkgRedirects/qt6gui-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
@@ -5901,18 +5927,18 @@ events:
         - "C:\\Programming\\msys2\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/task1"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Car"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files/Git/mingw64"
         - "C:/Program Files"
         - "C:/Program Files (x86)"
         - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/task1"
+        - "C:/Program Files (x86)/Car"
   -
     kind: "find_package-v1"
     backtrace:
       - "C:/Programming/msys2/clang64/lib/cmake/Qt6/Qt6Config.cmake:237 (find_package)"
-      - "CMakeLists.txt:12 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
     name: "Qt6Widgets"
     configs:
       -
@@ -5947,11 +5973,11 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/pkgRedirects/Qt6WidgetsConfig.cmake"
+        path: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/pkgRedirects/Qt6WidgetsConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/pkgRedirects/qt6widgets-config.cmake"
+        path: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/pkgRedirects/qt6widgets-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
@@ -6011,23 +6037,19 @@ events:
         - "C:\\Programming\\msys2\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/task1"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Car"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files/Git/mingw64"
         - "C:/Program Files"
         - "C:/Program Files (x86)"
         - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/task1"
+        - "C:/Program Files (x86)/Car"
   -
     kind: "find_package-v1"
     backtrace:
-      - "CMakeLists.txt:12 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
     name: "Qt6"
     components:
-      -
-        name: "Core"
-        required: true
-        found: false
       -
         name: "Widgets"
         required: true
@@ -6063,11 +6085,11 @@ events:
         CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
     candidates:
       -
-        path: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/pkgRedirects/Qt6Config.cmake"
+        path: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/pkgRedirects/Qt6Config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "C:/vsprojects/cpp/LR-1/task1/build/CMakeFiles/pkgRedirects/qt6-config.cmake"
+        path: "C:/vsprojects/cpp/LR-1/task1-1/build/CMakeFiles/pkgRedirects/qt6-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
@@ -8967,13 +8989,13 @@ events:
         - "C:\\Programming\\msys2\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
-      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/task1"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Car"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files/Git/mingw64"
         - "C:/Program Files"
         - "C:/Program Files (x86)"
         - "C:/Program Files/CMake"
-        - "C:/Program Files (x86)/task1"
+        - "C:/Program Files (x86)/Car"
       CMAKE_MODULE_PATH:
         - "C:/Programming/msys2/clang64/lib/cmake/Qt6"
         - "C:/Programming/msys2/clang64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"

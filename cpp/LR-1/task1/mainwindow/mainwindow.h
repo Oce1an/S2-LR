@@ -3,50 +3,46 @@
 
 #include <QMainWindow>
 #include <QTimer>
-#include <QLabel>
 #include "../car/car.h"
+#include "../canvas/canvas.h"
 
-QT_BEGIN_NAMESPACE
 class QPushButton;
-class QVBoxLayout;
-class QHBoxLayout;
-class QGroupBox;
-QT_END_NAMESPACE
+class QLabel;
 
-class MainWindow : public QMainWindow {
+class MainWindow : public QMainWindow
+{
     Q_OBJECT
 
 private:
-    Car* car;
-    QTimer* timer;
-    QLabel* drawArea;
+    Car car;
+    Canvas* canvas;
+    QTimer timer;
+
     QLabel* statusLabel;
 
-    // Кнопки управления
-    QPushButton* moveLeftBtn;
-    QPushButton* moveRightBtn;
-    QPushButton* moveUpBtn;
-    QPushButton* moveDownBtn;
-    QPushButton* toggleDoorsBtn;
-    QPushButton* toggleHeadlightsBtn;
+    QPushButton* leftBtn;
+    QPushButton* rightBtn;
+    QPushButton* upBtn;
+    QPushButton* downBtn;
+
+    QPushButton* doorBtn;
+    QPushButton* lightsBtn;
     QPushButton* resetBtn;
 
-    void setupUI();
-    void updateDisplay();
+    void updateStatus();
 
 private slots:
-    void onMoveLeft();
-    void onMoveRight();
-    void onMoveUp();
-    void onMoveDown();
-    void onToggleDoors();
-    void onToggleHeadlights();
-    void onReset();
-    void onTimerTimeout();
+    void moveLeft();
+    void moveRight();
+    void moveUp();
+    void moveDown();
+
+    void toggleDoors();
+    void toggleLights();
+    void reset();
 
 public:
-    MainWindow(QWidget* parent = nullptr);
-    ~MainWindow();
+    explicit MainWindow(QWidget* parent = nullptr);
 };
 
-#endif // MAINWINDOW_H
+#endif

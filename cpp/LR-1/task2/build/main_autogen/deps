@@ -1168,9 +1168,9 @@ main_autogen/timestamp: \
 	C:/VSProjects/cpp/LR-1/task2/star/star.h \
 	C:/VSProjects/cpp/LR-1/task2/triangle/triangle.cpp \
 	C:/VSProjects/cpp/LR-1/task2/triangle/triangle.h \
-	C:/vsprojects/cpp/lr-1/task2/build/CMakeFiles/4.2.3/CMakeCCompiler.cmake \
-	C:/vsprojects/cpp/lr-1/task2/build/CMakeFiles/4.2.3/CMakeCXXCompiler.cmake \
-	C:/vsprojects/cpp/lr-1/task2/build/CMakeFiles/4.2.3/CMakeRCCompiler.cmake \
-	C:/vsprojects/cpp/lr-1/task2/build/CMakeFiles/4.2.3/CMakeSystem.cmake \
-	C:/vsprojects/cpp/lr-1/task2/build/main_autogen/moc_predefs.h \
+	C:/vsprojects/cpp/LR-1/task2/build/CMakeFiles/4.2.3/CMakeCCompiler.cmake \
+	C:/vsprojects/cpp/LR-1/task2/build/CMakeFiles/4.2.3/CMakeCXXCompiler.cmake \
+	C:/vsprojects/cpp/LR-1/task2/build/CMakeFiles/4.2.3/CMakeRCCompiler.cmake \
+	C:/vsprojects/cpp/LR-1/task2/build/CMakeFiles/4.2.3/CMakeSystem.cmake \
+	C:/vsprojects/cpp/LR-1/task2/build/main_autogen/moc_predefs.h \
 	C:/Program\ Files/CMake/bin/cmake.exe

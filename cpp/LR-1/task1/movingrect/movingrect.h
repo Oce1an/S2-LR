@@ -2,33 +2,35 @@
 #define MOVINGRECT_H
 
 #include <QPainter>
-#include <QPoint>
 
-class MovingRect {
+class MovingRect
+{
 protected:
-    int x, y;           // Позиция
-    int width, height;  // Размеры
-    int speed;          // Скорость перемещения
+    int x{};
+    int y{};
+    int width{};
+    int height{};
+    int speed{ 5 };
 
 public:
-    MovingRect();
+    MovingRect() = default;
     MovingRect(int startX, int startY, int w, int h);
-    virtual ~MovingRect();
 
-    // Методы для перемещения
+    virtual ~MovingRect() = default;
+
     void moveLeft();
     void moveRight();
     void moveUp();
     void moveDown();
 
-    // Метод для отрисовки (виртуальный для переопределения)
-    virtual void draw(QPainter& painter);
+    virtual void draw(QPainter& painter) const;
 
-    // Геттеры и сеттеры
     int getX() const { return x; }
     int getY() const { return y; }
+
     void setPosition(int newX, int newY);
+
     void setSpeed(int newSpeed) { speed = newSpeed; }
 };
 
-#endif // MOVINGRECT_H
+#endif

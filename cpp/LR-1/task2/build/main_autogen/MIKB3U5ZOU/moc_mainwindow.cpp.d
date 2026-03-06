@@ -1,5 +1,5 @@
-C:/vsprojects/cpp/lr-1/task2/build/main_autogen/MIKB3U5ZOU/moc_mainwindow.cpp: C:/VSProjects/cpp/LR-1/task2/mainwindow/mainwindow.h \
-  C:/vsprojects/cpp/lr-1/task2/build/main_autogen/moc_predefs.h \
+C:/vsprojects/cpp/LR-1/task2/build/main_autogen/MIKB3U5ZOU/moc_mainwindow.cpp: C:/VSProjects/cpp/LR-1/task2/mainwindow/mainwindow.h \
+  C:/vsprojects/cpp/LR-1/task2/build/main_autogen/moc_predefs.h \
   C:/Programming/msys2/clang64/include/_mingw.h \
   C:/Programming/msys2/clang64/include/_mingw_mac.h \
   C:/Programming/msys2/clang64/include/_mingw_secapi.h \

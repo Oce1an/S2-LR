@@ -1,232 +1,123 @@
-﻿#include "../mainwindow/mainwindow.h"
+﻿#include "mainwindow.h"
+
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QGroupBox>
+#include <QGridLayout>
 #include <QLabel>
-#include <QPainter>
-#include <QMessageBox>
-#include <QDebug>
 
-MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
-    try {
-        car = new Car(200, 200);
-        timer = new QTimer(this);
-        setupUI();
+MainWindow::MainWindow(QWidget* parent)
+    : QMainWindow(parent), car(200, 200)
+{
+    QWidget* central = new QWidget;
+    setCentralWidget(central);
 
-        // Подключение сигналов и слотов
-        connect(moveLeftBtn, &QPushButton::clicked, this, &MainWindow::onMoveLeft);
-        connect(moveRightBtn, &QPushButton::clicked, this, &MainWindow::onMoveRight);
-        connect(moveUpBtn, &QPushButton::clicked, this, &MainWindow::onMoveUp);
-        connect(moveDownBtn, &QPushButton::clicked, this, &MainWindow::onMoveDown);
-        connect(toggleDoorsBtn, &QPushButton::clicked, this, &MainWindow::onToggleDoors);
-        connect(toggleHeadlightsBtn, &QPushButton::clicked, this, &MainWindow::onToggleHeadlights);
-        connect(resetBtn, &QPushButton::clicked, this, &MainWindow::onReset);
-        connect(timer, &QTimer::timeout, this, &MainWindow::onTimerTimeout);
+    QVBoxLayout* mainLayout = new QVBoxLayout(central);
 
-        timer->start(50); // Обновление 20 раз в секунду
-        updateDisplay();
-    }
-    catch (const std::exception& e) {
-        QMessageBox::critical(this, "Error",
-            QString("Failed to initialize application: %1").arg(e.what()));
-    }
-}
+    canvas = new Canvas(&car);
+    mainLayout->addWidget(canvas);
 
-MainWindow::~MainWindow() {
-    delete car;
-}
+    QGridLayout* moveLayout = new QGridLayout;
 
-void MainWindow::setupUI() {
-    setWindowTitle("Car Control");
-    setMinimumSize(800, 600);
+    upBtn = new QPushButton("UP");
+    leftBtn = new QPushButton("LEFT");
+    rightBtn = new QPushButton("RIGHT");
+    downBtn = new QPushButton("DOWN");
 
-    // Создание центрального виджета
-    QWidget* centralWidget = new QWidget(this);
-    setCentralWidget(centralWidget);
+    moveLayout->addWidget(upBtn, 0, 1);
+    moveLayout->addWidget(leftBtn, 1, 0);
+    moveLayout->addWidget(rightBtn, 1, 2);
+    moveLayout->addWidget(downBtn, 2, 1);
 
-    // Основной вертикальный layout
-    QVBoxLayout* mainLayout = new QVBoxLayout(centralWidget);
+    mainLayout->addLayout(moveLayout);
 
-    // Область рисования
-    drawArea = new QLabel();
-    drawArea->setMinimumSize(600, 400);
-    drawArea->setStyleSheet("border: 2px solid gray; background-color: white;");
-    drawArea->setAlignment(Qt::AlignCenter);
-    mainLayout->addWidget(drawArea);
-
-    // Группа для кнопок управления
-    QGroupBox* controlGroup = new QGroupBox("Car Control");
-    QVBoxLayout* controlLayout = new QVBoxLayout(controlGroup);
-
-    // Кнопки перемещения
-    QGroupBox* moveGroup = new QGroupBox("Movement");
-    QGridLayout* moveLayout = new QGridLayout(moveGroup);
-
-    moveUpBtn = new QPushButton("↑ Up");
-    moveLeftBtn = new QPushButton("← Left");
-    moveRightBtn = new QPushButton("→ Right");
-    moveDownBtn = new QPushButton("↓ Down");
-
-    moveLayout->addWidget(moveUpBtn, 0, 1);
-    moveLayout->addWidget(moveLeftBtn, 1, 0);
-    moveLayout->addWidget(moveRightBtn, 1, 2);
-    moveLayout->addWidget(moveDownBtn, 2, 1);
-
-    controlLayout->addWidget(moveGroup);
-
-    // Кнопки управления дверями и фарами
-    QHBoxLayout* featureLayout = new QHBoxLayout();
-    toggleDoorsBtn = new QPushButton("Open/Close Doors");
-    toggleHeadlightsBtn = new QPushButton("Turn On/Off Headlights");
+    doorBtn = new QPushButton("Toggle Doors");
+    lightsBtn = new QPushButton("Toggle Lights");
     resetBtn = new QPushButton("Reset Position");
 
-    featureLayout->addWidget(toggleDoorsBtn);
-    featureLayout->addWidget(toggleHeadlightsBtn);
-    featureLayout->addWidget(resetBtn);
+    mainLayout->addWidget(doorBtn);
+    mainLayout->addWidget(lightsBtn);
+    mainLayout->addWidget(resetBtn);
 
-    controlLayout->addLayout(featureLayout);
+    statusLabel = new QLabel;
+    mainLayout->addWidget(statusLabel);
 
-    // Статусная строка
-    statusLabel = new QLabel("Status: Doors closed, Headlights off");
-    statusLabel->setStyleSheet("font-weight: bold; color: blue;");
-    controlLayout->addWidget(statusLabel);
+    connect(leftBtn, &QPushButton::clicked, this, &MainWindow::moveLeft);
+    connect(rightBtn, &QPushButton::clicked, this, &MainWindow::moveRight);
+    connect(upBtn, &QPushButton::clicked, this, &MainWindow::moveUp);
+    connect(downBtn, &QPushButton::clicked, this, &MainWindow::moveDown);
 
-    mainLayout->addWidget(controlGroup);
+    connect(doorBtn, &QPushButton::clicked, this, &MainWindow::toggleDoors);
+    connect(lightsBtn, &QPushButton::clicked, this, &MainWindow::toggleLights);
+    connect(resetBtn, &QPushButton::clicked, this, &MainWindow::reset);
 
-    // Установка стилей для кнопок
-    QString buttonStyle = "QPushButton { padding: 8px; font-size: 14px; }";
-    moveUpBtn->setStyleSheet(buttonStyle);
-    moveLeftBtn->setStyleSheet(buttonStyle);
-    moveRightBtn->setStyleSheet(buttonStyle);
-    moveDownBtn->setStyleSheet(buttonStyle);
-    toggleDoorsBtn->setStyleSheet(buttonStyle);
-    toggleHeadlightsBtn->setStyleSheet(buttonStyle);
-    resetBtn->setStyleSheet(buttonStyle);
+    // исправленный connect
+    connect(&timer, &QTimer::timeout, this, [this]() {
+        canvas->update();
+        });
+
+    timer.start(16);
+
+    updateStatus();
 }
 
-void MainWindow::updateDisplay() {
-    try {
-        // Создание изображения для рисования
-        QPixmap pixmap(drawArea->size());
-        pixmap.fill(Qt::white);
+void MainWindow::updateStatus()
+{
+    QString status = "Doors: ";
+    status += car.areDoorsOpen() ? "Open" : "Closed";
+    status += " | Lights: ";
+    status += car.areHeadlightsOn() ? "On" : "Off";
 
-        QPainter painter(&pixmap);
-        painter.setRenderHint(QPainter::Antialiasing);
-
-        // Рисование автомобиля
-        car->draw(painter);
-
-        // Обновление QLabel
-        drawArea->setPixmap(pixmap);
-
-        // Обновление статуса
-        QString status = "Status: ";
-        status += car->areDoorsOpen() ? "Doors open, " : "Doors closed, ";
-        status += car->areHeadlightsOn() ? "Headlights on" : "Headlights off";
-        statusLabel->setText(status);
-    }
-    catch (const std::exception& e) {
-        qDebug() << "Error updating display:" << e.what();
-    }
+    statusLabel->setText(status);
 }
 
-void MainWindow::onMoveLeft() {
-    try {
-        car->moveLeft();
-        // Проверка выхода за границы
-        if (car->getX() < 0) {
-            car->setPosition(0, car->getY());
-            QMessageBox::information(this, "Warning",
-                "Reached left border!");
-        }
-    }
-    catch (const std::exception& e) {
-        QMessageBox::warning(this, "Error",
-            QString("Movement error: %1").arg(e.what()));
-    }
+void MainWindow::moveLeft()
+{
+    car.moveLeft();
+    canvas->update();
+    updateStatus();
 }
 
-void MainWindow::onMoveRight() {
-    try {
-        car->moveRight();
-        // Проверка выхода за границы
-        if (car->getX() > drawArea->width() - 120) {
-            car->setPosition(drawArea->width() - 120, car->getY());
-            QMessageBox::information(this, "Warning",
-                "Reached right border!");
-        }
-    }
-    catch (const std::exception& e) {
-        QMessageBox::warning(this, "Error",
-            QString("Movement error: %1").arg(e.what()));
-    }
+void MainWindow::moveRight()
+{
+    car.moveRight();
+    canvas->update();
+    updateStatus();
 }
 
-void MainWindow::onMoveUp() {
-    try {
-        car->moveUp();
-        // Проверка выхода за границы
-        if (car->getY() < 0) {
-            car->setPosition(car->getX(), 0);
-            QMessageBox::information(this, "Warning",
-                "Reached top border!");
-        }
-    }
-    catch (const std::exception& e) {
-        QMessageBox::warning(this, "Error",
-            QString("Movement error: %1").arg(e.what()));
-    }
+void MainWindow::moveUp()
+{
+    car.moveUp();
+    canvas->update();
+    updateStatus();
 }
 
-void MainWindow::onMoveDown() {
-    try {
-        car->moveDown();
-        // Проверка выхода за границы
-        if (car->getY() > drawArea->height() - 80) {
-            car->setPosition(car->getX(), drawArea->height() - 80);
-            QMessageBox::information(this, "Warning",
-                "Reached bottom border!");
-        }
-    }
-    catch (const std::exception& e) {
-        QMessageBox::warning(this, "Error",
-            QString("Movement error: %1").arg(e.what()));
-    }
+void MainWindow::moveDown()
+{
+    car.moveDown();
+    canvas->update();
+    updateStatus();
 }
 
-void MainWindow::onToggleDoors() {
-    try {
-        car->toggleDoors();
-    }
-    catch (const std::exception& e) {
-        QMessageBox::warning(this, "Error",
-            QString("Doors toggle error: %1").arg(e.what()));
-    }
+void MainWindow::toggleDoors()
+{
+    car.toggleDoors();
+    canvas->update();
+    updateStatus();
 }
 
-void MainWindow::onToggleHeadlights() {
-    try {
-        car->toggleHeadlights();
-    }
-    catch (const std::exception& e) {
-        QMessageBox::warning(this, "Error",
-            QString("Headlights toggle error: %1").arg(e.what()));
-    }
+void MainWindow::toggleLights()
+{
+    car.toggleHeadlights();
+    canvas->update();
+    updateStatus();
 }
 
-void MainWindow::onReset() {
-    try {
-        car->setPosition(200, 200);
-        car->closeDoors();
-        car->turnHeadlightsOff();
-    }
-    catch (const std::exception& e) {
-        QMessageBox::warning(this, "Error",
-            QString("Reset error: %1").arg(e.what()));
-    }
-}
+void MainWindow::reset()
+{
+    car.setPosition(200, 200);
+    car.closeDoors();
+    car.turnHeadlightsOff();
 
-void MainWindow::onTimerTimeout() {
-    updateDisplay();
+    canvas->update();
+    updateStatus();
 }

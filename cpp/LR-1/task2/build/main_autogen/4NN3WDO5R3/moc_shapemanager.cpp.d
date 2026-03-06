@@ -1,5 +1,5 @@
-C:/vsprojects/cpp/lr-1/task2/build/main_autogen/4NN3WDO5R3/moc_shapemanager.cpp: C:/VSProjects/cpp/LR-1/task2/shapemanager/shapemanager.h \
-  C:/vsprojects/cpp/lr-1/task2/build/main_autogen/moc_predefs.h \
+C:/vsprojects/cpp/LR-1/task2/build/main_autogen/4NN3WDO5R3/moc_shapemanager.cpp: C:/VSProjects/cpp/LR-1/task2/shapemanager/shapemanager.h \
+  C:/vsprojects/cpp/LR-1/task2/build/main_autogen/moc_predefs.h \
   C:/Programming/msys2/clang64/include/_mingw.h \
   C:/Programming/msys2/clang64/include/_mingw_mac.h \
   C:/Programming/msys2/clang64/include/_mingw_secapi.h \
