@@ -39,13 +39,16 @@ template <> constexpr inline auto ScaleAnimation::qt_create_metaobjectdata<qt_me
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "ScaleAnimation",
-        "step",
-        ""
+        "finished",
+        "",
+        "step"
     };
 
     QtMocHelpers::UintData qt_methods {
+        // Signal 'finished'
+        QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'step'
-        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -69,11 +72,15 @@ void ScaleAnimation::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
     auto *_t = static_cast<ScaleAnimation *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->step(); break;
+        case 0: _t->finished(); break;
+        case 1: _t->step(); break;
         default: ;
         }
     }
-    (void)_a;
+    if (_c == QMetaObject::IndexOfMethod) {
+        if (QtMocHelpers::indexOfMethod<void (ScaleAnimation::*)()>(_a, &ScaleAnimation::finished, 0))
+            return;
+    }
 }
 
 const QMetaObject *ScaleAnimation::metaObject() const
@@ -95,15 +102,21 @@ int ScaleAnimation::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 2)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
+}
+
+// SIGNAL 0
+void ScaleAnimation::finished()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
 QT_WARNING_POP

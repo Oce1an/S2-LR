@@ -21,6 +21,9 @@ public:
     int selectedIndex() const { return m_selectedIndex; }
     void setSelectedIndex(int index);
 
+signals:
+    void selectionChanged(int index);  // Добавляем сигнал для синхронизации с MainWindow
+
 protected:
     void paintEvent(QPaintEvent* event) override;
     void mousePressEvent(QMouseEvent* event) override;

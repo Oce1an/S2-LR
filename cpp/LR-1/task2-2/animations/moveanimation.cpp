@@ -30,6 +30,7 @@ void MoveAnimation::step()
         double remDy = m_dy - m_stepDy * (m_elapsed / 50 - 1);
         if (qAbs(remDx) > 1e-6 || qAbs(remDy) > 1e-6)
             m_shape->move(remDx, remDy);
+        emit finished(); // добавить
     }
     else {
         m_shape->move(m_stepDx, m_stepDy);

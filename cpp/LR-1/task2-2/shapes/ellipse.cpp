@@ -67,3 +67,17 @@ double Ellipse::radiusX() const { return m_rx; }
 double Ellipse::radiusY() const { return m_ry; }
 void Ellipse::setRotation(double angle) { m_angle = angle; emit shapeChanged(); }
 double Ellipse::rotation() const { return m_angle; }
+
+bool Ellipse::contains(const QPointF& point) const
+{
+    // Переводим точку в локальные координаты эллипса (центр в (0,0), без поворота)
+    double dx = point.x() - m_center.x();
+    double dy = point.y() - m_center.y();
+    double rad = qDegreesToRadians(-m_angle); // обратный поворот
+    double cosA = qCos(rad);
+    double sinA = qSin(rad);
+    double x = dx * cosA - dy * sinA;
+    double y = dx * sinA + dy * cosA;
+    // Проверка неравенства эллипса
+    return (x * x) / (m_rx * m_rx) + (y * y) / (m_ry * m_ry) <= 1.0;
+}

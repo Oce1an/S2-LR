@@ -51,6 +51,8 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "onAddEllipse",
         "onShapeSelected",
         "row",
+        "onCanvasSelectionChanged",
+        "index",
         "onMoveShape",
         "onRotateShape",
         "onScaleShape",
@@ -81,19 +83,23 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void(int)>(10, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 11 },
         }}),
+        // Slot 'onCanvasSelectionChanged'
+        QtMocHelpers::SlotData<void(int)>(12, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 13 },
+        }}),
         // Slot 'onMoveShape'
-        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onRotateShape'
-        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onScaleShape'
         QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onDeleteShape'
+        // Slot 'onRotateShape'
         QtMocHelpers::SlotData<void()>(15, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onClearAll'
+        // Slot 'onScaleShape'
         QtMocHelpers::SlotData<void()>(16, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onDeleteShape'
+        QtMocHelpers::SlotData<void()>(17, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onClearAll'
+        QtMocHelpers::SlotData<void()>(18, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onDurationChanged'
-        QtMocHelpers::SlotData<void(int)>(17, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Int, 18 },
+        QtMocHelpers::SlotData<void(int)>(19, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 20 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -127,12 +133,13 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 6: _t->onAddHexagon(); break;
         case 7: _t->onAddEllipse(); break;
         case 8: _t->onShapeSelected((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
-        case 9: _t->onMoveShape(); break;
-        case 10: _t->onRotateShape(); break;
-        case 11: _t->onScaleShape(); break;
-        case 12: _t->onDeleteShape(); break;
-        case 13: _t->onClearAll(); break;
-        case 14: _t->onDurationChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 9: _t->onCanvasSelectionChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 10: _t->onMoveShape(); break;
+        case 11: _t->onRotateShape(); break;
+        case 12: _t->onScaleShape(); break;
+        case 13: _t->onDeleteShape(); break;
+        case 14: _t->onClearAll(); break;
+        case 15: _t->onDurationChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
@@ -157,14 +164,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 15)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 15;
+        _id -= 16;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 15)
+        if (_id < 16)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 15;
+        _id -= 16;
     }
     return _id;
 }

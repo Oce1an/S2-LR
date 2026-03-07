@@ -22,6 +22,13 @@ void Circle::move(double dx, double dy)
     emit shapeChanged();
 }
 
+bool Circle::contains(const QPointF& point) const
+{
+    double dx = point.x() - m_center.x();
+    double dy = point.y() - m_center.y();
+    return (dx * dx + dy * dy) <= m_radius * m_radius;
+}
+
 void Circle::rotate(double /*angle*/, const QPointF&/*center*/) { /* ничего не делаем */ }
 
 void Circle::scale(double factor, const QPointF& center)

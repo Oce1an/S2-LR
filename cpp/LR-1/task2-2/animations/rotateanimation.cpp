@@ -29,6 +29,7 @@ void RotateAnimation::step()
         double remaining = m_totalAngle - m_stepAngle * (m_elapsed / 50 - 1);
         if (qAbs(remaining) > 1e-6)
             m_shape->rotate(remaining, m_center);
+        emit finished(); // <-- добавить
     }
     else {
         m_shape->rotate(m_stepAngle, m_center);

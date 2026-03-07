@@ -7,7 +7,6 @@ ScaleAnimation::ScaleAnimation(Shape* shape, double factor, const QPointF& cente
     connect(m_timer, &QTimer::timeout, this, &ScaleAnimation::step);
     int steps = durationMs / 50;
     if (steps == 0) steps = 1;
-    // Логарифмическое масштабирование? Для простоты линейное изменение фактора
     m_stepFactor = (factor - 1.0) / steps;
 }
 
@@ -29,6 +28,7 @@ void ScaleAnimation::step()
         double remaining = m_factor - (1.0 + m_stepFactor * (m_elapsed / 50 - 1));
         if (qAbs(remaining) > 1e-6)
             m_shape->scale(1.0 + remaining, m_center);
+        emit finished(); // добавить
     }
     else {
         m_shape->scale(1.0 + m_stepFactor, m_center);

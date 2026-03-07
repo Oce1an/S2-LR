@@ -3,7 +3,8 @@
 #include <QMouseEvent>
 
 Canvas::Canvas(QWidget* parent)
-    : QWidget(parent), m_selectedIndex(-1)
+    : QWidget(parent)
+    , m_selectedIndex(-1)
 {
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
@@ -13,8 +14,10 @@ void Canvas::addShape(QSharedPointer<Shape> shape)
 {
     if (shape) {
         m_shapes.append(shape);
-        // Используем лямбду для избежания проблем с перегрузкой
-        connect(shape.data(), &Shape::shapeChanged, this, [this]() { update(); });
+        // Используем безопасное соединение
+        connect(shape.data(), &Shape::shapeChanged, this, [this]() {
+            update();
+            });
         update();
     }
 }
@@ -22,7 +25,13 @@ void Canvas::addShape(QSharedPointer<Shape> shape)
 void Canvas::removeShape(int index)
 {
     if (index >= 0 && index < m_shapes.size()) {
+        // Отключаем сигналы от удаляемой фигуры
+        if (m_shapes[index]) {
+            m_shapes[index]->disconnect(this);
+        }
+
         m_shapes.removeAt(index);
+
         // Корректно обновляем выделение
         if (m_shapes.isEmpty()) {
             m_selectedIndex = -1;
@@ -30,14 +39,25 @@ void Canvas::removeShape(int index)
         else if (m_selectedIndex >= m_shapes.size()) {
             m_selectedIndex = m_shapes.size() - 1;
         }
+
+        emit selectionChanged(m_selectedIndex);
         update();
     }
 }
 
 void Canvas::clear()
 {
+    // Отключаем сигналы от всех фигур
+    for (const auto& shape : m_shapes) {
+        if (shape) {
+            shape->disconnect(this);
+        }
+    }
+
     m_shapes.clear();
-    m_selectedIndex = -1;  // Важно: сбрасываем индекс
+    m_selectedIndex = -1;
+
+    emit selectionChanged(m_selectedIndex);
     update();
 }
 
@@ -56,7 +76,6 @@ int Canvas::shapeCount() const
 
 QSharedPointer<Shape> Canvas::selectedShape() const
 {
-    // Добавляем проверку на валидность индекса
     if (m_selectedIndex >= 0 && m_selectedIndex < m_shapes.size()) {
         return m_shapes[m_selectedIndex];
     }
@@ -65,6 +84,8 @@ QSharedPointer<Shape> Canvas::selectedShape() const
 
 void Canvas::setSelectedIndex(int index)
 {
+    int oldIndex = m_selectedIndex;
+
     // Добавляем проверку на пустой список
     if (m_shapes.isEmpty()) {
         m_selectedIndex = -1;
@@ -72,7 +93,11 @@ void Canvas::setSelectedIndex(int index)
     else if (index >= -1 && index < m_shapes.size()) {
         m_selectedIndex = index;
     }
-    update();
+
+    if (oldIndex != m_selectedIndex) {
+        emit selectionChanged(m_selectedIndex);
+        update();
+    }
 }
 
 void Canvas::paintEvent(QPaintEvent* event)
@@ -92,29 +117,43 @@ void Canvas::paintEvent(QPaintEvent* event)
 
     // Рисуем фигуры с заливкой
     for (int i = 0; i < m_shapes.size(); ++i) {
-        if (i == m_selectedIndex) {
-            painter.setPen(QPen(Qt::red, 2));
-            painter.setBrush(QColor(255, 200, 200));  // Светло-красная заливка для выбранной фигуры
-        }
-        else {
-            painter.setPen(Qt::black);
-            // Разные цвета для разных фигур на основе индекса
-            QColor fillColor(200, 200, 255);  // Светло-синий по умолчанию
-            switch (i % 5) {
-            case 0: fillColor = QColor(200, 255, 200); break;  // Светло-зеленый
-            case 1: fillColor = QColor(255, 255, 200); break;  // Светло-желтый
-            case 2: fillColor = QColor(255, 200, 255); break;  // Светло-розовый
-            case 3: fillColor = QColor(200, 255, 255); break;  // Голубой
-            case 4: fillColor = QColor(255, 220, 180); break;  // Персиковый
+        if (m_shapes[i]) {
+            if (i == m_selectedIndex) {
+                painter.setPen(QPen(Qt::red, 2));
+                painter.setBrush(QColor(255, 200, 200));  // Светло-красная заливка для выбранной фигуры
             }
-            painter.setBrush(fillColor);
+            else {
+                painter.setPen(Qt::black);
+                // Разные цвета для разных фигур на основе индекса
+                QColor fillColor(200, 200, 255);  // Светло-синий по умолчанию
+                switch (i % 5) {
+                case 0: fillColor = QColor(200, 255, 200); break;  // Светло-зеленый
+                case 1: fillColor = QColor(255, 255, 200); break;  // Светло-желтый
+                case 2: fillColor = QColor(255, 200, 255); break;  // Светло-розовый
+                case 3: fillColor = QColor(200, 255, 255); break;  // Голубой
+                case 4: fillColor = QColor(255, 220, 180); break;  // Персиковый
+                }
+                painter.setBrush(fillColor);
+            }
+            m_shapes[i]->draw(painter);
         }
-        m_shapes[i]->draw(painter);
     }
 }
 
 void Canvas::mousePressEvent(QMouseEvent* event)
 {
-    // Можно реализовать выбор фигуры по клику, но пока оставим пустым
-    Q_UNUSED(event);
+    // Ищем с конца, так как последние фигуры рисуются поверх
+    for (int i = m_shapes.size() - 1; i >= 0; --i) {
+        if (m_shapes[i] && m_shapes[i]->contains(event->pos())) {
+            setSelectedIndex(i);
+            break;
+        }
+    }
+    // Если кликнули не по фигуре, снимаем выделение
+    if (m_selectedIndex != -1 &&
+        (!m_shapes[m_selectedIndex] || !m_shapes[m_selectedIndex]->contains(event->pos()))) {
+        setSelectedIndex(-1);
+    }
+
+    QWidget::mousePressEvent(event);
 }

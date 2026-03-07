@@ -20,6 +20,7 @@ public:
     void scale(double factor, const QPointF& center) override;
     void draw(QPainter& painter) const override;
     QString typeName() const override;
+    bool contains(const QPointF& point) const override;   // <-- ДОБАВЛЕНО
 
     void setVertices(const std::vector<QPointF>& vertices);
     std::vector<QPointF> vertices() const;

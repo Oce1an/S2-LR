@@ -25,6 +25,7 @@ public:
 
     virtual void draw(QPainter& painter) const = 0;
     virtual QString typeName() const = 0;
+    virtual bool contains(const QPointF& point) const = 0;  // Добавлено (уже было)
 
 signals:
     void shapeChanged();

@@ -34,8 +34,8 @@ endif()
 set(__QT_DEPLOY_SYSTEM_NAME "Windows")
 set(__QT_DEPLOY_SHARED_LIBRARY_SUFFIX ".dll")
 set(__QT_DEPLOY_IS_SHARED_LIBS_BUILD "ON")
-set(__QT_DEPLOY_TOOL "C:/Programming/msys2/clang64/bin/windeployqt.exe")
-set(__QT_DEPLOY_IMPL_DIR "C:/vsprojects/cpp/LR-1/task2-2/build/.qt")
+set(__QT_DEPLOY_TOOL "C:/msys64/mingw64/bin/windeployqt.exe")
+set(__QT_DEPLOY_IMPL_DIR "C:/Projects/S2-LR/cpp/LR-1/task2-2/build/.qt")
 set(__QT_DEPLOY_VERBOSE "")
 set(__QT_CMAKE_EXPORT_NAMESPACE "Qt6")
 set(__QT_LIBINFIX "")
@@ -44,14 +44,14 @@ set(__QT_DEPLOY_ACTIVE_CONFIG "")
 set(__QT_NO_CREATE_VERSIONLESS_FUNCTIONS "")
 set(__QT_DEFAULT_MAJOR_VERSION "6")
 set(__QT_DEPLOY_QT_ADDITIONAL_PACKAGES_PREFIX_PATH "")
-set(__QT_DEPLOY_QT_INSTALL_PREFIX "C:/Programming/msys2/clang64")
+set(__QT_DEPLOY_QT_INSTALL_PREFIX "C:/msys64/mingw64")
 set(__QT_DEPLOY_QT_INSTALL_BINS "bin")
 set(__QT_DEPLOY_QT_INSTALL_DATA "share/qt6")
 set(__QT_DEPLOY_QT_INSTALL_DESCRIPTIONSDIR "share/qt6/modules")
 set(__QT_DEPLOY_QT_INSTALL_LIBEXECS "share/qt6/bin")
 set(__QT_DEPLOY_QT_INSTALL_PLUGINS "share/qt6/plugins")
 set(__QT_DEPLOY_QT_INSTALL_TRANSLATIONS "share/qt6/translations")
-set(__QT_DEPLOY_TARGET_QT_PATHS_PATH "C:/Programming/msys2/clang64/bin/qtpaths6.exe")
+set(__QT_DEPLOY_TARGET_QT_PATHS_PATH "C:/msys64/mingw64/bin/qtpaths6.exe")
 set(__QT_DEPLOY_MUST_ADJUST_PLUGINS_RPATH "OFF")
 set(__QT_DEPLOY_USE_PATCHELF "")
 set(__QT_DEPLOY_PATCHELF_EXECUTABLE "")
@@ -60,8 +60,8 @@ set(__QT_DEPLOY_QT_DEBUG_POSTFIX "")
 
 # Define the CMake commands to be made available during deployment.
 set(__qt_deploy_support_files
-    "C:/VSProjects/cpp/LR-1/task2-2/build/.qt/QtDeployTargets.cmake"
-    "C:/Programming/msys2/clang64/lib/cmake/Qt6Core/Qt6CoreDeploySupport.cmake"
+    "C:/Projects/S2-LR/cpp/LR-1/task2-2/build/.qt/QtDeployTargets.cmake"
+    "C:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreDeploySupport.cmake"
 )
 foreach(__qt_deploy_support_file IN LISTS __qt_deploy_support_files)
     include("${__qt_deploy_support_file}")

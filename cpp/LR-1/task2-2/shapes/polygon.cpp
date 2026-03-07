@@ -134,3 +134,12 @@ QPointF Polygon::vertex(int index) const
         throw std::out_of_range("Vertex index out of range");
     return m_vertices[index];
 }
+bool Polygon::contains(const QPointF& point) const
+{
+    if (m_vertices.empty())
+        return false;
+    QPolygonF poly;
+    for (const auto& p : m_vertices)
+        poly << p;
+    return poly.containsPoint(point, Qt::OddEvenFill);
+}

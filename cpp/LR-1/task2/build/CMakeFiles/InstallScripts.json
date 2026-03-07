@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"C:/vsprojects/cpp/LR-1/task2/build/cmake_install.cmake"
+		"C:/projects/S2-LR/cpp/LR-1/task2/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

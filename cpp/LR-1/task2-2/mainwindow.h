@@ -3,15 +3,27 @@
 
 #include <QMainWindow>
 #include <QListWidget>
-#include <QLineEdit>
 #include <QSlider>
 #include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QMap>
 #include <QSharedPointer>
-#include "canvas.h"
+
+// Добавляем недостающие включения
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QGroupBox>
+#include <QFormLayout>
+#include <QDoubleValidator>
+
+class Canvas;
+class Shape;
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+
 public:
     explicit MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
@@ -25,25 +37,39 @@ private slots:
     void onAddStar();
     void onAddHexagon();
     void onAddEllipse();
+
     void onShapeSelected(int row);
+    void onCanvasSelectionChanged(int index);
+
     void onMoveShape();
     void onRotateShape();
     void onScaleShape();
     void onDeleteShape();
     void onClearAll();
+
     void onDurationChanged(int value);
 
 private:
-    Canvas* m_canvas;
+    void setupUI();
+    void setupConnections();
+    void updateShapeList();
+    void showWarning(const QString& message);
+    bool validateCanvasAndShape() const;
+
+    template<typename T, typename... Args>
+    void createShape(Args&&... args);
+
+private:
     QListWidget* m_shapeList;
-    QLineEdit* m_moveDx, * m_moveDy, * m_rotateAngle, * m_scaleFactor;
+    Canvas* m_canvas;
+    QLineEdit* m_moveDx;
+    QLineEdit* m_moveDy;
+    QLineEdit* m_rotateAngle;
+    QLineEdit* m_scaleFactor;
     QSlider* m_durationSlider;
     QLabel* m_durationLabel;
 
-    void updateShapeList();
-    void showWarning(const QString& message);
-    bool getSelectedShape(QSharedPointer<Shape>& shape);
-    QString normalizeDecimalString(const QString& input);
+    QMap<QString, QPushButton*> m_buttons;
 };
 
 #endif // MAINWINDOW_H

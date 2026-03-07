@@ -15,6 +15,9 @@ public:
     void start();
     void stop();
 
+signals:
+    void finished();
+
 private slots:
     void step();
 
