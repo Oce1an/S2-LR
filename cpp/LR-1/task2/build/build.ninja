@@ -48,7 +48,7 @@ build CMakeFiles/main.dir/main_autogen/mocs_compilation.cpp.obj: CXX_COMPILER__m
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
   DEP_FILE = CMakeFiles\main.dir\main_autogen\mocs_compilation.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
+  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -IC:/Projects/S2-LR/cpp/LR-1/task2 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
   OBJECT_DIR = CMakeFiles\main.dir
   OBJECT_FILE_DIR = CMakeFiles\main.dir\main_autogen
   TARGET_COMPILE_PDB = CMakeFiles\main.dir\
@@ -60,153 +60,189 @@ build CMakeFiles/main.dir/main.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projec
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
   DEP_FILE = CMakeFiles\main.dir\main.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
+  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -IC:/Projects/S2-LR/cpp/LR-1/task2 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
   OBJECT_DIR = CMakeFiles\main.dir
   OBJECT_FILE_DIR = CMakeFiles\main.dir
   TARGET_COMPILE_PDB = CMakeFiles\main.dir\
   TARGET_PDB = main.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\main.dir
 
-build CMakeFiles/main.dir/mainwindow/mainwindow.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/mainwindow/mainwindow.cpp || cmake_object_order_depends_target_main
-  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\mainwindow\mainwindow.cpp -- 
+build CMakeFiles/main.dir/mainwindow.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/mainwindow.cpp || cmake_object_order_depends_target_main
+  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\mainwindow.cpp -- 
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
-  DEP_FILE = CMakeFiles\main.dir\mainwindow\mainwindow.cpp.obj.d
+  DEP_FILE = CMakeFiles\main.dir\mainwindow.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
+  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -IC:/Projects/S2-LR/cpp/LR-1/task2 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
   OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir\mainwindow
+  OBJECT_FILE_DIR = CMakeFiles\main.dir
   TARGET_COMPILE_PDB = CMakeFiles\main.dir\
   TARGET_PDB = main.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\main.dir
 
-build CMakeFiles/main.dir/shape/shape.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/shape/shape.cpp || cmake_object_order_depends_target_main
-  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\shape\shape.cpp -- 
+build CMakeFiles/main.dir/canvas.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/canvas.cpp || cmake_object_order_depends_target_main
+  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\canvas.cpp -- 
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
-  DEP_FILE = CMakeFiles\main.dir\shape\shape.cpp.obj.d
+  DEP_FILE = CMakeFiles\main.dir\canvas.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
+  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -IC:/Projects/S2-LR/cpp/LR-1/task2 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
   OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir\shape
+  OBJECT_FILE_DIR = CMakeFiles\main.dir
   TARGET_COMPILE_PDB = CMakeFiles\main.dir\
   TARGET_PDB = main.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\main.dir
 
-build CMakeFiles/main.dir/polygon/polygon.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/polygon/polygon.cpp || cmake_object_order_depends_target_main
-  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\polygon\polygon.cpp -- 
+build CMakeFiles/main.dir/shapes/shape.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/shapes/shape.cpp || cmake_object_order_depends_target_main
+  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\shapes\shape.cpp -- 
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
-  DEP_FILE = CMakeFiles\main.dir\polygon\polygon.cpp.obj.d
+  DEP_FILE = CMakeFiles\main.dir\shapes\shape.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
+  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -IC:/Projects/S2-LR/cpp/LR-1/task2 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
   OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir\polygon
+  OBJECT_FILE_DIR = CMakeFiles\main.dir\shapes
   TARGET_COMPILE_PDB = CMakeFiles\main.dir\
   TARGET_PDB = main.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\main.dir
 
-build CMakeFiles/main.dir/triangle/triangle.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/triangle/triangle.cpp || cmake_object_order_depends_target_main
-  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\triangle\triangle.cpp -- 
+build CMakeFiles/main.dir/shapes/polygon.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/shapes/polygon.cpp || cmake_object_order_depends_target_main
+  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\shapes\polygon.cpp -- 
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
-  DEP_FILE = CMakeFiles\main.dir\triangle\triangle.cpp.obj.d
+  DEP_FILE = CMakeFiles\main.dir\shapes\polygon.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
+  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -IC:/Projects/S2-LR/cpp/LR-1/task2 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
   OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir\triangle
+  OBJECT_FILE_DIR = CMakeFiles\main.dir\shapes
   TARGET_COMPILE_PDB = CMakeFiles\main.dir\
   TARGET_PDB = main.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\main.dir
 
-build CMakeFiles/main.dir/circle/circle.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/circle/circle.cpp || cmake_object_order_depends_target_main
-  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\circle\circle.cpp -- 
+build CMakeFiles/main.dir/shapes/triangle.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/shapes/triangle.cpp || cmake_object_order_depends_target_main
+  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\shapes\triangle.cpp -- 
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
-  DEP_FILE = CMakeFiles\main.dir\circle\circle.cpp.obj.d
+  DEP_FILE = CMakeFiles\main.dir\shapes\triangle.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
+  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -IC:/Projects/S2-LR/cpp/LR-1/task2 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
   OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir\circle
+  OBJECT_FILE_DIR = CMakeFiles\main.dir\shapes
   TARGET_COMPILE_PDB = CMakeFiles\main.dir\
   TARGET_PDB = main.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\main.dir
 
-build CMakeFiles/main.dir/rectangle/rectangle.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/rectangle/rectangle.cpp || cmake_object_order_depends_target_main
-  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\rectangle\rectangle.cpp -- 
+build CMakeFiles/main.dir/shapes/circle.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/shapes/circle.cpp || cmake_object_order_depends_target_main
+  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\shapes\circle.cpp -- 
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
-  DEP_FILE = CMakeFiles\main.dir\rectangle\rectangle.cpp.obj.d
+  DEP_FILE = CMakeFiles\main.dir\shapes\circle.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
+  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -IC:/Projects/S2-LR/cpp/LR-1/task2 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
   OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir\rectangle
+  OBJECT_FILE_DIR = CMakeFiles\main.dir\shapes
   TARGET_COMPILE_PDB = CMakeFiles\main.dir\
   TARGET_PDB = main.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\main.dir
 
-build CMakeFiles/main.dir/square/square.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/square/square.cpp || cmake_object_order_depends_target_main
-  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\square\square.cpp -- 
+build CMakeFiles/main.dir/shapes/rectangle.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/shapes/rectangle.cpp || cmake_object_order_depends_target_main
+  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\shapes\rectangle.cpp -- 
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
-  DEP_FILE = CMakeFiles\main.dir\square\square.cpp.obj.d
+  DEP_FILE = CMakeFiles\main.dir\shapes\rectangle.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
+  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -IC:/Projects/S2-LR/cpp/LR-1/task2 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
   OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir\square
+  OBJECT_FILE_DIR = CMakeFiles\main.dir\shapes
   TARGET_COMPILE_PDB = CMakeFiles\main.dir\
   TARGET_PDB = main.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\main.dir
 
-build CMakeFiles/main.dir/rhombus/rhombus.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/rhombus/rhombus.cpp || cmake_object_order_depends_target_main
-  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\rhombus\rhombus.cpp -- 
+build CMakeFiles/main.dir/shapes/square.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/shapes/square.cpp || cmake_object_order_depends_target_main
+  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\shapes\square.cpp -- 
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
-  DEP_FILE = CMakeFiles\main.dir\rhombus\rhombus.cpp.obj.d
+  DEP_FILE = CMakeFiles\main.dir\shapes\square.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
+  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -IC:/Projects/S2-LR/cpp/LR-1/task2 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
   OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir\rhombus
+  OBJECT_FILE_DIR = CMakeFiles\main.dir\shapes
   TARGET_COMPILE_PDB = CMakeFiles\main.dir\
   TARGET_PDB = main.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\main.dir
 
-build CMakeFiles/main.dir/hexagon/hexagon.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/hexagon/hexagon.cpp || cmake_object_order_depends_target_main
-  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\hexagon\hexagon.cpp -- 
+build CMakeFiles/main.dir/shapes/rhombus.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/shapes/rhombus.cpp || cmake_object_order_depends_target_main
+  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\shapes\rhombus.cpp -- 
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
-  DEP_FILE = CMakeFiles\main.dir\hexagon\hexagon.cpp.obj.d
+  DEP_FILE = CMakeFiles\main.dir\shapes\rhombus.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
+  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -IC:/Projects/S2-LR/cpp/LR-1/task2 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
   OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir\hexagon
+  OBJECT_FILE_DIR = CMakeFiles\main.dir\shapes
   TARGET_COMPILE_PDB = CMakeFiles\main.dir\
   TARGET_PDB = main.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\main.dir
 
-build CMakeFiles/main.dir/star/star.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/star/star.cpp || cmake_object_order_depends_target_main
-  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\star\star.cpp -- 
+build CMakeFiles/main.dir/shapes/hexagon.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/shapes/hexagon.cpp || cmake_object_order_depends_target_main
+  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\shapes\hexagon.cpp -- 
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
-  DEP_FILE = CMakeFiles\main.dir\star\star.cpp.obj.d
+  DEP_FILE = CMakeFiles\main.dir\shapes\hexagon.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
+  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -IC:/Projects/S2-LR/cpp/LR-1/task2 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
   OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir\star
+  OBJECT_FILE_DIR = CMakeFiles\main.dir\shapes
   TARGET_COMPILE_PDB = CMakeFiles\main.dir\
   TARGET_PDB = main.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\main.dir
 
-build CMakeFiles/main.dir/customshape/customshape.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/customshape/customshape.cpp || cmake_object_order_depends_target_main
-  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\customshape\customshape.cpp -- 
+build CMakeFiles/main.dir/shapes/star.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/shapes/star.cpp || cmake_object_order_depends_target_main
+  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\shapes\star.cpp -- 
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
-  DEP_FILE = CMakeFiles\main.dir\customshape\customshape.cpp.obj.d
+  DEP_FILE = CMakeFiles\main.dir\shapes\star.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
+  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -IC:/Projects/S2-LR/cpp/LR-1/task2 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
   OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir\customshape
+  OBJECT_FILE_DIR = CMakeFiles\main.dir\shapes
   TARGET_COMPILE_PDB = CMakeFiles\main.dir\
   TARGET_PDB = main.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\main.dir
 
-build CMakeFiles/main.dir/shapemanager/shapemanager.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/shapemanager/shapemanager.cpp || cmake_object_order_depends_target_main
-  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\shapemanager\shapemanager.cpp -- 
+build CMakeFiles/main.dir/shapes/ellipse.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/shapes/ellipse.cpp || cmake_object_order_depends_target_main
+  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\shapes\ellipse.cpp -- 
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
-  DEP_FILE = CMakeFiles\main.dir\shapemanager\shapemanager.cpp.obj.d
+  DEP_FILE = CMakeFiles\main.dir\shapes\ellipse.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
+  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -IC:/Projects/S2-LR/cpp/LR-1/task2 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
   OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir\shapemanager
+  OBJECT_FILE_DIR = CMakeFiles\main.dir\shapes
+  TARGET_COMPILE_PDB = CMakeFiles\main.dir\
+  TARGET_PDB = main.pdb
+  TARGET_SUPPORT_DIR = CMakeFiles\main.dir
+
+build CMakeFiles/main.dir/animations/rotateanimation.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/animations/rotateanimation.cpp || cmake_object_order_depends_target_main
+  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\animations\rotateanimation.cpp -- 
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = CMakeFiles\main.dir\animations\rotateanimation.cpp.obj.d
+  FLAGS = -std=gnu++17
+  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -IC:/Projects/S2-LR/cpp/LR-1/task2 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
+  OBJECT_DIR = CMakeFiles\main.dir
+  OBJECT_FILE_DIR = CMakeFiles\main.dir\animations
+  TARGET_COMPILE_PDB = CMakeFiles\main.dir\
+  TARGET_PDB = main.pdb
+  TARGET_SUPPORT_DIR = CMakeFiles\main.dir
+
+build CMakeFiles/main.dir/animations/moveanimation.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/animations/moveanimation.cpp || cmake_object_order_depends_target_main
+  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\animations\moveanimation.cpp -- 
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = CMakeFiles\main.dir\animations\moveanimation.cpp.obj.d
+  FLAGS = -std=gnu++17
+  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -IC:/Projects/S2-LR/cpp/LR-1/task2 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
+  OBJECT_DIR = CMakeFiles\main.dir
+  OBJECT_FILE_DIR = CMakeFiles\main.dir\animations
+  TARGET_COMPILE_PDB = CMakeFiles\main.dir\
+  TARGET_PDB = main.pdb
+  TARGET_SUPPORT_DIR = CMakeFiles\main.dir
+
+build CMakeFiles/main.dir/animations/scaleanimation.cpp.obj: CXX_COMPILER__main_unscanned_ C$:/Projects/S2-LR/cpp/LR-1/task2/animations/scaleanimation.cpp || cmake_object_order_depends_target_main
+  CODE_CHECK = "C:\Program Files\CMake\bin\cmake.exe" -E __run_co_compile --tidy=clang-tidy;--extra-arg-before=--driver-mode=g++ --source=C:\Projects\S2-LR\cpp\LR-1\task2\animations\scaleanimation.cpp -- 
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = CMakeFiles\main.dir\animations\scaleanimation.cpp.obj.d
+  FLAGS = -std=gnu++17
+  INCLUDES = -IC:/projects/S2-LR/cpp/LR-1/task2/build/main_autogen/include -IC:/Projects/S2-LR/cpp/LR-1/task2 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
+  OBJECT_DIR = CMakeFiles\main.dir
+  OBJECT_FILE_DIR = CMakeFiles\main.dir\animations
   TARGET_COMPILE_PDB = CMakeFiles\main.dir\
   TARGET_PDB = main.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\main.dir
@@ -219,7 +255,7 @@ build CMakeFiles/main.dir/shapemanager/shapemanager.cpp.obj: CXX_COMPILER__main_
 #############################################
 # Link the executable main.exe
 
-build main.exe: CXX_EXECUTABLE_LINKER__main_ CMakeFiles/main.dir/main_autogen/mocs_compilation.cpp.obj CMakeFiles/main.dir/main.cpp.obj CMakeFiles/main.dir/mainwindow/mainwindow.cpp.obj CMakeFiles/main.dir/shape/shape.cpp.obj CMakeFiles/main.dir/polygon/polygon.cpp.obj CMakeFiles/main.dir/triangle/triangle.cpp.obj CMakeFiles/main.dir/circle/circle.cpp.obj CMakeFiles/main.dir/rectangle/rectangle.cpp.obj CMakeFiles/main.dir/square/square.cpp.obj CMakeFiles/main.dir/rhombus/rhombus.cpp.obj CMakeFiles/main.dir/hexagon/hexagon.cpp.obj CMakeFiles/main.dir/star/star.cpp.obj CMakeFiles/main.dir/customshape/customshape.cpp.obj CMakeFiles/main.dir/shapemanager/shapemanager.cpp.obj | C$:/msys64/mingw64/lib/libQt6Widgets.dll.a C$:/msys64/mingw64/lib/libQt6Gui.dll.a C$:/msys64/mingw64/lib/libQt6Core.dll.a || main_autogen main_autogen_timestamp_deps
+build main.exe: CXX_EXECUTABLE_LINKER__main_ CMakeFiles/main.dir/main_autogen/mocs_compilation.cpp.obj CMakeFiles/main.dir/main.cpp.obj CMakeFiles/main.dir/mainwindow.cpp.obj CMakeFiles/main.dir/canvas.cpp.obj CMakeFiles/main.dir/shapes/shape.cpp.obj CMakeFiles/main.dir/shapes/polygon.cpp.obj CMakeFiles/main.dir/shapes/triangle.cpp.obj CMakeFiles/main.dir/shapes/circle.cpp.obj CMakeFiles/main.dir/shapes/rectangle.cpp.obj CMakeFiles/main.dir/shapes/square.cpp.obj CMakeFiles/main.dir/shapes/rhombus.cpp.obj CMakeFiles/main.dir/shapes/hexagon.cpp.obj CMakeFiles/main.dir/shapes/star.cpp.obj CMakeFiles/main.dir/shapes/ellipse.cpp.obj CMakeFiles/main.dir/animations/rotateanimation.cpp.obj CMakeFiles/main.dir/animations/moveanimation.cpp.obj CMakeFiles/main.dir/animations/scaleanimation.cpp.obj | C$:/msys64/mingw64/lib/libQt6Widgets.dll.a C$:/msys64/mingw64/lib/libQt6Gui.dll.a C$:/msys64/mingw64/lib/libQt6Core.dll.a || main_autogen main_autogen_timestamp_deps
   LINK_LIBRARIES = C:/msys64/mingw64/lib/libQt6Widgets.dll.a  C:/msys64/mingw64/lib/libQt6Gui.dll.a  C:/msys64/mingw64/lib/libQt6Core.dll.a  -lmpr  -luserenv  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\main.dir
   POST_BUILD = cd .

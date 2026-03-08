@@ -425,81 +425,93 @@
 	"HEADERS" : 
 	[
 		[
-			"C:/Projects/S2-LR/cpp/LR-1/task2/circle/circle.h",
+			"C:/Projects/S2-LR/cpp/LR-1/task2/animations/moveanimation.h",
 			"MU",
-			"DMIH6XZGY3/moc_circle.cpp",
+			"4NBMFDNHZT/moc_moveanimation.cpp",
 			null
 		],
 		[
-			"C:/Projects/S2-LR/cpp/LR-1/task2/customshape/customshape.h",
+			"C:/Projects/S2-LR/cpp/LR-1/task2/animations/rotateanimation.h",
 			"MU",
-			"BW5P2AE4BZ/moc_customshape.cpp",
+			"4NBMFDNHZT/moc_rotateanimation.cpp",
 			null
 		],
 		[
-			"C:/Projects/S2-LR/cpp/LR-1/task2/hexagon/hexagon.h",
+			"C:/Projects/S2-LR/cpp/LR-1/task2/animations/scaleanimation.h",
 			"MU",
-			"UXVCELY4LG/moc_hexagon.cpp",
+			"4NBMFDNHZT/moc_scaleanimation.cpp",
 			null
 		],
 		[
-			"C:/Projects/S2-LR/cpp/LR-1/task2/mainwindow/mainwindow.h",
+			"C:/Projects/S2-LR/cpp/LR-1/task2/canvas.h",
 			"MU",
-			"MIKB3U5ZOU/moc_mainwindow.cpp",
+			"EWIEGA46WW/moc_canvas.cpp",
 			null
 		],
 		[
-			"C:/Projects/S2-LR/cpp/LR-1/task2/point/point.h",
+			"C:/Projects/S2-LR/cpp/LR-1/task2/mainwindow.h",
 			"MU",
-			"M7F3CKOWJJ/moc_point.cpp",
+			"EWIEGA46WW/moc_mainwindow.cpp",
 			null
 		],
 		[
-			"C:/Projects/S2-LR/cpp/LR-1/task2/polygon/polygon.h",
+			"C:/Projects/S2-LR/cpp/LR-1/task2/shapes/circle.h",
 			"MU",
-			"PC7OY5O3DT/moc_polygon.cpp",
+			"U4ZD2ZJ57N/moc_circle.cpp",
 			null
 		],
 		[
-			"C:/Projects/S2-LR/cpp/LR-1/task2/rectangle/rectangle.h",
+			"C:/Projects/S2-LR/cpp/LR-1/task2/shapes/ellipse.h",
 			"MU",
-			"OYS6DS2UUD/moc_rectangle.cpp",
+			"U4ZD2ZJ57N/moc_ellipse.cpp",
 			null
 		],
 		[
-			"C:/Projects/S2-LR/cpp/LR-1/task2/rhombus/rhombus.h",
+			"C:/Projects/S2-LR/cpp/LR-1/task2/shapes/hexagon.h",
 			"MU",
-			"M34BXSCN4U/moc_rhombus.cpp",
+			"U4ZD2ZJ57N/moc_hexagon.cpp",
 			null
 		],
 		[
-			"C:/Projects/S2-LR/cpp/LR-1/task2/shape/shape.h",
+			"C:/Projects/S2-LR/cpp/LR-1/task2/shapes/polygon.h",
 			"MU",
-			"52UF3Q3GEO/moc_shape.cpp",
+			"U4ZD2ZJ57N/moc_polygon.cpp",
 			null
 		],
 		[
-			"C:/Projects/S2-LR/cpp/LR-1/task2/shapemanager/shapemanager.h",
+			"C:/Projects/S2-LR/cpp/LR-1/task2/shapes/rectangle.h",
 			"MU",
-			"4NN3WDO5R3/moc_shapemanager.cpp",
+			"U4ZD2ZJ57N/moc_rectangle.cpp",
 			null
 		],
 		[
-			"C:/Projects/S2-LR/cpp/LR-1/task2/square/square.h",
+			"C:/Projects/S2-LR/cpp/LR-1/task2/shapes/rhombus.h",
 			"MU",
-			"MYAIZ4PYFG/moc_square.cpp",
+			"U4ZD2ZJ57N/moc_rhombus.cpp",
 			null
 		],
 		[
-			"C:/Projects/S2-LR/cpp/LR-1/task2/star/star.h",
+			"C:/Projects/S2-LR/cpp/LR-1/task2/shapes/shape.h",
 			"MU",
-			"IAWFZR63BN/moc_star.cpp",
+			"U4ZD2ZJ57N/moc_shape.cpp",
 			null
 		],
 		[
-			"C:/Projects/S2-LR/cpp/LR-1/task2/triangle/triangle.h",
+			"C:/Projects/S2-LR/cpp/LR-1/task2/shapes/square.h",
 			"MU",
-			"4SM73DVZRF/moc_triangle.cpp",
+			"U4ZD2ZJ57N/moc_square.cpp",
+			null
+		],
+		[
+			"C:/Projects/S2-LR/cpp/LR-1/task2/shapes/star.h",
+			"MU",
+			"U4ZD2ZJ57N/moc_star.cpp",
+			null
+		],
+		[
+			"C:/Projects/S2-LR/cpp/LR-1/task2/shapes/triangle.h",
+			"MU",
+			"U4ZD2ZJ57N/moc_triangle.cpp",
 			null
 		]
 	],
@@ -531,6 +543,7 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"C:/Projects/S2-LR/cpp/LR-1/task2",
 		"C:/msys64/mingw64/include/qt6/QtCore",
 		"C:/msys64/mingw64/include/qt6",
 		"C:/msys64/mingw64/share/qt6/mkspecs/win32-g++",
@@ -576,35 +589,34 @@
 	"SETTINGS_FILE" : "C:/projects/S2-LR/cpp/LR-1/task2/build/CMakeFiles/main_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "C:/Projects/S2-LR/cpp/LR-1/task2/circle/circle.cpp", "MU", null ],
 		[
-			"C:/Projects/S2-LR/cpp/LR-1/task2/customshape/customshape.cpp",
+			"C:/Projects/S2-LR/cpp/LR-1/task2/animations/moveanimation.cpp",
 			"MU",
 			null
 		],
-		[ "C:/Projects/S2-LR/cpp/LR-1/task2/hexagon/hexagon.cpp", "MU", null ],
+		[
+			"C:/Projects/S2-LR/cpp/LR-1/task2/animations/rotateanimation.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Projects/S2-LR/cpp/LR-1/task2/animations/scaleanimation.cpp",
+			"MU",
+			null
+		],
+		[ "C:/Projects/S2-LR/cpp/LR-1/task2/canvas.cpp", "MU", null ],
 		[ "C:/Projects/S2-LR/cpp/LR-1/task2/main.cpp", "MU", null ],
-		[
-			"C:/Projects/S2-LR/cpp/LR-1/task2/mainwindow/mainwindow.cpp",
-			"MU",
-			null
-		],
-		[ "C:/Projects/S2-LR/cpp/LR-1/task2/polygon/polygon.cpp", "MU", null ],
-		[
-			"C:/Projects/S2-LR/cpp/LR-1/task2/rectangle/rectangle.cpp",
-			"MU",
-			null
-		],
-		[ "C:/Projects/S2-LR/cpp/LR-1/task2/rhombus/rhombus.cpp", "MU", null ],
-		[ "C:/Projects/S2-LR/cpp/LR-1/task2/shape/shape.cpp", "MU", null ],
-		[
-			"C:/Projects/S2-LR/cpp/LR-1/task2/shapemanager/shapemanager.cpp",
-			"MU",
-			null
-		],
-		[ "C:/Projects/S2-LR/cpp/LR-1/task2/square/square.cpp", "MU", null ],
-		[ "C:/Projects/S2-LR/cpp/LR-1/task2/star/star.cpp", "MU", null ],
-		[ "C:/Projects/S2-LR/cpp/LR-1/task2/triangle/triangle.cpp", "MU", null ]
+		[ "C:/Projects/S2-LR/cpp/LR-1/task2/mainwindow.cpp", "MU", null ],
+		[ "C:/Projects/S2-LR/cpp/LR-1/task2/shapes/circle.cpp", "MU", null ],
+		[ "C:/Projects/S2-LR/cpp/LR-1/task2/shapes/ellipse.cpp", "MU", null ],
+		[ "C:/Projects/S2-LR/cpp/LR-1/task2/shapes/hexagon.cpp", "MU", null ],
+		[ "C:/Projects/S2-LR/cpp/LR-1/task2/shapes/polygon.cpp", "MU", null ],
+		[ "C:/Projects/S2-LR/cpp/LR-1/task2/shapes/rectangle.cpp", "MU", null ],
+		[ "C:/Projects/S2-LR/cpp/LR-1/task2/shapes/rhombus.cpp", "MU", null ],
+		[ "C:/Projects/S2-LR/cpp/LR-1/task2/shapes/shape.cpp", "MU", null ],
+		[ "C:/Projects/S2-LR/cpp/LR-1/task2/shapes/square.cpp", "MU", null ],
+		[ "C:/Projects/S2-LR/cpp/LR-1/task2/shapes/star.cpp", "MU", null ],
+		[ "C:/Projects/S2-LR/cpp/LR-1/task2/shapes/triangle.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
