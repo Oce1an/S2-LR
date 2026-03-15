@@ -4,31 +4,96 @@ class Program
 {
     static void Main()
     {
-        TransportCompany company = TransportCompany.GetInstance();
+        Firm firm = Firm.Instance;
+        bool exit = false;
 
-        Tariff t1 = new Tariff("FastCargo", 100, 20);
-        Tariff t2 = new Tariff("FastCargo", 100, 15);
+        while (!exit)
+        {
+            Console.WriteLine("\n--- Меню ---");
+            Console.WriteLine("1. Добавить тариф");
+            Console.WriteLine("2. Показать все тарифы");
+            Console.WriteLine("3. Увеличить все тарифы");
+            Console.WriteLine("4. Уменьшить все тарифы");
+            Console.WriteLine("5. Выйти");
+            Console.Write("Выберите действие: ");
 
-        company.AddTariff(t1);
-        company.AddTariff(t2);
+            string choice = Console.ReadLine();
 
-        Console.WriteLine("Начальные данные:");
-        company.ShowAll();
+            try
+            {
+                switch (choice)
+                {
+                    case "1":
+                        AddTariffInteractive(firm);
+                        break;
+                    case "2":
+                        ShowAllTariffs(firm);
+                        break;
+                    case "3":
+                        IncreaseAllRatesInteractive(firm);
+                        break;
+                    case "4":
+                        DecreaseAllRatesInteractive(firm);
+                        break;
+                    case "5":
+                        exit = true;
+                        break;
+                    default:
+                        Console.WriteLine("Неверный ввод.");
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка: {ex.Message}");
+            }
+        }
+    }
 
-        Console.WriteLine("Общая выручка:");
-        Console.WriteLine(company.CalculateTotalRevenue());
+    static void AddTariffInteractive(Firm firm)
+    {
+        Console.Write("Введите ставку за тонну: ");
+        decimal rate = decimal.Parse(Console.ReadLine());
 
-        Console.WriteLine("\nИзменение тарифа");
+        Console.Write("Введите массу перевезенных грузов: ");
+        double mass = double.Parse(Console.ReadLine());
 
-        Console.Write("Введите величину изменения: ");
-        double change = Convert.ToDouble(Console.ReadLine());
+        Console.Write("Введите название фирмы: ");
+        string name = Console.ReadLine();
 
-        t1.ChangeTariff(change, true);
+        firm.AddTariff(rate, mass, name);
+        Console.WriteLine("Тариф добавлен.");
+    }
 
-        Console.WriteLine("\nНовые данные:");
-        company.ShowAll();
+    static void ShowAllTariffs(Firm firm)
+    {
+        var tariffs = firm.GetAllTariffs();
+        if (tariffs.Count == 0)
+        {
+            Console.WriteLine("Нет тарифов.");
+            return;
+        }
 
-        Console.WriteLine("Новая выручка:");
-        Console.WriteLine(company.CalculateTotalRevenue());
+        Console.WriteLine("Список тарифов:");
+        for (int i = 0; i < tariffs.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {tariffs[i]}");
+        }
+    }
+
+    static void IncreaseAllRatesInteractive(Firm firm)
+    {
+        Console.Write("Введите сумму увеличения: ");
+        decimal amount = decimal.Parse(Console.ReadLine());
+        firm.IncreaseAllRates(amount);
+        Console.WriteLine("Ставки увеличены.");
+    }
+
+    static void DecreaseAllRatesInteractive(Firm firm)
+    {
+        Console.Write("Введите сумму уменьшения: ");
+        decimal amount = decimal.Parse(Console.ReadLine());
+        firm.DecreaseAllRates(amount);
+        Console.WriteLine("Ставки уменьшены.");
     }
 }

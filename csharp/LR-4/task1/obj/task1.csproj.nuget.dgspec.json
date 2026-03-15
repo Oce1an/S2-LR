@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\VSProjects\\csharp\\LR-4\\task1\\task1.csproj": {}
+    "C:\\Proj\\S2-LR\\csharp\\LR-4\\task1\\task1.csproj": {}
   },
   "projects": {
-    "C:\\VSProjects\\csharp\\LR-4\\task1\\task1.csproj": {
+    "C:\\Proj\\S2-LR\\csharp\\LR-4\\task1\\task1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\VSProjects\\csharp\\LR-4\\task1\\task1.csproj",
+        "projectUniqueName": "C:\\Proj\\S2-LR\\csharp\\LR-4\\task1\\task1.csproj",
         "projectName": "task1",
-        "projectPath": "C:\\VSProjects\\csharp\\LR-4\\task1\\task1.csproj",
+        "projectPath": "C:\\Proj\\S2-LR\\csharp\\LR-4\\task1\\task1.csproj",
         "packagesPath": "C:\\Users\\just1\\.nuget\\packages\\",
-        "outputPath": "C:\\VSProjects\\csharp\\LR-4\\task1\\obj\\",
+        "outputPath": "C:\\Proj\\S2-LR\\csharp\\LR-4\\task1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\just1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
