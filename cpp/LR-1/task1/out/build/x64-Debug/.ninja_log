@@ -1,0 +1,10 @@
+# ninja log v6
+53	174	7979763280160304	car_autogen/timestamp	2744abad71e8e0fe
+53	174	7979763280160304	car_autogen/mocs_compilation.cpp	2744abad71e8e0fe
+53	174	7979763280160304	C:/Projects/S2-LR/cpp/LR-1/task1/out/build/x64-Debug/car_autogen/timestamp	2744abad71e8e0fe
+53	174	7979763280160304	C:/Projects/S2-LR/cpp/LR-1/task1/out/build/x64-Debug/car_autogen/mocs_compilation.cpp	2744abad71e8e0fe
+178	538	7979763280668391	CMakeFiles/car.dir/car_autogen/mocs_compilation.cpp.obj	2c77574c49f8a8c1
+194	538	7979763280828776	CMakeFiles/car.dir/src/Car.cpp.obj	9a3c71307c43bd70
+198	538	7979763280871887	CMakeFiles/car.dir/src/DrawingWidget.cpp.obj	cb3bfee67dee660f
+186	539	7979763280749007	CMakeFiles/car.dir/src/MainWindow.cpp.obj	3bf015039b35bbea
+183	1050	7979763280713557	CMakeFiles/car.dir/main.cpp.obj	39867e6990105f6c
