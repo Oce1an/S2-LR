@@ -1,5 +1,4 @@
 #include <stdexcept>
-#include <iostream>
 
 // Базовый абстрактный класс
 class Expression {
@@ -69,21 +68,3 @@ public:
         }
     }
 };
-
-int main() {
-    // Выражение: 3 + 4.5 * 5
-
-    // Создаём подвыражение 4.5 * 5
-    Expression* sube = new BinaryOperation(new Number(4.5), '*', new Number(5));
-
-    // Создаём полное выражение 3 + sube
-    Expression* expr = new BinaryOperation(new Number(3), '+', sube);
-
-    // Вычисляем и выводим результат: 25.5
-    std::cout << expr->evaluate() << std::endl;
-
-    // Удаляем всё выражение (sube удалится автоматически)
-    delete expr;
-
-    return 0;
-}

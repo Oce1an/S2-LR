@@ -292,18 +292,24 @@ void MainWindow::on_btnSortByName_clicked()
 void MainWindow::on_btnWinterDebtors_clicked()
 {
     std::vector<Student> debtors = getWinterDebtors();
-    
+
     if (debtors.empty()) {
-        QMessageBox::information(this, "Задолжники", 
-                                "Задолжников по зимней сессии нет");
+        QMessageBox::information(this, "Задолжники",
+            "Задолжников по зимней сессии нет");
         return;
     }
-    
+
     QString result = "Список задолжников по зимней сессии:\n\n";
-    result += QString("%-10s %-30s %-15s %-10s\n")
-              .arg("Группа").arg("ФИО").arg("Оценки (зима)").arg("Долгов");
-    result += QString(70, '=') + "\n";
-    
+
+    // Заголовок с фиксированной шириной колонок
+    result += QString("%1 %2 %3 %4\n")
+        .arg(QString("Группа").leftJustified(10, ' '))
+        .arg(QString("ФИО").leftJustified(30, ' '))
+        .arg(QString("Оценки (зима)").leftJustified(20, ' '))
+        .arg(QString("Долгов").leftJustified(10, ' '));
+
+    result += QString(75, '=') + "\n";
+
     for (const auto& student : debtors) {
         QString grades;
         auto winterGrades = student.getWinterGrades();
@@ -311,15 +317,15 @@ void MainWindow::on_btnWinterDebtors_clicked()
             grades += QString::number(winterGrades[i]);
             if (i < winterGrades.size() - 1) grades += ",";
         }
-        
-        result += QString("%-10s %-30s %-15s %-10d\n")
-                  .arg(QString::fromStdString(student.getGroupNumber()))
-                  .arg(QString::fromStdString(student.getFullName()))
-                  .arg(grades)
-                  .arg(student.getWinterDebtCount());
+
+        result += QString("%1 %2 %3 %4\n")
+            .arg(QString::fromStdString(student.getGroupNumber()).leftJustified(10, ' '))
+            .arg(QString::fromStdString(student.getFullName()).leftJustified(30, ' '))
+            .arg(grades.leftJustified(20, ' '))
+            .arg(QString::number(student.getWinterDebtCount()).leftJustified(10, ' '));
     }
-    
-    ResultDialog *dialog = new ResultDialog(this);
+
+    ResultDialog* dialog = new ResultDialog(this);
     dialog->setResult(result, QString("Найдено %1 задолжников").arg(debtors.size()));
     dialog->exec();
     delete dialog;
@@ -328,29 +334,35 @@ void MainWindow::on_btnWinterDebtors_clicked()
 void MainWindow::on_btnExpelList_clicked()
 {
     std::vector<Student> forExpel = getStudentsForExpel();
-    
+
     if (forExpel.empty()) {
-        QMessageBox::information(this, "Список на отчисление", 
-                                "Студентов на отчисление нет");
+        QMessageBox::information(this, "Список на отчисление",
+            "Студентов на отчисление нет");
         return;
     }
-    
+
     QString result = "Список студентов на отчисление:\n\n";
     result += "Критерии: 2+ неудовлетворительные оценки за летнюю сессию\n";
     result += "и наличие задолженностей за зимнюю сессию\n\n";
-    result += QString("%-10s %-30s %-15s %-15s\n")
-              .arg("Группа").arg("ФИО").arg("Долгов (зима)").arg("Долгов (лето)");
-    result += QString(70, '=') + "\n";
-    
+
+    // Заголовок с фиксированной шириной колонок
+    result += QString("%1 %2 %3 %4\n")
+        .arg(QString("Группа").leftJustified(10, ' '))
+        .arg(QString("ФИО").leftJustified(30, ' '))
+        .arg(QString("Долгов (зима)").leftJustified(15, ' '))
+        .arg(QString("Долгов (лето)").leftJustified(15, ' '));
+
+    result += QString(75, '=') + "\n";
+
     for (const auto& student : forExpel) {
-        result += QString("%-10s %-30s %-15d %-15d\n")
-                  .arg(QString::fromStdString(student.getGroupNumber()))
-                  .arg(QString::fromStdString(student.getFullName()))
-                  .arg(student.getWinterDebtCount())
-                  .arg(student.getSummerDebtCount());
+        result += QString("%1 %2 %3 %4\n")
+            .arg(QString::fromStdString(student.getGroupNumber()).leftJustified(10, ' '))
+            .arg(QString::fromStdString(student.getFullName()).leftJustified(30, ' '))
+            .arg(QString::number(student.getWinterDebtCount()).leftJustified(15, ' '))
+            .arg(QString::number(student.getSummerDebtCount()).leftJustified(15, ' '));
     }
-    
-    ResultDialog *dialog = new ResultDialog(this);
+
+    ResultDialog* dialog = new ResultDialog(this);
     dialog->setResult(result, QString("Найдено %1 студентов на отчисление").arg(forExpel.size()));
     dialog->exec();
     delete dialog;
