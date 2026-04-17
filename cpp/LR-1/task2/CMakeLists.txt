@@ -13,10 +13,16 @@ file(GLOB_RECURSE SOURCES
     "*.h"
 )
 
-add_executable(task2 ${SOURCES})
+add_executable(c ${SOURCES})
 
-target_link_libraries(task2 Qt6::Core Qt6::Widgets)
+target_link_libraries(c Qt6::Core Qt6::Widgets)
 
-set_target_properties(car PROPERTIES
+target_include_directories(c PRIVATE 
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/shapes/hdr
+    ${CMAKE_CURRENT_SOURCE_DIR}/animation
+)
+
+set_target_properties(c PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
