@@ -12,10 +12,10 @@ public:
 
     void setPosition(int x, int y);
 
-    void moveLeft(int step = 10);
-    void moveRight(int step = 10);
-    void moveUp(int step = 10);
-    void moveDown(int step = 10);
+    void moveLeft(int step = 30);
+    void moveRight(int step = 30);
+    void moveUp(int step = 30);
+    void moveDown(int step = 30);
 
     // Геттеры
     int x() const; // метод QPoint

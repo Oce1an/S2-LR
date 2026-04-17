@@ -4,7 +4,7 @@
 DrawingWidget::DrawingWidget(QWidget *parent) : QWidget(parent)
 {
 	// Размер окна
-	setFixedSize(600, 400);
+	setFixedSize(800, 600);
 	// Цвет фона
 	setAutoFillBackground(true);
 	setPalette(QPalette(Qt::lightGray));

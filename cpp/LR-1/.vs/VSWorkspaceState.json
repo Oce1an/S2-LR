@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\task1",
+    "\\task2",
+    "\\task2\\animations",
+    "\\task2\\shapes"
   ],
+  "SelectedNode": "\\task2\\shapes\\Shape.cpp",
   "PreviewInSolutionExplorer": false
 }

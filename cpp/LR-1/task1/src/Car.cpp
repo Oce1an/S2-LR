@@ -63,6 +63,10 @@ void Car::draw(QPainter& painter) const
 	int wheelRadius = height() / 4;
 	painter.drawEllipse(QPoint(x() + wheelRadius, y() + height()), // расположение по Oxy
 							   wheelRadius, // радиус по Ox
+							   wheelRadius);
+
+	painter.drawEllipse(QPoint(x() + width() - wheelRadius, y() + height()), // расположение по Oxy
+							   wheelRadius, // радиус по Ox
 							   wheelRadius); // радиус по Oy
 
 

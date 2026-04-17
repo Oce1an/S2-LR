@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
 	setupUI();
 	setWindowTitle("CAR");
-	setFixedSize(800, 500);
+	setFixedSize(1200, 700);
 
 }
 
@@ -64,7 +64,7 @@ void MainWindow::setupUI()
     QHBoxLayout *coordLayout = new QHBoxLayout;
     coordLayout->addWidget(new QLabel(tr("X:")));
     m_editX = new QLineEdit;
-    m_editX->setValidator(new QIntValidator(0, 600, this));
+    m_editX->setValidator(new QIntValidator(0, 400, this));
     coordLayout->addWidget(m_editX);
     coordLayout->addWidget(new QLabel(tr("Y:")));
     m_editY = new QLineEdit;

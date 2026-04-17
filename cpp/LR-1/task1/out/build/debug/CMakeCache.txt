@@ -242,28 +242,28 @@ QT_ADDITIONAL_HOST_PACKAGES_PREFIX_PATH:STRING=
 QT_ADDITIONAL_PACKAGES_PREFIX_PATH:STRING=
 
 //The directory containing a CMake configuration file for Qt6CoreTools.
-Qt6CoreTools_DIR:PATH=C:/Qt/6.11.0/msvc2022_64/lib/cmake/Qt6CoreTools
+Qt6CoreTools_DIR:PATH=C:/msys64/mingw64/lib/cmake/Qt6CoreTools
 
 //The directory containing a CMake configuration file for Qt6Core.
-Qt6Core_DIR:PATH=C:/Qt/6.11.0/msvc2022_64/lib/cmake/Qt6Core
+Qt6Core_DIR:PATH=C:/msys64/mingw64/lib/cmake/Qt6Core
 
 //The directory containing a CMake configuration file for Qt6EntryPointPrivate.
-Qt6EntryPointPrivate_DIR:PATH=C:/Qt/6.11.0/msvc2022_64/lib/cmake/Qt6EntryPointPrivate
+Qt6EntryPointPrivate_DIR:PATH=C:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate
 
 //The directory containing a CMake configuration file for Qt6GuiTools.
-Qt6GuiTools_DIR:PATH=C:/Qt/6.11.0/msvc2022_64/lib/cmake/Qt6GuiTools
+Qt6GuiTools_DIR:PATH=C:/msys64/mingw64/lib/cmake/Qt6GuiTools
 
 //The directory containing a CMake configuration file for Qt6Gui.
-Qt6Gui_DIR:PATH=C:/Qt/6.11.0/msvc2022_64/lib/cmake/Qt6Gui
+Qt6Gui_DIR:PATH=C:/msys64/mingw64/lib/cmake/Qt6Gui
 
 //The directory containing a CMake configuration file for Qt6WidgetsTools.
-Qt6WidgetsTools_DIR:PATH=C:/Qt/6.11.0/msvc2022_64/lib/cmake/Qt6WidgetsTools
+Qt6WidgetsTools_DIR:PATH=C:/msys64/mingw64/lib/cmake/Qt6WidgetsTools
 
 //The directory containing a CMake configuration file for Qt6Widgets.
-Qt6Widgets_DIR:PATH=C:/Qt/6.11.0/msvc2022_64/lib/cmake/Qt6Widgets
+Qt6Widgets_DIR:PATH=C:/msys64/mingw64/lib/cmake/Qt6Widgets
 
 //The directory containing a CMake configuration file for Qt6.
-Qt6_DIR:PATH=C:/Qt/6.11.0/msvc2022_64/lib/cmake/Qt6
+Qt6_DIR:PATH=C:/msys64/mingw64/lib/cmake/Qt6
 
 //Path to a program.
 Vulkan_GLSLANG_VALIDATOR_EXECUTABLE:FILEPATH=C:/Programming/msys2/clang64/bin/glslangValidator.exe
@@ -555,7 +555,7 @@ QT_FEATURE_contextmenu:INTERNAL=ON
 //Qt feature: copy_file_range (from target Qt6::Core)
 QT_FEATURE_copy_file_range:INTERNAL=OFF
 //Qt feature: cpp_winrt (from target Qt6::Core)
-QT_FEATURE_cpp_winrt:INTERNAL=ON
+QT_FEATURE_cpp_winrt:INTERNAL=OFF
 //Qt feature: cross_compile (from target Qt6::Core)
 QT_FEATURE_cross_compile:INTERNAL=OFF
 //Qt feature: cssparser (from target Qt6::Gui)
@@ -569,13 +569,13 @@ QT_FEATURE_cxx11_future:INTERNAL=ON
 //Qt feature: cxx17_filesystem (from target Qt6::Core)
 QT_FEATURE_cxx17_filesystem:INTERNAL=ON
 //Qt feature: cxx20 (from target Qt6::Core)
-QT_FEATURE_cxx20:INTERNAL=OFF
+QT_FEATURE_cxx20:INTERNAL=ON
 //Qt feature: cxx20_format (from target Qt6::Core)
 QT_FEATURE_cxx20_format:INTERNAL=ON
 //Qt feature: cxx23_stacktrace (from target Qt6::Core)
 QT_FEATURE_cxx23_stacktrace:INTERNAL=OFF
 //Qt feature: cxx2a (from target Qt6::Core)
-QT_FEATURE_cxx2a:INTERNAL=OFF
+QT_FEATURE_cxx2a:INTERNAL=ON
 //Qt feature: cxx2b (from target Qt6::Core)
 QT_FEATURE_cxx2b:INTERNAL=OFF
 //Qt feature: cxx2c (from target Qt6::Core)
@@ -591,11 +591,11 @@ QT_FEATURE_datetimeparser:INTERNAL=ON
 //Qt feature: dbus (from target Qt6::Core)
 QT_FEATURE_dbus:INTERNAL=ON
 //Qt feature: dbus_linked (from target Qt6::Core)
-QT_FEATURE_dbus_linked:INTERNAL=OFF
+QT_FEATURE_dbus_linked:INTERNAL=ON
 //Qt feature: debug (from target Qt6::Core)
-QT_FEATURE_debug:INTERNAL=ON
+QT_FEATURE_debug:INTERNAL=OFF
 //Qt feature: debug_and_release (from target Qt6::Core)
-QT_FEATURE_debug_and_release:INTERNAL=ON
+QT_FEATURE_debug_and_release:INTERNAL=OFF
 //Qt feature: desktopservices (from target Qt6::Gui)
 QT_FEATURE_desktopservices:INTERNAL=ON
 //Qt feature: developer_build (from target Qt6::Core)
@@ -617,7 +617,7 @@ QT_FEATURE_directwrite:INTERNAL=ON
 //Qt feature: directwrite3 (from target Qt6::Gui)
 QT_FEATURE_directwrite3:INTERNAL=ON
 //Qt feature: directwritecolrv1 (from target Qt6::Gui)
-QT_FEATURE_directwritecolrv1:INTERNAL=ON
+QT_FEATURE_directwritecolrv1:INTERNAL=OFF
 //Qt feature: dladdr (from target Qt6::Core)
 QT_FEATURE_dladdr:INTERNAL=OFF
 //Qt feature: dlopen (from target Qt6::Core)
@@ -727,7 +727,7 @@ QT_FEATURE_getentropy:INTERNAL=OFF
 //Qt feature: gif (from target Qt6::Gui)
 QT_FEATURE_gif:INTERNAL=ON
 //Qt feature: glib (from target Qt6::Core)
-QT_FEATURE_glib:INTERNAL=OFF
+QT_FEATURE_glib:INTERNAL=ON
 //Qt feature: glibc_fortify_source (from target Qt6::Core)
 QT_FEATURE_glibc_fortify_source:INTERNAL=OFF
 //Qt feature: graphicseffect (from target Qt6::Widgets)
@@ -751,7 +751,7 @@ QT_FEATURE_hijricalendar:INTERNAL=ON
 //Qt feature: ico (from target Qt6::Gui)
 QT_FEATURE_ico:INTERNAL=ON
 //Qt feature: icu (from target Qt6::Core)
-QT_FEATURE_icu:INTERNAL=OFF
+QT_FEATURE_icu:INTERNAL=ON
 //Qt feature: identityproxymodel (from target Qt6::Core)
 QT_FEATURE_identityproxymodel:INTERNAL=ON
 //Qt feature: im (from target Qt6::Gui)
@@ -823,7 +823,7 @@ QT_FEATURE_libinput_hires_wheel_support:INTERNAL=OFF
 //Qt feature: library (from target Qt6::Core)
 QT_FEATURE_library:INTERNAL=ON
 //Qt feature: libstdcpp_assertions (from target Qt6::Core)
-QT_FEATURE_libstdcpp_assertions:INTERNAL=OFF
+QT_FEATURE_libstdcpp_assertions:INTERNAL=ON
 //Qt feature: libudev (from target Qt6::Core)
 QT_FEATURE_libudev:INTERNAL=OFF
 //Qt feature: liburing (from target Qt6::Core)
@@ -917,7 +917,7 @@ QT_FEATURE_permissions:INTERNAL=ON
 //Qt feature: picture (from target Qt6::Gui)
 QT_FEATURE_picture:INTERNAL=ON
 //Qt feature: pkg_config (from target Qt6::Core)
-QT_FEATURE_pkg_config:INTERNAL=OFF
+QT_FEATURE_pkg_config:INTERNAL=ON
 //Qt feature: plugin_manifest (from target Qt6::Core)
 QT_FEATURE_plugin_manifest:INTERNAL=ON
 //Qt feature: png (from target Qt6::Gui)
@@ -935,7 +935,7 @@ QT_FEATURE_poll_select:INTERNAL=OFF
 //Qt feature: posix_fallocate (from target Qt6::Core)
 QT_FEATURE_posix_fallocate:INTERNAL=OFF
 //Qt feature: posix_sem (from target Qt6::Core)
-QT_FEATURE_posix_sem:INTERNAL=OFF
+QT_FEATURE_posix_sem:INTERNAL=ON
 //Qt feature: posix_shm (from target Qt6::Core)
 QT_FEATURE_posix_shm:INTERNAL=OFF
 //Qt feature: printsupport (from target Qt6::Core)
@@ -977,7 +977,7 @@ QT_FEATURE_rdrnd:INTERNAL=ON
 //Qt feature: rdseed (from target Qt6::Core)
 QT_FEATURE_rdseed:INTERNAL=ON
 //Qt feature: reduce_exports (from target Qt6::Core)
-QT_FEATURE_reduce_exports:INTERNAL=OFF
+QT_FEATURE_reduce_exports:INTERNAL=ON
 //Qt feature: reduce_relocations (from target Qt6::Core)
 QT_FEATURE_reduce_relocations:INTERNAL=OFF
 //Qt feature: regularexpression (from target Qt6::Core)
@@ -1003,7 +1003,7 @@ QT_FEATURE_scrollbar:INTERNAL=ON
 //Qt feature: scroller (from target Qt6::Widgets)
 QT_FEATURE_scroller:INTERNAL=ON
 //Qt feature: separate_debug_info (from target Qt6::Core)
-QT_FEATURE_separate_debug_info:INTERNAL=OFF
+QT_FEATURE_separate_debug_info:INTERNAL=ON
 //Qt feature: sessionmanager (from target Qt6::Gui)
 QT_FEATURE_sessionmanager:INTERNAL=ON
 //Qt feature: settings (from target Qt6::Core)
@@ -1049,9 +1049,9 @@ QT_FEATURE_sse4_2:INTERNAL=ON
 //Qt feature: ssse3 (from target Qt6::Core)
 QT_FEATURE_ssse3:INTERNAL=ON
 //Qt feature: stack_clash_protection (from target Qt6::Core)
-QT_FEATURE_stack_clash_protection:INTERNAL=OFF
+QT_FEATURE_stack_clash_protection:INTERNAL=ON
 //Qt feature: stack_protector (from target Qt6::Core)
-QT_FEATURE_stack_protector:INTERNAL=OFF
+QT_FEATURE_stack_protector:INTERNAL=ON
 //Qt feature: stackedwidget (from target Qt6::Widgets)
 QT_FEATURE_stackedwidget:INTERNAL=ON
 //Qt feature: standarditemmodel (from target Qt6::Gui)
@@ -1087,25 +1087,25 @@ QT_FEATURE_syntaxhighlighter:INTERNAL=ON
 //Qt feature: syslog (from target Qt6::Core)
 QT_FEATURE_syslog:INTERNAL=OFF
 //Qt feature: system_doubleconversion (from target Qt6::Core)
-QT_FEATURE_system_doubleconversion:INTERNAL=OFF
+QT_FEATURE_system_doubleconversion:INTERNAL=ON
 //Qt feature: system_freetype (from target Qt6::Gui)
-QT_FEATURE_system_freetype:INTERNAL=OFF
+QT_FEATURE_system_freetype:INTERNAL=ON
 //Qt feature: system_harfbuzz (from target Qt6::Gui)
-QT_FEATURE_system_harfbuzz:INTERNAL=OFF
+QT_FEATURE_system_harfbuzz:INTERNAL=ON
 //Qt feature: system_jpeg (from target Qt6::Gui)
-QT_FEATURE_system_jpeg:INTERNAL=OFF
+QT_FEATURE_system_jpeg:INTERNAL=ON
 //Qt feature: system_libb2 (from target Qt6::Core)
-QT_FEATURE_system_libb2:INTERNAL=OFF
+QT_FEATURE_system_libb2:INTERNAL=ON
 //Qt feature: system_pcre2 (from target Qt6::Core)
-QT_FEATURE_system_pcre2:INTERNAL=OFF
+QT_FEATURE_system_pcre2:INTERNAL=ON
 //Qt feature: system_png (from target Qt6::Gui)
-QT_FEATURE_system_png:INTERNAL=OFF
+QT_FEATURE_system_png:INTERNAL=ON
 //Qt feature: system_textmarkdownreader (from target Qt6::Gui)
-QT_FEATURE_system_textmarkdownreader:INTERNAL=OFF
+QT_FEATURE_system_textmarkdownreader:INTERNAL=ON
 //Qt feature: system_xcb_xinput (from target Qt6::Gui)
 QT_FEATURE_system_xcb_xinput:INTERNAL=OFF
 //Qt feature: system_zlib (from target Qt6::Core)
-QT_FEATURE_system_zlib:INTERNAL=OFF
+QT_FEATURE_system_zlib:INTERNAL=ON
 //Qt feature: systemsemaphore (from target Qt6::Core)
 QT_FEATURE_systemsemaphore:INTERNAL=ON
 //Qt feature: systemtrayicon (from target Qt6::Gui)
@@ -1171,7 +1171,7 @@ QT_FEATURE_treeview:INTERNAL=ON
 //Qt feature: treewidget (from target Qt6::Widgets)
 QT_FEATURE_treewidget:INTERNAL=ON
 //Qt feature: trivial_auto_var_init_pattern (from target Qt6::Core)
-QT_FEATURE_trivial_auto_var_init_pattern:INTERNAL=OFF
+QT_FEATURE_trivial_auto_var_init_pattern:INTERNAL=ON
 //Qt feature: tslib (from target Qt6::Gui)
 QT_FEATURE_tslib:INTERNAL=OFF
 //Qt feature: tuiotouch (from target Qt6::Gui)
@@ -1266,7 +1266,7 @@ QT_FEATURE_windows_ioring:INTERNAL=ON
 // Qt6::Core)
 QT_FEATURE_windows_ioring_skip_builder_param_checks:INTERNAL=ON
 //Qt feature: winsdkicu (from target Qt6::Core)
-QT_FEATURE_winsdkicu:INTERNAL=ON
+QT_FEATURE_winsdkicu:INTERNAL=OFF
 //Qt feature: wizard (from target Qt6::Widgets)
 QT_FEATURE_wizard:INTERNAL=ON
 //Qt feature: x86intrin (from target Qt6::Core)
@@ -1279,6 +1279,8 @@ QT_FEATURE_xcb_egl_plugin:INTERNAL=OFF
 QT_FEATURE_xcb_glx:INTERNAL=OFF
 //Qt feature: xcb_glx_plugin (from target Qt6::Gui)
 QT_FEATURE_xcb_glx_plugin:INTERNAL=OFF
+//Qt feature: xcb_native_painting (from target Qt6::Gui)
+QT_FEATURE_xcb_native_painting:INTERNAL=OFF
 //Qt feature: xcb_sm (from target Qt6::Gui)
 QT_FEATURE_xcb_sm:INTERNAL=OFF
 //Qt feature: xcb_xlib (from target Qt6::Gui)
@@ -1297,8 +1299,10 @@ QT_FEATURE_xmlstream:INTERNAL=ON
 QT_FEATURE_xmlstreamreader:INTERNAL=ON
 //Qt feature: xmlstreamwriter (from target Qt6::Core)
 QT_FEATURE_xmlstreamwriter:INTERNAL=ON
+//Qt feature: xrender (from target Qt6::Gui)
+QT_FEATURE_xrender:INTERNAL=OFF
 //Qt feature: zstd (from target Qt6::Core)
-QT_FEATURE_zstd:INTERNAL=OFF
+QT_FEATURE_zstd:INTERNAL=ON
 //ADVANCED property for variable: Vulkan_GLSLANG_VALIDATOR_EXECUTABLE
 Vulkan_GLSLANG_VALIDATOR_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Vulkan_GLSLC_EXECUTABLE

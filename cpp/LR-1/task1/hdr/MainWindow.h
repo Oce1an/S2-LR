@@ -29,7 +29,7 @@ private slots:
     void moveUp();
     void moveDown();
 
-    void moveTo(); // Перемещение по координатам
+    void moveTo();
 
     void toggleDoors();
     void toggleHeadlights();
