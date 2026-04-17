@@ -1,0 +1,48 @@
+#ifndef STUDENT_H
+#define STUDENT_H
+
+#include <string>
+#include <vector>
+#include <algorithm>
+
+class Student {
+private:
+    std::string groupNumber;
+    std::string fullName;
+    std::vector<int> winterGrades;  // оценки за зимнюю сессию
+    std::vector<int> summerGrades;  // оценки за летнюю сессию
+    double winterAverage;           // средний балл за зимнюю сессию
+    double summerAverage;           // средний балл за летнюю сессию
+
+    void calculateAverages();
+
+public:
+    Student();
+    Student(const std::string& group, const std::string& name,
+            const std::vector<int>& winter, const std::vector<int>& summer);
+
+    // Getters
+    std::string getGroupNumber() const { return groupNumber; }
+    std::string getFullName() const { return fullName; }
+    std::vector<int> getWinterGrades() const { return winterGrades; }
+    std::vector<int> getSummerGrades() const { return summerGrades; }
+    double getWinterAverage() const { return winterAverage; }
+    double getSummerAverage() const { return summerAverage; }
+
+    // Setters
+    void setGroupNumber(const std::string& group) { groupNumber = group; }
+    void setFullName(const std::string& name) { fullName = name; }
+    void setWinterGrades(const std::vector<int>& grades);
+    void setSummerGrades(const std::vector<int>& grades);
+
+    // Helper methods
+    bool hasWinterDebts() const;  // есть ли задолженности за зимнюю сессию
+    bool shouldBeExpelled() const; // подлежит ли отчислению
+    int getWinterDebtCount() const;
+    int getSummerDebtCount() const;
+
+    std::string toString() const;
+    static Student fromString(const std::string& str);
+};
+
+#endif // STUDENT_H

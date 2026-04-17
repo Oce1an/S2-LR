@@ -1,0 +1,18 @@
+CPU|Intel|Core i5-12400F|6 cores, 12 threads, 2.5-4.4 GHz|150|1
+CPU|AMD|Ryzen 5 5600X|6 cores, 12 threads, 3.7-4.6 GHz|200|1
+CPU|Intel|Core i7-12700K|12 cores, 20 threads, 3.6-5.0 GHz|350|1
+GPU|NVIDIA|GeForce RTX 3060|12GB GDDR6|330|1
+GPU|NVIDIA|GeForce RTX 3080|10GB GDDR6X|700|1
+GPU|AMD|Radeon RX 6600|8GB GDDR6|300|1
+Motherboard|ASUS|PRIME B660M-K|LGA1700, mATX, DDR4|100|1
+Motherboard|MSI|B550M PRO-VDH|AM4, mATX, DDR4|120|1
+RAM|Corsair|Vengeance LPX|16GB (2x8GB) DDR4-3200|80|1
+RAM|Kingston|Fury Beast|32GB (2x16GB) DDR4-3600|150|1
+Storage|Samsung|970 EVO Plus|1TB NVMe SSD|130|1
+Storage|WD|Blue SN570|500GB NVMe SSD|60|1
+Storage|Seagate|Barracuda|2TB HDD 7200RPM|50|1
+PSU|EVGA|SuperNOVA 650W|80+ Bronze, Modular|80|1
+PSU|Corsair|RM750x|750W 80+ Gold, Fully Modular|120|1
+PSU|YES|NO|900w|0|1
+CPU|Энвидэа|АРТЭХЭ 4050|КРУТА МОЩНА САСНА|100|1
+RAM|Microsoft|u|10 Hz|75|1
