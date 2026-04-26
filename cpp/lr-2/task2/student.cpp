@@ -78,14 +78,12 @@ std::string Student::toString() const {
     std::stringstream ss;
     ss << groupNumber << "|" << fullName << "|";
     
-    // Сохраняем зимние оценки
     for (size_t i = 0; i < winterGrades.size(); ++i) {
         ss << winterGrades[i];
         if (i < winterGrades.size() - 1) ss << ",";
     }
     ss << "|";
     
-    // Сохраняем летние оценки
     for (size_t i = 0; i < summerGrades.size(); ++i) {
         ss << summerGrades[i];
         if (i < summerGrades.size() - 1) ss << ",";
@@ -107,7 +105,6 @@ Student Student::fromString(const std::string& str) {
         std::string group = tokens[0];
         std::string name = tokens[1];
         
-        // Парсим зимние оценки
         std::vector<int> winter;
         std::stringstream winterStream(tokens[2]);
         std::string grade;
@@ -117,7 +114,6 @@ Student Student::fromString(const std::string& str) {
             }
         }
         
-        // Парсим летние оценки
         std::vector<int> summer;
         std::stringstream summerStream(tokens[3]);
         while (std::getline(summerStream, grade, ',')) {

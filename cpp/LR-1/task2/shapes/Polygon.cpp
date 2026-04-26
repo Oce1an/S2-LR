@@ -1,106 +1,145 @@
-#include "Polygon.h"
-#include <QLineF>
-#include <cmath>
+#include "polygon.h"
+#include <QPolygonF>
+#include <QtMath>
+#include <stdexcept>
 
-Polygon::Polygon(QObject *parent) : Shape(parent) {}
+Polygon::Polygon(QObject* parent) : Shape(parent)
+{
+}
+
+Polygon::Polygon(const std::vector<QPointF>& vertices, QObject* parent)
+    : Shape(parent), m_vertices(vertices)
+{
+    if (vertices.size() < 3)
+        throw std::invalid_argument("Polygon must have at least 3 vertices");
+}
+
+Polygon::~Polygon()
+{
+}
 
 double Polygon::area() const
 {
-    if (m_vertices.size() < 3) return 0.0;
-    double area = 0.0;
+    double a = 0;
     int n = m_vertices.size();
     for (int i = 0; i < n; ++i) {
-        int j = (i + 1) % n;
-        area += m_vertices[i].x() * m_vertices[j].y() - m_vertices[j].x() * m_vertices[i].y();
+        const QPointF& p1 = m_vertices[i];
+        const QPointF& p2 = m_vertices[(i + 1) % n];
+        a += p1.x() * p2.y() - p2.x() * p1.y();
     }
-    return std::abs(area) * 0.5;
+    return qAbs(a) / 2.0;
 }
 
 double Polygon::perimeter() const
 {
-    double perim = 0.0;
-    for (int i = 0; i < m_vertices.size(); ++i) {
-        int j = (i + 1) % m_vertices.size();
-        perim += QLineF(m_vertices[i], m_vertices[j]).length();
+    double p = 0;
+    int n = m_vertices.size();
+    for (int i = 0; i < n; ++i) {
+        const QPointF& p1 = m_vertices[i];
+        const QPointF& p2 = m_vertices[(i + 1) % n];
+        p += QLineF(p1, p2).length();
     }
-    return perim;
+    return p;
 }
 
-QPointF Polygon::center() const
+QPointF Polygon::centerOfMass() const
 {
-    QPointF sum(0,0);
-    for (const QPointF &p : m_vertices)
-        sum += p;
-    return sum / m_vertices.size();
+    if (m_vertices.empty())
+        return QPointF();
+    double sx = 0, sy = 0;
+    for (const QPointF& p : m_vertices) {
+        sx += p.x();
+        sy += p.y();
+    }
+    return QPointF(sx / m_vertices.size(), sy / m_vertices.size());
 }
 
-void Polygon::translate(double dx, double dy)
+void Polygon::move(double dx, double dy)
 {
-    m_vertices.translate(dx, dy);
-    emit transformed();
+    for (QPointF& p : m_vertices) {
+        p += QPointF(dx, dy);
+    }
+    emit shapeChanged();
 }
 
-void Polygon::rotate(double angleDeg, const QPointF &anchor)
+void Polygon::rotate(double angle, const QPointF& center)
 {
-    double rad = angleDeg * M_PI / 180.0;
-    QPointF offset;
-    for (QPointF &p : m_vertices) {
-        offset = p - anchor;
-        p = anchor + QPointF(offset.x() * cos(rad) - offset.y() * sin(rad),
-                             offset.x() * sin(rad) + offset.y() * cos(rad));
+    double rad = qDegreesToRadians(angle);
+    double cosA = qCos(rad);
+    double sinA = qSin(rad);
+    for (QPointF& p : m_vertices) {
+        double x = p.x() - center.x();
+        double y = p.y() - center.y();
+        p.setX(center.x() + x * cosA - y * sinA);
+        p.setY(center.y() + x * sinA + y * cosA);
     }
-    emit transformed();
+    emit shapeChanged();
 }
 
-void Polygon::scale(double factor, const QPointF &anchor)
+void Polygon::scale(double factor, const QPointF& center)
 {
-    for (QPointF &p : m_vertices) {
-        QPointF offset = p - anchor;
-        p = anchor + offset * factor;
+    if (factor <= 0)
+        throw std::invalid_argument("Scale factor must be positive");
+    for (QPointF& p : m_vertices) {
+        double x = p.x() - center.x();
+        double y = p.y() - center.y();
+        p.setX(center.x() + x * factor);
+        p.setY(center.y() + y * factor);
     }
-    emit transformed();
+    emit shapeChanged();
 }
 
-void Polygon::draw(QPainter &painter) const
+void Polygon::draw(QPainter& painter) const
 {
-    painter.drawPolygon(m_vertices);
+    if (m_vertices.empty()) return;
+    QPolygonF poly;
+    for (const QPointF& p : m_vertices) poly << p;
+    painter.drawPolygon(poly);
 }
 
-void Polygon::setVertices(const QPolygonF &verts)
+QString Polygon::typeName() const
 {
-    m_vertices = verts;
-    emit transformed();
+    return "Polygon";
 }
 
-void Polygon::applyAnimationStep(double progress)
+void Polygon::setVertices(const std::vector<QPointF>& vertices)
 {
-    if (m_animData.type == AnimationType::None) return;
-    
-    if (progress <= 0.01 || m_originalVertices.isEmpty()) {
-        m_originalVertices = m_vertices;
-    }
-    
-    switch (m_animData.type) {
-    case AnimationType::Translate: {
-        double stepDx = m_animData.dx * progress;
-        double stepDy = m_animData.dy * progress;
-        m_vertices = m_originalVertices;
-        translate(stepDx, stepDy);
-        break;
-    }
-    case AnimationType::Rotate: {
-        double stepAngle = m_animData.angleDeg * progress;
-        m_vertices = m_originalVertices;
-        rotate(stepAngle, m_animData.anchor);
-        break;
-    }
-    case AnimationType::Scale: {
-        double stepFactor = 1.0 + (m_animData.factor - 1.0) * progress;
-        m_vertices = m_originalVertices;
-        scale(stepFactor, m_animData.anchor);
-        break;
-    }
-    default:
-        break;
-    }
+    if (vertices.size() < 3)
+        throw std::invalid_argument("Polygon must have at least 3 vertices");
+    m_vertices = vertices;
+    emit shapeChanged();
+}
+
+std::vector<QPointF> Polygon::vertices() const
+{
+    return m_vertices;
+}
+
+int Polygon::vertexCount() const
+{
+    return m_vertices.size();
+}
+
+void Polygon::setVertex(int index, const QPointF& point)
+{
+    if (index < 0 || index >= (int)m_vertices.size())
+        throw std::out_of_range("Vertex index out of range");
+    m_vertices[index] = point;
+    emit shapeChanged();
+}
+
+QPointF Polygon::vertex(int index) const
+{
+    if (index < 0 || index >= (int)m_vertices.size())
+        throw std::out_of_range("Vertex index out of range");
+    return m_vertices[index];
+}
+bool Polygon::contains(const QPointF& point) const
+{
+    if (m_vertices.empty())
+        return false;
+    QPolygonF poly;
+    for (const auto& p : m_vertices)
+        poly << p;
+    return poly.containsPoint(point, Qt::OddEvenFill);
 }

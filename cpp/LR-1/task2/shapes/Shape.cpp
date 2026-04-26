@@ -1,97 +1,23 @@
-#include "Shape.h"
-#include <cmath>
+#include "shape.h"
+#include <stdexcept>
 
-Shape::Shape(QObject *parent) : QObject(parent) {}
-
-void Shape::moveCenter(double dx, double dy)
+Shape::Shape(QObject* parent) : QObject(parent)
 {
-    translate(dx, dy);
 }
 
-void Shape::setAnimationValue(double value)
+Shape::~Shape()
 {
-    if (qFuzzyCompare(m_animProgress, value))
-        return;
-    m_animProgress = value;
-    applyAnimationStep(value);
-    emit animationValueChanged();
-    emit transformed();
 }
 
-void Shape::animateTranslate(double dx, double dy, int durationMs)
+void Shape::moveCenterTo(const QPointF& newCenter)
 {
-    if (m_animation && m_animation->state() == QAbstractAnimation::Running)
-        m_animation->stop();
-    
-    m_animData.type = AnimationType::Translate;
-    m_animData.dx = dx;
-    m_animData.dy = dy;
-    
-    m_animation = new QVariantAnimation(this);
-    m_animation->setDuration(durationMs);
-    m_animation->setStartValue(0.0);
-    m_animation->setEndValue(1.0);
-    
-    connect(m_animation, &QVariantAnimation::valueChanged, this, [this](const QVariant &val){
-        setAnimationValue(val.toDouble());
-    });
-    
-    connect(m_animation, &QVariantAnimation::finished, this, [this](){
-        emit animationFinished();
-        m_animData.type = AnimationType::None;
-    });
-    
-    m_animation->start(QAbstractAnimation::DeleteWhenStopped);
+    QPointF old = centerOfMass();
+    move(newCenter.x() - old.x(), newCenter.y() - old.y());
 }
 
-void Shape::animateRotate(double angleDeg, const QPointF &anchor, int durationMs)
+void Shape::checkPositive(double value, const QString& paramName) const
 {
-    if (m_animation && m_animation->state() == QAbstractAnimation::Running)
-        m_animation->stop();
-    
-    m_animData.type = AnimationType::Rotate;
-    m_animData.angleDeg = angleDeg;
-    m_animData.anchor = anchor;
-    
-    m_animation = new QVariantAnimation(this);
-    m_animation->setDuration(durationMs);
-    m_animation->setStartValue(0.0);
-    m_animation->setEndValue(1.0);
-    
-    connect(m_animation, &QVariantAnimation::valueChanged, this, [this](const QVariant &val){
-        setAnimationValue(val.toDouble());
-    });
-    
-    connect(m_animation, &QVariantAnimation::finished, this, [this](){
-        emit animationFinished();
-        m_animData.type = AnimationType::None;
-    });
-    
-    m_animation->start(QAbstractAnimation::DeleteWhenStopped);
-}
-
-void Shape::animateScale(double factor, const QPointF &anchor, int durationMs)
-{
-    if (m_animation && m_animation->state() == QAbstractAnimation::Running)
-        m_animation->stop();
-    
-    m_animData.type = AnimationType::Scale;
-    m_animData.factor = factor;
-    m_animData.anchor = anchor;
-    
-    m_animation = new QVariantAnimation(this);
-    m_animation->setDuration(durationMs);
-    m_animation->setStartValue(0.0);
-    m_animation->setEndValue(1.0);
-    
-    connect(m_animation, &QVariantAnimation::valueChanged, this, [this](const QVariant &val){
-        setAnimationValue(val.toDouble());
-    });
-    
-    connect(m_animation, &QVariantAnimation::finished, this, [this](){
-        emit animationFinished();
-        m_animData.type = AnimationType::None;
-    });
-    
-    m_animation->start(QAbstractAnimation::DeleteWhenStopped);
+    if (value <= 0) {
+        throw std::invalid_argument(("Parameter " + paramName + " must be positive").toStdString());
+    }
 }

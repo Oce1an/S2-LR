@@ -127,14 +127,12 @@ void MainWindow::on_btnAddStudent_clicked()
             return;
         }
         
-        // Парсим зимние оценки
         std::vector<int> winterGrades;
         QStringList winterList = winterStr.split(',');
         for (const QString& grade : winterList) {
             winterGrades.push_back(grade.trimmed().toInt());
         }
         
-        // Парсим летние оценки
         std::vector<int> summerGrades;
         QStringList summerList = summerStr.split(',');
         for (const QString& grade : summerList) {
@@ -178,7 +176,6 @@ void MainWindow::on_btnEditStudent_clicked()
     QLineEdit *groupEdit = new QLineEdit(QString::fromStdString(student.getGroupNumber()), &dialog);
     QLineEdit *nameEdit = new QLineEdit(QString::fromStdString(student.getFullName()), &dialog);
     
-    // Формируем строки с оценками
     QString winterStr;
     auto winterGrades = student.getWinterGrades();
     for (size_t i = 0; i < winterGrades.size(); ++i) {
@@ -301,7 +298,6 @@ void MainWindow::on_btnWinterDebtors_clicked()
 
     QString result = "Список задолжников по зимней сессии:\n\n";
 
-    // Заголовок с фиксированной шириной колонок
     result += QString("%1 %2 %3 %4\n")
         .arg(QString("Группа").leftJustified(10, ' '))
         .arg(QString("ФИО").leftJustified(30, ' '))
@@ -345,7 +341,6 @@ void MainWindow::on_btnExpelList_clicked()
     result += "Критерии: 2+ неудовлетворительные оценки за летнюю сессию\n";
     result += "и наличие задолженностей за зимнюю сессию\n\n";
 
-    // Заголовок с фиксированной шириной колонок
     result += QString("%1 %2 %3 %4\n")
         .arg(QString("Группа").leftJustified(10, ' '))
         .arg(QString("ФИО").leftJustified(30, ' '))

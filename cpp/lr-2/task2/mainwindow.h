@@ -50,4 +50,4 @@ private:
     void sortStudentsByNameInGroups();
 };
 
-#endif // MAINWINDOW_H
+#endif

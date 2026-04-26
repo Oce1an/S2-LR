@@ -33,17 +33,17 @@ private slots:
     void on_btnCalculateBirthday_clicked();
     void on_btnCalculateDuration_clicked();
     void on_btnShowCurrentDate_clicked();
-    void on_btnSaveAs_clicked();  // Слот для кнопки Save As
+    void on_btnSaveAs_clicked();
 
 private:
     Ui::MainWindow *ui;
     std::vector<Date> dates;
     QString currentFileName;
     
-    void saveDatesToFile(const QString& fileName);  // Вспомогательный метод
+    void saveDatesToFile(const QString& fileName);
 
 protected:
-    void keyPressEvent(QKeyEvent *event) override;  // Для Ctrl+S
+    void keyPressEvent(QKeyEvent *event) override;
 };
 
 #endif

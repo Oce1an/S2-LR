@@ -1,7 +1,0 @@
-# ninja log v6
-29	1862	7979830345197139	car_autogen/timestamp	14c1ba89fef736d0
-1868	4885	7979830345742317	CMakeFiles/car.dir/car_autogen/mocs_compilation.cpp.obj	4ae4bca4cba67c2c
-29	1862	7979830345197139	car_autogen/mocs_compilation.cpp	14c1ba89fef736d0
-29	1862	7979830345197139	C:/Projects/S2-LR/cpp/LR-1/task1/out/build/debug/car_autogen/timestamp	14c1ba89fef736d0
-29	1862	7979830345197139	C:/Projects/S2-LR/cpp/LR-1/task1/out/build/debug/car_autogen/mocs_compilation.cpp	14c1ba89fef736d0
-1871	2964	7979830345777427	CMakeFiles/car.dir/main.cpp.obj	4b9ae1db7de9fa74

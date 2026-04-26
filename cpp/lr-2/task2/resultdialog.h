@@ -19,4 +19,4 @@ private:
     QLabel *labelTitle;
 };
 
-#endif // RESULTDIALOG_H
+#endif

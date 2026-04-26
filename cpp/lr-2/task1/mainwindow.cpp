@@ -68,7 +68,6 @@ void MainWindow::on_btnSaveAs_clicked()
         return;
     }
     
-    // Добавляем расширение .txt если пользователь его не указал
     if (!fileName.endsWith(".txt", Qt::CaseInsensitive)) {
         fileName += ".txt";
     }
@@ -191,7 +190,6 @@ void MainWindow::on_btnAddDate_clicked()
         out << " " << QString::fromStdString(newDate.toString());
         file.close();
 
-        // Add to memory and table
         dates.push_back(newDate);
         int row = ui->tableWidget->rowCount();
         ui->tableWidget->insertRow(row);
@@ -296,7 +294,7 @@ void MainWindow::on_btnCalculateDuration_clicked()
     }
 
     try {
-        Date today; // System date
+        Date today;
         Date selectedDate = dates[currentRow];
         int daysDiff = today.Duration(selectedDate);
 

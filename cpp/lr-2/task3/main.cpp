@@ -1,53 +1,41 @@
 #include <stdexcept>
 #include <iostream>
 
-// Базовый абстрактный класс
 class Expression {
 public:
-    // Виртуальный деструктор для корректного удаления производных классов
     virtual ~Expression() = default;
 
-    // Чисто виртуальный метод для вычисления значения выражения
     virtual double evaluate() const = 0;
 };
 
-// Класс для представления чисел
 class Number : public Expression {
 private:
     double value;
 
 public:
-    // Конструктор
     explicit Number(double val) : value(val) {}
 
-    // Реализация метода evaluate
     double evaluate() const override {
         return value;
     }
-
-    // Деструктор не нужен - компилятор сгенерирует правильный
 };
 
-// Класс для представления бинарных операций
 class BinaryOperation : public Expression {
 private:
-    Expression* left;   // Левый операнд
-    Expression* right;  // Правый операнд
-    char operation;     // Тип операции: '+', '-', '*', '/'
+    Expression* left;
+    Expression* right;
+    char operation;
 
 public:
-    // Конструктор
     BinaryOperation(Expression* l, char op, Expression* r)
         : left(l), right(r), operation(op) {
     }
 
-    // Деструктор - освобождаем оба операнда
     ~BinaryOperation() {
         delete left;
         delete right;
     }
 
-    // Реализация метода evaluate
     double evaluate() const override {
         double leftVal = left->evaluate();
         double rightVal = right->evaluate();
@@ -71,18 +59,12 @@ public:
 };
 
 int main() {
-    // Выражение: 3 + 4.5 * 5
-
-    // Создаём подвыражение 4.5 * 5
     Expression* sube = new BinaryOperation(new Number(4.5), '*', new Number(5));
 
-    // Создаём полное выражение 3 + sube
     Expression* expr = new BinaryOperation(new Number(3), '+', sube);
 
-    // Вычисляем и выводим результат: 25.5
     std::cout << expr->evaluate() << std::endl;
 
-    // Удаляем всё выражение (sube удалится автоматически)
     delete expr;
 
     return 0;
