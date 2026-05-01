@@ -4,19 +4,13 @@
 #include <stdexcept>
 #include <locale>
 
-// ---------------------------------------------------------------------------
-// Private helper
-// ---------------------------------------------------------------------------
 void MyString::allocate(size_t capacity)
 {
-    m_cap  = capacity + 1; // +1 for null terminator
+    m_cap  = capacity + 1;
     m_data = std::make_unique<char[]>(m_cap);
     m_data[0] = '\0';
 }
 
-// ---------------------------------------------------------------------------
-// Constructors / Rule of Three
-// ---------------------------------------------------------------------------
 MyString::MyString()
     : m_len(0)
 {
@@ -47,9 +41,6 @@ MyString& MyString::operator=(const MyString& other)
     return *this;
 }
 
-// ---------------------------------------------------------------------------
-// Element access
-// ---------------------------------------------------------------------------
 char& MyString::operator[](size_t pos)
 {
     if (pos >= m_len) throw std::out_of_range("MyString::operator[]");
@@ -62,12 +53,8 @@ const char& MyString::operator[](size_t pos) const
     return m_data[pos];
 }
 
-// ---------------------------------------------------------------------------
-// Static <cstring> implementations
-// ---------------------------------------------------------------------------
 void* MyString::s_memcpy(void* s1, const void* s2, size_t n)
 {
-    // Copy n bytes from s2 to s1 (non-overlapping)
     unsigned char*       dst = static_cast<unsigned char*>(s1);
     const unsigned char* src = static_cast<const unsigned char*>(s2);
     for (size_t i = 0; i < n; ++i)
@@ -77,7 +64,6 @@ void* MyString::s_memcpy(void* s1, const void* s2, size_t n)
 
 void* MyString::s_memmove(void* s1, const void* s2, size_t n)
 {
-    // Safe even for overlapping regions
     unsigned char*       dst = static_cast<unsigned char*>(s1);
     const unsigned char* src = static_cast<const unsigned char*>(s2);
     if (dst < src) {
@@ -141,7 +127,6 @@ int MyString::s_strcmp(const char* s1, const char* s2)
 
 int MyString::s_strcoll(const char* s1, const char* s2)
 {
-    // Locale-aware comparison — delegate to std::strcoll
     return std::strcoll(s1, s2);
 }
 

@@ -12,6 +12,7 @@ void Trainer::setText(const QString &text)
     m_mistakes = 0;
     m_correct  = 0;
     m_results.clear();
+    m_lastError = false;  // сбрасываем флаг ошибки
 }
 
 QString Trainer::text() const { return m_text; }
@@ -22,11 +23,15 @@ void Trainer::reset()
     m_mistakes = 0;
     m_correct  = 0;
     m_results.clear();
+    m_lastError = false;  // сбрасываем флаг ошибки
 }
 
 bool Trainer::typeChar(QChar ch)
 {
-    if (m_pos >= m_text.length()) return false;
+    if (m_pos >= m_text.length()) {
+        m_lastError = false;
+        return false;
+    }
 
     bool ok = (ch == m_text.at(m_pos));
 
@@ -35,11 +40,12 @@ bool Trainer::typeChar(QChar ch)
         m_results.append({m_text.at(m_pos), true});
         ++m_correct;
         ++m_pos;
+        m_lastError = false;  // сбрасываем флаг ошибки при правильном вводе
     } else {
-        // Ошибка — фиксируем ошибку, курсор НЕ двигаем.
-        // Записываем ожидаемый символ с флагом false, но тут же убираем его из
-        // results, чтобы не смещать индексы — просто инкрементируем счётчик.
+        // Ошибка — увеличиваем счётчик ошибок, курсор НЕ двигаем.
+        // Устанавливаем флаг ошибки для временной подсветки в UI
         ++m_mistakes;
+        m_lastError = true;   // устанавливаем флаг ошибки для визуальной индикации
     }
 
     return ok;
@@ -49,6 +55,7 @@ int  Trainer::position()     const { return m_pos; }
 bool Trainer::finished()     const { return m_pos >= m_text.length(); }
 int  Trainer::mistakeCount() const { return m_mistakes; }
 int  Trainer::correctCount() const { return m_correct; }
+bool Trainer::hasLastError() const { return m_lastError; }
 
 double Trainer::accuracy() const
 {
@@ -137,7 +144,7 @@ QList<QStringList> Trainer::keyboardLayout(Language lang)
         return {
             {"^","1","2","3","4","5","6","7","8","9","0","ß","´","←"},
             {"Tab","q","w","e","r","t","z","u","i","o","p","ü","+","↵"},
-            {"Caps","a","s","d","f","g","h","j","k","l","ö","ä","#"},
+            {"Caps","a","s","d","f","g","h","j","k","l","ö","ä","#","↵"},
             {"Shift","<","y","x","c","v","b","n","m",",",".","-","Shift"},
             {"Strg","","Alt","Space","AltGr","","Strg"}
         };
@@ -145,7 +152,7 @@ QList<QStringList> Trainer::keyboardLayout(Language lang)
         return {
             {"²","&","é","\"","'","(","§","è","!","ç","à",")","=","←"},
             {"Tab","a","z","e","r","t","y","u","i","o","p","^","$","↵"},
-            {"Caps","q","s","d","f","g","h","j","k","l","m","ù","*"},
+            {"Caps","q","s","d","f","g","h","j","k","l","m","ù","*","↵"},
             {"Shift","<","w","x","c","v","b","n",",",";",":","!","Shift"},
             {"Ctrl","","Alt","Space","AltGr","","Ctrl"}
         };
@@ -153,31 +160,31 @@ QList<QStringList> Trainer::keyboardLayout(Language lang)
         return {
             {"ذ","1","2","3","4","5","6","7","8","9","0","-","=","←"},
             {"Tab","ض","ص","ث","ق","ف","غ","ع","ه","خ","ح","ج","د","↵"},
-            {"Caps","ش","س","ي","ب","ل","ا","ت","ن","م","ك","ط"},
+            {"Caps","ش","س","ي","ب","ل","ا","ت","ن","م","ك","ط","ذ","↵"},
             {"Shift","ئ","ء","ؤ","ر","لا","ى","ة","و","ز","ظ","Shift"},
             {"Ctrl","","Alt","Space","AltGr","","Ctrl"}
         };
     case Language::Chinese:
         return {
             {"`","1","2","3","4","5","6","7","8","9","0","-","=","←"},
-            {"Tab","q","w","e","r","t","y","u","i","o","p","[","]","↵"},
-            {"Caps","a","s","d","f","g","h","j","k","l",";","'","\\"},
+            {"Tab","q","w","e","r","t","y","u","i","o","p","[","]","\\","↵"},
+            {"Caps","a","s","d","f","g","h","j","k","l",";","'","↵"},
             {"Shift","z","x","c","v","b","n","m",",",".","/","Shift"},
-            {"Ctrl","","Alt","Space (拼音)","AltGr","","Ctrl"}
+            {"Ctrl","","Alt","Space","AltGr","","Ctrl"}
         };
     case Language::Belarusian:
         return {
             {"ё","1","2","3","4","5","6","7","8","9","0","-","=","←"},
             {"Tab","й","ц","у","к","е","н","г","ш","ў","з","х","'","↵"},
-            {"Caps","ф","ы","в","а","п","р","о","л","д","ж","э"},
-            {"Shift","я","ч","с","м","і","т","ь","б","ю",".","Shift"},
+            {"Caps","ф","ы","в","а","п","р","о","л","д","ж","э","↵"},
+            {"Shift","\\","я","ч","с","м","і","т","ь","б","ю",".","Shift"},
             {"Ctrl","","Alt","Space","AltGr","","Ctrl"}
         };
     case Language::Hebrew:
         return {
             {"`","1","2","3","4","5","6","7","8","9","0","-","=","←"},
             {"Tab","/","'","ק","ר","א","ט","ו","ן","ם","פ","[","]","↵"},
-            {"Caps","ש","ד","ג","כ","ע","י","ח","ל","ך","ף",","},
+            {"Caps","ש","ד","ג","כ","ע","י","ח","ל","ך","ף",",","↵"},
             {"Shift","ז","ס","ב","ה","נ","מ","צ","ת","ץ",".","Shift"},
             {"Ctrl","","Alt","Space","AltGr","","Ctrl"}
         };

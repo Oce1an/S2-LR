@@ -10,7 +10,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     setWindowTitle("Задание 2 — Динамическая библиотека String");
 
-    // Populate function combo
     const QStringList funcs = {
         "strlen",  "strcpy",  "strncpy", "strcat",  "strncat",
         "strcmp",  "strncmp", "strcoll", "strxfrm", "strtok",
@@ -47,7 +46,6 @@ void MainWindow::on_runButton_clicked()
     appendResult(QString("s2 = \"%1\"").arg(ui->s2Edit->text()));
     appendResult("---");
 
-    // We work with local char arrays big enough for demos
     char buf1[512] = {0};
     char buf2[512] = {0};
     std::strncpy(buf1, ba1.constData(), 511);
@@ -121,10 +119,8 @@ void MainWindow::on_runButton_clicked()
 
     } else if (func == "memmove") {
         if (!nOk) { QMessageBox::warning(this, "Ошибка", "Введите n."); return; }
-        // Demonstrate overlapping move within buf1
         char src[512] = {0};
         MyString::s_strcpy(src, buf1);
-        // Move first n chars 2 positions to the right within src
         if (n + 2 < 512 && n <= std::strlen(src)) {
             MyString::s_memmove(src + 2, src, n);
             appendResult(QString("memmove(src+2, src, %1) → src = \"%2\"").arg(n).arg(src));
@@ -141,7 +137,6 @@ void MainWindow::on_runButton_clicked()
 
     } else if (func == "memset") {
         if (!nOk) { QMessageBox::warning(this, "Ошибка", "Введите n (байты)."); return; }
-        // Fill first n bytes with char from s2 (first char)
         char c  = buf2[0] ? buf2[0] : '0';
         char dst[512] = {0};
         MyString::s_strcpy(dst, buf1);

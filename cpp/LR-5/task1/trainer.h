@@ -40,6 +40,10 @@ public:
 
     // Доступ к истории результатов (для подсветки)
     const QVector<CharResult>& results() const { return m_results; }
+    
+    // Флаг последней ошибки для визуальной индикации
+    bool   hasLastError() const;
+    void   clearLastError() { m_lastError = false; }
 
 private:
     QString             m_text;
@@ -47,6 +51,7 @@ private:
     int                 m_mistakes;
     int                 m_correct;
     QVector<CharResult> m_results;
+    bool                m_lastError = false;  // флаг последней ошибки
 };
 
 #endif // TRAINER_H

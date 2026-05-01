@@ -2,52 +2,45 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QComboBox>
-#include <QLabel>
-#include <QPushButton>
-#include <QLineEdit>
 #include <QTimer>
-#include <QKeyEvent>               // <-- добавлено
-#include "trainermodel.h"
-#include "textdisplay.h"
-#include "keyboardwidget.h"
-#include "languagedata.h"
+#include <QElapsedTimer>
+#include "trainer.h"
 
-class MainWindow : public QMainWindow {
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
+
+class MainWindow : public QMainWindow
+{
     Q_OBJECT
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow() = default;
+    ~MainWindow();
 
 protected:
-    void keyPressEvent(QKeyEvent *event) override;   // <-- добавлено
-    bool eventFilter(QObject *obj, QEvent *event) override;
+    void keyPressEvent(QKeyEvent *event) override;
 
 private slots:
-    void onLanguageChanged(int index);
-    void onLoadFile();
-    void onStartStop();
-    void updateStats();
+    void on_langCombo_currentIndexChanged(int index);
+    void on_openFileButton_clicked();
+    void on_restartButton_clicked();
+    void onTimerTick();
 
 private:
-    void applyLanguage(const QString &langCode);
-    void setSampleText(const QString &text);
+    Ui::MainWindow *ui;
+    Trainer         m_trainer;
+    Language        m_lang;
+    QTimer          m_timer;
+    QTimer          *m_errorTimer;  // таймер для сброса индикации ошибки
+    QElapsedTimer   m_elapsed;
+    bool            m_started;
 
-    TrainerModel *m_model;
-    TextDisplay *m_textDisplay;
-    KeyboardWidget *m_keyboard;
-
-    QComboBox *m_langCombo;
-    QLabel *m_timerLabel;
-    QLabel *m_wpmLabel;
-    QPushButton *m_btnLoad;
-    QPushButton *m_btnStartStop;
-    QLineEdit *m_inputLine;      // скрытое поле для захвата IME
-
-    QTimer *m_statTimer;
-    QMap<QString, LanguageInfo> m_languages;
-    QString m_currentLangCode;
+    void applyLanguage(Language lang);
+    void resetState();  // единый метод сброса состояния
+    void refreshTextDisplay();
+    void buildKeyboard();
+    void updateStats();
 };
 
 #endif // MAINWINDOW_H

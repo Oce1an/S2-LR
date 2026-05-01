@@ -26,4 +26,4 @@ private:
     void appendResult(const QString &line);
 };
 
-#endif // MAINWINDOW_H
+#endif

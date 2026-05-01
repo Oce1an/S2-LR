@@ -4,14 +4,9 @@
 #include <cstddef>
 #include <memory>
 
-// ---------------------------------------------------------------------------
-// MyString — dynamic string class (analogue of std::string)
-// Uses std::unique_ptr for internal buffer (Rule of Three implemented).
-// ---------------------------------------------------------------------------
 class MyString
 {
 public:
-    // ---- Iterators ----
     using iterator       = char*;
     using const_iterator = const char*;
 
@@ -22,14 +17,12 @@ public:
     const_iterator cbegin() const { return begin(); }
     const_iterator cend()   const { return end();   }
 
-    // ---- Constructors / Rule of Three ----
-    MyString();                            // default: empty string
-    MyString(const char* s);              // from C-string
-    MyString(const MyString& other);      // copy constructor
-    MyString& operator=(const MyString& other); // copy assignment
-    ~MyString() = default;                // unique_ptr handles deallocation
+    MyString();
+    MyString(const char* s);
+    MyString(const MyString& other);
+    MyString& operator=(const MyString& other);
+    ~MyString() = default;
 
-    // ---- Element access ----
           char& operator[](size_t pos);
     const char& operator[](size_t pos) const;
 
@@ -37,7 +30,6 @@ public:
     size_t      size()  const { return m_len; }
     bool        empty() const { return m_len == 0; }
 
-    // ---- <cstring>-style static functions ----
     static void*  s_memcpy (void* s1, const void* s2, size_t n);
     static void*  s_memmove(void* s1, const void* s2, size_t n);
     static char*  s_strcpy (char* s1, const char* s2);
@@ -62,4 +54,4 @@ private:
     void allocate(size_t capacity);
 };
 
-#endif // MYSTRING_H
+#endif

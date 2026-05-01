@@ -1,197 +1,393 @@
 #include "mainwindow.h"
-#include <QVBoxLayout>
-#include <QHBoxLayout>
+#include "ui_mainwindow.h"
+#include <QKeyEvent>
 #include <QFileDialog>
 #include <QTextStream>
-#include <QMessageBox>
-#include <QEvent>
-#include <QKeyEvent>
-#include <QInputMethodEvent>
-#include <QApplication>
-#include <QStringConverter>   // для setEncoding в Qt6
+#include <QGridLayout>
+#include <QPushButton>
+#include <QLabel>
+#include <QTextCharFormat>
+#include <QTextCursor>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+    , m_lang(Language::German)
+    , m_errorTimer(nullptr)
+    , m_started(false)
 {
-    m_model = new TrainerModel(this);
-    m_languages = languageData();
+    qDebug() << "Constructor start";
+    ui->setupUi(this);
+    qDebug() << "setupUi done";
+    
+    setWindowTitle("Клавиатурный тренажёр");
 
-    QWidget *central = new QWidget(this);
-    setCentralWidget(central);
-    QVBoxLayout *mainLayout = new QVBoxLayout(central);
-
-    // Верхняя панель
-    QHBoxLayout *topLayout = new QHBoxLayout();
-
-    m_langCombo = new QComboBox(this);
-    for (auto it = m_languages.constBegin(); it != m_languages.constEnd(); ++it)
-        m_langCombo->addItem(it.value().name, it.key());
-    m_langCombo->setCurrentIndex(0);
-    connect(m_langCombo, QOverload<int>::of(&QComboBox::currentIndexChanged),
-            this, &MainWindow::onLanguageChanged);
-
-    m_btnLoad = new QPushButton("Загрузить файл", this);
-    connect(m_btnLoad, &QPushButton::clicked, this, &MainWindow::onLoadFile);
-
-    m_btnStartStop = new QPushButton("Старт", this);
-    m_btnStartStop->setCheckable(true);
-    connect(m_btnStartStop, &QPushButton::clicked, this, &MainWindow::onStartStop);
-
-    m_timerLabel = new QLabel("00:00", this);
-    m_timerLabel->setStyleSheet("font-size: 16px; font-weight: bold;");
-    m_wpmLabel = new QLabel("0 WPM", this);
-    m_wpmLabel->setStyleSheet("font-size: 16px; font-weight: bold;");
-
-    topLayout->addWidget(m_langCombo);
-    topLayout->addWidget(m_btnLoad);
-    topLayout->addWidget(m_btnStartStop);
-    topLayout->addStretch();
-    topLayout->addWidget(new QLabel("Время:", this));
-    topLayout->addWidget(m_timerLabel);
-    topLayout->addWidget(new QLabel("Скорость:", this));
-    topLayout->addWidget(m_wpmLabel);
-    mainLayout->addLayout(topLayout);
-
-    // Отображение текста
-    m_textDisplay = new TextDisplay(m_model, this);
-    mainLayout->addWidget(m_textDisplay, 1);
-
-    // Виртуальная клавиатура
-    m_keyboard = new KeyboardWidget(this);
-    mainLayout->addWidget(m_keyboard);
-
-    // Скрытое поле для перехвата IME (китайский и т.п.)
-    m_inputLine = new QLineEdit(this);
-    m_inputLine->setMaximumSize(0, 0);
-    m_inputLine->setStyleSheet("border: none; background: transparent;");
-    m_inputLine->installEventFilter(this);
-    m_inputLine->setFocus();   // без фокуса IME не работает
-
-    // Таймер обновления статистики
-    m_statTimer = new QTimer(this);
-    m_statTimer->setInterval(200);
-    connect(m_statTimer, &QTimer::timeout, this, &MainWindow::updateStats);
-
-    onLanguageChanged(0);
-}
-
-bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
-    if (obj == m_inputLine && event->type() == QEvent::InputMethod) {
-        QInputMethodEvent *ime = static_cast<QInputMethodEvent*>(event);
-        if (!ime->commitString().isEmpty()) {
-            const QString text = ime->commitString();
-            m_inputLine->clear();
-            if (m_model->isActive()) {
-                if (text == " ") {
-                    m_model->finishCurrentWord();
-                } else {
-                    m_model->processCharacter(text);
-                }
-                m_textDisplay->update();
-                if (text.length() == 1)
-                    m_keyboard->highlightKey(text);
-            }
-            return true;
-        }
+    // Проверяем, что keyboardWidget существует
+    if (!ui->keyboardWidget) {
+        qDebug() << "ERROR: keyboardWidget is null after setupUi!";
+        return;
     }
-    return QMainWindow::eventFilter(obj, event);
+
+    ui->langCombo->addItem(Trainer::languageName(Language::German));
+    ui->langCombo->addItem(Trainer::languageName(Language::French));
+    ui->langCombo->addItem(Trainer::languageName(Language::Arabic));
+    ui->langCombo->addItem(Trainer::languageName(Language::Chinese));
+    ui->langCombo->addItem(Trainer::languageName(Language::Belarusian));
+    ui->langCombo->addItem(Trainer::languageName(Language::Hebrew));
+    qDebug() << "Combo items added";
+
+    connect(&m_timer, &QTimer::timeout, this, &MainWindow::onTimerTick);
+    m_timer.setInterval(100);
+    qDebug() << "Timer setup done";
+
+    m_errorTimer = new QTimer(this);
+    m_errorTimer->setSingleShot(true);
+    m_errorTimer->setInterval(300);
+    connect(m_errorTimer, &QTimer::timeout, this, [this]() {
+        m_trainer.clearLastError();
+        refreshTextDisplay();
+    });
+    qDebug() << "Error timer setup done";
+
+    qDebug() << "Calling applyLanguage";
+    applyLanguage(m_lang);
+    qDebug() << "Constructor end";
 }
 
-// Обработка обычных нажатий клавиш (включая пробел)
-void MainWindow::keyPressEvent(QKeyEvent *event) {
-    if (!m_model->isActive()) {
+MainWindow::~MainWindow()
+{
+    qDebug() << "Destructor";
+    delete ui;
+}
+
+void MainWindow::applyLanguage(Language lang)
+{
+    qDebug() << "applyLanguage start" << (int)lang;
+    m_lang = lang;
+    QStringList samples = Trainer::sampleText(lang);
+    QString text = samples.isEmpty() ? "Test" : samples.join(" ");
+    qDebug() << "Sample text:" << text;
+
+    bool rtl = (lang == Language::Arabic || lang == Language::Hebrew);
+    ui->textEdit->setLayoutDirection(rtl ? Qt::RightToLeft : Qt::LeftToRight);
+    qDebug() << "Text direction set";
+
+    m_trainer.setText(text);
+    qDebug() << "Trainer text set";
+    
+    resetState();
+    qDebug() << "State reset";
+    
+    refreshTextDisplay();
+    qDebug() << "Text display refreshed";
+    
+    buildKeyboard();
+    qDebug() << "Keyboard built";
+    
+    setFocus();
+    qDebug() << "applyLanguage end";
+}
+
+void MainWindow::resetState()
+{
+    m_started = false;
+    m_timer.stop();
+    if (m_errorTimer) m_errorTimer->stop();
+    ui->timerLabel->setText("00:00.0");
+    ui->wpmLabel->setText("0");
+    ui->accuracyLabel->setText("100.0%");
+}
+
+void MainWindow::refreshTextDisplay()
+{
+    qDebug() << "refreshTextDisplay start";
+    
+    if (!ui->textEdit) {
+        qDebug() << "textEdit is null!";
+        return;
+    }
+    
+    const QString &text = m_trainer.text();
+    int pos = m_trainer.position();
+    const auto &results = m_trainer.results();
+    bool hasError = m_trainer.hasLastError();
+
+    qDebug() << "Text length:" << text.length() << "Position:" << pos;
+
+    ui->textEdit->clear();
+    QTextCursor cursor(ui->textEdit->document());
+
+    for (int i = 0; i < text.length(); ++i) {
+        QTextCharFormat fmt;
+
+        if (i < pos) {
+            bool correct = (i < results.size()) ? results[i].correct : true;
+            fmt.setForeground(correct ? QColor(0, 140, 0) : QColor(200, 0, 0));
+            fmt.setBackground(Qt::transparent);
+        } else if (i == pos) {
+            if (hasError) {
+                fmt.setBackground(QColor(255, 180, 180));
+                fmt.setForeground(QColor(200, 0, 0));
+            } else {
+                fmt.setBackground(QColor(180, 200, 255));
+                fmt.setForeground(Qt::black);
+            }
+        } else {
+            fmt.setForeground(QColor(80, 80, 80));
+            fmt.setBackground(Qt::transparent);
+        }
+
+        cursor.insertText(QString(text[i]), fmt);
+    }
+    qDebug() << "refreshTextDisplay end";
+}
+
+void MainWindow::buildKeyboard()
+{
+    qDebug() << "buildKeyboard start";
+    
+    QWidget *kbWidget = ui->keyboardWidget;
+    if (!kbWidget) {
+        qDebug() << "keyboardWidget is null!";
+        return;
+    }
+    
+    qDebug() << "keyboardWidget OK";
+    
+    // Безопасная очистка виджета клавиатуры
+    if (kbWidget->layout()) {
+        QLayout *oldLayout = kbWidget->layout();
+        
+        // Удаляем все дочерние виджеты
+        QList<QWidget*> childWidgets = kbWidget->findChildren<QWidget*>(QString(), Qt::FindDirectChildrenOnly);
+        for (QWidget *child : childWidgets) {
+            child->setParent(nullptr);
+            delete child;
+        }
+        
+        // Очищаем и удаляем старый layout
+        while (oldLayout->count() > 0) {
+            QLayoutItem *item = oldLayout->takeAt(0);
+            if (item) {
+                delete item;
+            }
+        }
+        
+        delete oldLayout;
+        qDebug() << "Old layout deleted";
+    }
+
+    qDebug() << "Creating new layout";
+    QVBoxLayout *mainLayout = new QVBoxLayout();
+    mainLayout->setSpacing(3);
+    mainLayout->setContentsMargins(5, 5, 5, 5);
+
+    QList<QStringList> rows = Trainer::keyboardLayout(m_lang);
+    qDebug() << "Got" << rows.size() << "keyboard rows";
+    
+    // Проверяем, что rows не пустой
+    if (rows.isEmpty()) {
+        qDebug() << "ERROR: No keyboard layout data!";
+        kbWidget->setLayout(mainLayout);
+        return;
+    }
+    
+    // Отступы для разных рядов
+    QList<int> rowOffsets = {0, 15, 25, 10, 0};
+    
+    for (int rowIdx = 0; rowIdx < rows.size(); ++rowIdx) {
+        const QStringList &row = rows[rowIdx];
+        
+        if (row.isEmpty()) {
+            qDebug() << "Skipping empty row" << rowIdx;
+            continue;
+        }
+        
+        QHBoxLayout *rowLayout = new QHBoxLayout();
+        rowLayout->setSpacing(2);
+        
+        // Добавляем отступ в начале ряда
+        if (rowIdx < rowOffsets.size()) {
+            rowLayout->addSpacing(rowOffsets[rowIdx]);
+        }
+        
+        for (int keyIdx = 0; keyIdx < row.size(); ++keyIdx) {
+            const QString &key = row[keyIdx];
+            
+            if (key.isEmpty()) {
+                rowLayout->addSpacing(8);
+                continue;
+            }
+            
+            QPushButton *btn = new QPushButton(key);
+            
+            // Определение ширины кнопки
+            int width = 34; // стандартная ширина
+            if (key == "Space" || key.contains("Space")) {
+                width = 200;
+            } else if (key == "←" || key == "Backspace") {
+                width = 55;
+            } else if (key == "Tab") {
+                width = 55;
+            } else if (key == "Caps") {
+                width = 60;
+            } else if (key == "Shift") {
+                width = 70;
+            } else if (key == "Ctrl" || key == "Strg") {
+                width = 55;
+            } else if (key == "Alt" || key == "AltGr") {
+                width = 45;
+            } else if (key == "↵" || key == "Enter") {
+                width = 65;
+            } else if (key.length() > 2) {
+                width = 42;
+            }
+            
+            btn->setFixedSize(width, 32);
+            btn->setFocusPolicy(Qt::NoFocus);
+            
+            // Стиль для разных типов клавиш
+            QString style;
+            if (key == "Space" || key.contains("Space") || 
+                key == "←" || key == "Tab" || key == "Caps" || 
+                key == "Shift" || key == "Ctrl" || key == "Strg" || 
+                key == "Alt" || key == "AltGr" || key == "↵") {
+                style = "QPushButton { font-size:8px; border-radius:3px; background:#4a4a4a; color:#ddd; border:1px solid #666; padding:2px; }";
+            } else {
+                style = "QPushButton { font-size:11px; border-radius:3px; background:#5a5a5a; color:white; border:1px solid #777; padding:2px; }";
+            }
+            
+            btn->setStyleSheet(style);
+            rowLayout->addWidget(btn);
+        }
+        
+        rowLayout->addStretch();
+        mainLayout->addLayout(rowLayout);
+    }
+    
+    mainLayout->addStretch();
+    kbWidget->setLayout(mainLayout);
+    kbWidget->setMinimumHeight(200);
+    
+    qDebug() << "buildKeyboard end";
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+    if (!event) {
+        QMainWindow::keyPressEvent(event);
+        return;
+    }
+    
+    // Игнорируем модификаторы
+    if (event->key() == Qt::Key_Shift || 
+        event->key() == Qt::Key_Control ||
+        event->key() == Qt::Key_Alt ||
+        event->key() == Qt::Key_Meta) {
         QMainWindow::keyPressEvent(event);
         return;
     }
 
-    const QString text = event->text();
+    QString text = event->text();
     if (text.isEmpty()) {
         QMainWindow::keyPressEvent(event);
         return;
     }
 
-    // Пробел завершает слово, остальные символы обрабатываются моделью
-    if (text == " ") {
-        m_model->finishCurrentWord();
-    } else {
-        m_model->processCharacter(text);
-    }
-
-    m_textDisplay->update();
-    if (text.length() == 1)
-        m_keyboard->highlightKey(text);
-
-    // Не вызываем QMainWindow::keyPressEvent, чтобы избежать дублирования
-}
-
-void MainWindow::onLanguageChanged(int index) {
-    QString code = m_langCombo->itemData(index).toString();
-    applyLanguage(code);
-}
-
-void MainWindow::applyLanguage(const QString &langCode) {
-    m_currentLangCode = langCode;
-    if (!m_languages.contains(langCode)) return;
-
-    const LanguageInfo &info = m_languages[langCode];
-    m_keyboard->setKeyRows(info.keyRows);
-
-    // Направление письма
-    if (langCode == "ar" || langCode == "he") {
-        QApplication::setLayoutDirection(Qt::RightToLeft);
-    } else {
-        QApplication::setLayoutDirection(Qt::LeftToRight);
-    }
-
-    setSampleText(info.sampleText);
-    m_model->reset();
-    m_textDisplay->update();
-}
-
-void MainWindow::onLoadFile() {
-    QString fileName = QFileDialog::getOpenFileName(this, "Открыть текстовый файл",
-                                                    QString(), "Текст (*.txt);;Все (*)");
-    if (fileName.isEmpty()) return;
-
-    QFile file(fileName);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        QMessageBox::warning(this, "Ошибка", "Не могу открыть файл");
+    QChar ch = text.at(0);
+    
+    // Фильтруем непечатные символы
+    if (!ch.isPrint() && ch != ' ') {
+        QMainWindow::keyPressEvent(event);
         return;
     }
+    
+    if (!m_started && !m_trainer.finished()) {
+        m_started = true;
+        m_elapsed.restart();
+        m_timer.start();
+    }
 
-    QTextStream in(&file);
-    in.setEncoding(QStringConverter::Utf8);   // Qt6
-    QString content = in.readAll();
-    file.close();
+    bool correct = m_trainer.typeChar(ch);
+    refreshTextDisplay();
+    updateStats();
 
-    setSampleText(content);
-    m_model->reset();
-    m_textDisplay->update();
-}
+    if (!correct && !m_trainer.finished()) {
+        if (m_errorTimer) {
+            m_errorTimer->start();
+        }
+    }
 
-void MainWindow::onStartStop() {
-    if (m_model->isActive()) {
-        m_model->stop();
-        m_btnStartStop->setText("Старт");
-        m_statTimer->stop();
-    } else {
-        if (m_model->words().isEmpty()) return;
-        m_model->start();
-        m_btnStartStop->setText("Стоп");
-        m_statTimer->start();
-        m_inputLine->clear();
-        m_inputLine->setFocus();  // фокус для IME
+    if (m_trainer.finished()) {
+        m_timer.stop();
+        updateStats();
     }
 }
 
-void MainWindow::updateStats() {
-    if (!m_model->isActive()) return;
-    int secs = m_model->elapsedSeconds();
-    QTime t = QTime(0, 0).addSecs(secs);
-    m_timerLabel->setText(t.toString("mm:ss"));
-    m_wpmLabel->setText(QString::number(m_model->wordsPerMinute()) + " WPM");
+void MainWindow::onTimerTick()
+{
+    if (!m_started) return;
+    
+    qint64 ms = m_elapsed.elapsed();
+    int totalSec = ms / 1000;
+    int min = totalSec / 60;
+    int sec = totalSec % 60;
+    int tenth = (ms % 1000) / 100;
+    ui->timerLabel->setText(QString("%1:%2.%3")
+        .arg(min,  2, 10, QChar('0'))
+        .arg(sec,  2, 10, QChar('0'))
+        .arg(tenth));
+    updateStats();
 }
 
-void MainWindow::setSampleText(const QString &text) {
-    m_model->setText(text);
+void MainWindow::updateStats()
+{
+    qint64 ms = m_started ? m_elapsed.elapsed() : 0;
+    double wpm = m_trainer.wordsPerMinute(ms);
+    ui->wpmLabel->setText(QString::number(wpm, 'f', 1));
+    double acc = m_trainer.accuracy();
+    ui->accuracyLabel->setText(QString::number(acc, 'f', 1) + "%");
+}
+
+void MainWindow::on_langCombo_currentIndexChanged(int index)
+{
+    qDebug() << "Language changed to index:" << index;
+    if (index >= 0 && index <= 5) {
+        Language newLang = static_cast<Language>(index);
+        if (newLang != m_lang) {
+            applyLanguage(newLang);
+        }
+    }
+}
+
+void MainWindow::on_openFileButton_clicked()
+{
+    QString path = QFileDialog::getOpenFileName(this, "Открыть файл", "",
+                                                "Text files (*.txt);;All files (*)");
+    if (path.isEmpty()) return;
+    
+    QFile f(path);
+    if (!f.open(QIODevice::ReadOnly | QIODevice::Text)) return;
+    
+    QTextStream in(&f);
+    in.setEncoding(QStringConverter::Utf8);
+    QString content = in.readAll().simplified();
+    
+    if (content.isEmpty()) {
+        content = "Empty file";
+    }
+    
+    m_trainer.setText(content);
+    resetState();
+    refreshTextDisplay();
+    setFocus();
+}
+
+void MainWindow::on_restartButton_clicked()
+{
+    m_trainer.reset();
+    resetState();
+    refreshTextDisplay();
+    setFocus();
 }
