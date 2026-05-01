@@ -1,5 +1,0 @@
-C:/projects/s2-lr/cpp/LR-4/task5/build/CMakeFiles/main.dir
-C:/projects/s2-lr/cpp/LR-4/task5/build/CMakeFiles/edit_cache.dir
-C:/projects/s2-lr/cpp/LR-4/task5/build/CMakeFiles/rebuild_cache.dir
-C:/projects/s2-lr/cpp/LR-4/task5/build/CMakeFiles/main_autogen_timestamp_deps.dir
-C:/projects/s2-lr/cpp/LR-4/task5/build/CMakeFiles/main_autogen.dir
