@@ -98,7 +98,7 @@ public:
 private slots:
     void onPushBackInt() {
         bool ok;
-        int val = QInputDialog::getInt(this, "Push Back", "Enter integer:", 0, -10000, 10000, 1, &ok);
+        int val = QInputDialog::getInt(this, "Push Back", "Enter integer:", 0, -10000000, 10000000, 1, &ok);
         if (ok) {
             mainData[0].first.push_back(val);
             refreshTables();
@@ -107,9 +107,9 @@ private slots:
 
     void onPushBackPair() {
         bool ok1, ok2;
-        int i = QInputDialog::getInt(this, "Push Back Pair", "Enter int:", 0, -10000, 10000, 1, &ok1);
+        int i = QInputDialog::getInt(this, "Push Back Pair", "Enter int:", 0, -10000000, 10000000, 1, &ok1);
         if (!ok1) return;
-        double d = QInputDialog::getDouble(this, "Push Back Pair", "Enter double:", 0.0, -10000, 10000, 2, &ok2);
+        double d = QInputDialog::getDouble(this, "Push Back Pair", "Enter double:", 0.0, -10000000, 10000000, 2, &ok2);
         if (ok2) {
             mainData[0].second.push_back(Pair<int, double>(i, d));
             refreshTables();
@@ -144,7 +144,7 @@ private slots:
         bool ok1, ok2;
         int pos = QInputDialog::getInt(this, "Insert", "Enter position:", 0, 0, (int)vec.size(), 1, &ok1);
         if (!ok1) return;
-        int val = QInputDialog::getInt(this, "Insert", "Enter value:", 0, -10000, 10000, 1, &ok2);
+        int val = QInputDialog::getInt(this, "Insert", "Enter value:", 0, -10000000, 10000000, 1, &ok2);
         if (ok2) {
             vec.insert(vec.cbegin() + pos, val);
             refreshTables();
@@ -156,10 +156,10 @@ private slots:
         bool ok1, ok2;
         int pos = QInputDialog::getInt(this, "Emplace", "Enter position:", 0, 0, (int)vec.size(), 1, &ok1);
         if (!ok1) return;
-        int i = QInputDialog::getInt(this, "Emplace Pair", "Enter int:", 0, -10000, 10000, 1, &ok2);
+        int i = QInputDialog::getInt(this, "Emplace Pair", "Enter int:", 0, -10000000, 10000000, 1, &ok2);
         if (!ok2) return;
         bool ok3;
-        double d = QInputDialog::getDouble(this, "Emplace Pair", "Enter double:", 0.0, -10000, 10000, 2, &ok3);
+        double d = QInputDialog::getDouble(this, "Emplace Pair", "Enter double:", 0.0, -10000000, 10000000, 2, &ok3);
         if (ok3) {
             vec.emplace(vec.cbegin() + pos, i, d);
             refreshTables();
