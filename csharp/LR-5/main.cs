@@ -141,17 +141,17 @@ class Program
         company.AddTariff(new Tariff("Эконом", 150.00m));
         company.AddTariff(new Tariff("Стандарт", 250.00m));
         company.AddTariff(new Tariff("Экспресс", 400.00m));
-        Console.WriteLine("=== Тарифы фирмы ===");
+        Console.WriteLine("~~~~~~~~~~~~Тарифы фирмы~~~~~~~~~~~~");
         foreach (var t in company.Tariffs)
             Console.WriteLine(t);
 
-        Console.WriteLine("\n=== Регистрация клиентов ===");
+        Console.WriteLine("\n~~~~~~~~~~~~Регистрация клиентов~~~~~~~~~~~~");
         var client1 = company.RegisterClient("Иванов Иван", "+79001234567", ClientType.Standard);
         var client2 = company.RegisterClient("Петрова Анна", "+79007654321", ClientType.VIP);
         Console.WriteLine(client1);
         Console.WriteLine(client2);
 
-        Console.WriteLine("\n=== Оформление заказов ===");
+        Console.WriteLine("\n~~~~~~~~~~~~Оформление заказов~~~~~~~~~~~~");
         try
         {
             var order1 = company.PlaceOrder(client1, "Эконом", 10.5);
@@ -166,11 +166,11 @@ class Program
             Console.WriteLine($"Ошибка: {ex.Message}");
         }
 
-        Console.WriteLine("\n=== Сумма заказов по клиентам ===");
+        Console.WriteLine("\n~~~~~~~~~~~~Сумма заказов по клиентам~~~~~~~~~~~~");
         Console.WriteLine($"Клиент {client1.FullName}: {company.GetTotalCostForClient(client1):F2} руб.");
         Console.WriteLine($"Клиент {client2.FullName}: {company.GetTotalCostForClient(client2):F2} руб.");
 
-        Console.WriteLine("\n=== Итого по фирме ===");
+        Console.WriteLine("\n~~~~~~~~~~~~Итого по фирме~~~~~~~~~~~~");
         Console.WriteLine($"Общая стоимость всех заказов: {company.GetTotalCostOfAllOrders():F2} руб.");
 
         Console.WriteLine("\nНажмите любую клавишу для выхода...");

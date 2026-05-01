@@ -59,7 +59,6 @@ class Program
         Console.WriteLine($"A < B ? {A < B}");
         Console.WriteLine($"A > B ? {A > B}");
 
-        // Проблема с C
         Console.WriteLine("\n~~~~~~~~~~~~ЛОГИЧЕСКИЕ ОПЕРАТОРЫ~~~~~~~~~~~~");
         Console.Write("det(A) != 0: ");
         if (A) {Console.WriteLine("true");
