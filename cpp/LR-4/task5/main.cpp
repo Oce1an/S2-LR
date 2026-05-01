@@ -14,7 +14,6 @@
 #include "vector.h"
 #include "pair.h"
 
-// Типы для удобства
 using IntVector = Vector<int>;
 using PairVector = Vector<Pair<int, double>>;
 using MainVector = Vector<Pair<IntVector, PairVector>>;
@@ -27,10 +26,8 @@ public:
     {
         setWindowTitle("Vector and Pair Demo");
 
-        // Основной контейнер: одна пара из двух векторов
         mainData.push_back(Pair<IntVector, PairVector>());
 
-        // Заполним начальными данными
         auto& firstVec = mainData[0].first;
         firstVec.push_back(10);
         firstVec.push_back(20);
@@ -41,15 +38,12 @@ public:
         secondVec.push_back(Pair<int, double>(2, 2.2));
         secondVec.push_back(Pair<int, double>(3, 3.3));
 
-        // Внешний вид: две таблицы справа, кнопки слева
         auto* central = new QWidget;
         auto* mainLayout = new QHBoxLayout(central);
 
-        // Левая панель с кнопками
         auto* buttonLayout = new QVBoxLayout;
         mainLayout->addLayout(buttonLayout);
 
-        // Кнопки для демонстрации методов
         auto* btnPushBackInt = new QPushButton("Push Back (int vector)");
         auto* btnPushBackPair = new QPushButton("Push Back (pair vector)");
         auto* btnPopBackInt = new QPushButton("Pop Back (int)");
@@ -69,11 +63,9 @@ public:
         buttonLayout->addWidget(btnSwap);
         buttonLayout->addStretch();
 
-        // Правый виджет с таблицами
         auto* tableLayout = new QVBoxLayout;
         mainLayout->addLayout(tableLayout);
 
-        // Таблица для первого вектора int
         auto* labelInt = new QLabel("First matrix (vector<int>)");
         tableLayout->addWidget(labelInt);
         tableInt = new QTableWidget;
@@ -82,7 +74,6 @@ public:
         tableInt->horizontalHeader()->setStretchLastSection(true);
         tableLayout->addWidget(tableInt);
 
-        // Таблица для второго вектора пар
         auto* labelPair = new QLabel("Second matrix (vector<pair<int,double>>)");
         tableLayout->addWidget(labelPair);
         tablePair = new QTableWidget;
@@ -94,7 +85,6 @@ public:
         setCentralWidget(central);
         refreshTables();
 
-        // Подключаем сигналы
         connect(btnPushBackInt, &QPushButton::clicked, this, &MainWindow::onPushBackInt);
         connect(btnPushBackPair, &QPushButton::clicked, this, &MainWindow::onPushBackPair);
         connect(btnPopBackInt, &QPushButton::clicked, this, &MainWindow::onPopBackInt);
@@ -177,12 +167,11 @@ private slots:
     }
 
     void onResize() {
-        mainData[0].first.resize(5, 0);  // Приводит размер к 5, дополняя нулями
+        mainData[0].first.resize(5, 0);
         refreshTables();
     }
 
     void onSwap() {
-        // Меняем содержимое первого вектора int с временным вектором
         IntVector temp;
         temp.push_back(100);
         temp.push_back(200);
@@ -207,7 +196,7 @@ private:
     }
 
 private:
-    MainVector mainData;   // хранит одну пару векторов
+    MainVector mainData;
     QTableWidget* tableInt;
     QTableWidget* tablePair;
 };

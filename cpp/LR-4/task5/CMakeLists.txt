@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(task2)
+project(task5)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -20,8 +20,8 @@ set(HEADERS
     pair.h
 )
 
-add_executable(main ${SOURCES} ${HEADERS})
+add_executable(c ${SOURCES} ${HEADERS})
 
-target_include_directories(main PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(c PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(main Qt6::Core Qt6::Widgets)
+target_link_libraries(c Qt6::Core Qt6::Widgets)

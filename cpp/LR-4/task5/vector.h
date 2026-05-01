@@ -4,12 +4,8 @@
 using size_t = unsigned long long;
 using ptrdiff_t = long long;
 
-// Пустой базовый класс для итератора (как требуется по заданию)
 struct IteratorBase {};
 
-// -------------------------------------------------------------------
-// Вспомогательные утилиты (move / forward без <utility>)
-// -------------------------------------------------------------------
 template <typename T> struct remove_reference      { using type = T; };
 template <typename T> struct remove_reference<T&>  { using type = T; };
 template <typename T> struct remove_reference<T&&> { using type = T; };
@@ -29,9 +25,7 @@ constexpr typename remove_reference<T>::type&& move(T&& arg) noexcept {
     return static_cast<typename remove_reference<T>::type&&>(arg);
 }
 
-// -------------------------------------------------------------------
-// Прямой итератор (наследует IteratorBase)
-// -------------------------------------------------------------------
+
 template <typename ValueType>
 class Iterator : public IteratorBase {
 public:
@@ -46,13 +40,11 @@ public:
     reference operator*() const { return *ptr; }
     pointer   operator->() const { return ptr; }
 
-    // Префиксный и постфиксный ++ / --
     Iterator& operator++() { ++ptr; return *this; }
     Iterator  operator++(int) { Iterator tmp(*this); ++ptr; return tmp; }
     Iterator& operator--() { --ptr; return *this; }
     Iterator  operator--(int) { Iterator tmp(*this); --ptr; return tmp; }
 
-    // Арифметика произвольного доступа
     Iterator& operator+=(difference_type n) { ptr += n; return *this; }
     Iterator& operator-=(difference_type n) { ptr -= n; return *this; }
     Iterator  operator+(difference_type n) const { return Iterator(ptr + n); }
@@ -64,10 +56,8 @@ public:
         return ptr - other.ptr;
     }
 
-    // Доступ по индексу
     reference operator[](difference_type n) const { return ptr[n]; }
 
-    // Сравнения
     friend bool operator==(const Iterator& a, const Iterator& b) { return a.ptr == b.ptr; }
     friend bool operator!=(const Iterator& a, const Iterator& b) { return a.ptr != b.ptr; }
     friend bool operator<(const Iterator& a, const Iterator& b)  { return a.ptr < b.ptr; }
@@ -81,9 +71,6 @@ private:
     pointer ptr;
 };
 
-// -------------------------------------------------------------------
-// Обратный итератор (также наследует IteratorBase)
-// -------------------------------------------------------------------
 template <typename Iter>
 class ReverseIterator : public IteratorBase {
 public:
@@ -112,9 +99,6 @@ private:
     Iter cur;
 };
 
-// -------------------------------------------------------------------
-// Основной класс Vector
-// -------------------------------------------------------------------
 template <typename T>
 class Vector {
 public:
@@ -130,7 +114,6 @@ public:
     using reverse_iterator       = ReverseIterator<iterator>;
     using const_reverse_iterator = ReverseIterator<const_iterator>;
 
-    // Конструкторы/деструктор
     Vector() noexcept : data_(nullptr), size_(0), capacity_(0) {}
 
     explicit Vector(size_type count) : Vector() {
@@ -174,7 +157,6 @@ public:
         return *this;
     }
 
-    // assign – замена содержимого
     void assign(size_type count, const T& value) {
         clear();
         reserve(count);
@@ -191,7 +173,6 @@ public:
         }
     }
 
-    // at с проверкой границ
     reference at(size_type pos) {
         if (pos >= size_) throw "out_of_range";
         return data_[pos];
@@ -209,15 +190,12 @@ public:
         return data_[pos];
     }
 
-    // back
     reference back() { return data_[size_ - 1]; }
     const_reference back() const { return data_[size_ - 1]; }
 
-    // front
     reference front() { return data_[0]; }
     const_reference front() const { return data_[0]; }
 
-    // Итераторы
     iterator begin() noexcept { return iterator(data_); }
     iterator end() noexcept { return iterator(data_ + size_); }
     const_iterator begin() const noexcept { return const_iterator(data_); }
@@ -232,7 +210,6 @@ public:
     const_reverse_iterator crbegin() const noexcept { return const_reverse_iterator(end()); }
     const_reverse_iterator crend() const noexcept { return const_reverse_iterator(begin()); }
 
-    // capacity
     size_type capacity() const noexcept { return capacity_; }
     size_type size() const noexcept { return size_; }
     size_type max_size() const noexcept { return static_cast<size_type>(-1) / sizeof(T); }
@@ -268,24 +245,20 @@ public:
         }
     }
 
-    // clear
     void clear() noexcept {
         for (size_type i = 0; i < size_; ++i)
             data_[i].~T();
         size_ = 0;
     }
 
-    // data
     pointer data() noexcept { return data_; }
     const_pointer data() const noexcept { return data_; }
 
-    // emplace (создание на месте в указанной позиции)
     template <typename... Args>
     iterator emplace(const_iterator pos, Args&&... args) {
         size_type index = pos.base() - data_;
         if (size_ == capacity_)
             reserve(capacity_ == 0 ? 1 : capacity_ * 2);
-        // Сдвигаем элементы вправо
         for (size_type i = size_; i > index; --i) {
             new (data_ + i) T(move(data_[i - 1]));
             data_[i - 1].~T();
@@ -295,7 +268,6 @@ public:
         return iterator(data_ + index);
     }
 
-    // emplace_back
     template <typename... Args>
     reference emplace_back(Args&&... args) {
         if (size_ == capacity_)
@@ -305,7 +277,6 @@ public:
         return data_[size_ - 1];
     }
 
-    // push_back
     void push_back(const T& value) {
         emplace_back(value);
     }
@@ -314,13 +285,11 @@ public:
         emplace_back(move(value));
     }
 
-    // pop_back
     void pop_back() {
         data_[size_ - 1].~T();
         --size_;
     }
 
-    // insert – одиночный элемент
     iterator insert(const_iterator pos, const T& value) {
         size_type index = pos.base() - data_;
         if (size_ == capacity_)
@@ -334,7 +303,6 @@ public:
         return iterator(data_ + index);
     }
 
-    // insert – несколько копий
     iterator insert(const_iterator pos, size_type count, const T& value) {
         size_type index = pos.base() - data_;
         if (count == 0) return iterator(data_ + index);
@@ -350,7 +318,6 @@ public:
         return iterator(data_ + index);
     }
 
-    // erase – один элемент
     iterator erase(const_iterator pos) {
         size_type index = pos.base() - data_;
         data_[index].~T();
@@ -362,7 +329,6 @@ public:
         return iterator(data_ + index);
     }
 
-    // erase – диапазон
     iterator erase(const_iterator first, const_iterator last) {
         size_type idx_first = first.base() - data_;
         size_type idx_last  = last.base() - data_;
@@ -378,7 +344,6 @@ public:
         return iterator(data_ + idx_first);
     }
 
-    // swap
     void swap(Vector& other) noexcept {
         T* tmp_data = data_; data_ = other.data_; other.data_ = tmp_data;
         size_type tmp_size = size_; size_ = other.size_; other.size_ = tmp_size;

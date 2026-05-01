@@ -1,0 +1,8 @@
+# ninja log v7
+8	732	7993185182729044	main_autogen/timestamp	52fdad0fcbbebda4
+8	732	7993185182729044	main_autogen/mocs_compilation.cpp	52fdad0fcbbebda4
+8	732	7993185182729044	C:/projects/s2-lr/cpp/LR-4/task5/build/main_autogen/timestamp	52fdad0fcbbebda4
+8	732	7993185182729044	C:/projects/s2-lr/cpp/LR-4/task5/build/main_autogen/mocs_compilation.cpp	52fdad0fcbbebda4
+738	791	7993185183253511	CMakeFiles/main.dir/main_autogen/mocs_compilation.cpp.obj	4322d184898494c3
+741	12879	7993185183283948	CMakeFiles/main.dir/main.cpp.obj	10377390f96159e2
+12879	13070	7993185304662791	main.exe	4b3bbab82f8a710b
