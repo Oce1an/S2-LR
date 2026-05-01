@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include <QVBoxLayout>
 #include <QFormLayout>
+#include <QApplication>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -32,22 +33,60 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow() {}
 
-void MainWindow::hanoi(int n, char from, char to, char mid, QString &steps)
+void MainWindow::hanoiOptimized(int n, char from, char to, char mid, QStringList &stepsList)
 {
     if (n == 1) {
-        steps += QString("Переместить кольцо 1 с %1 на %2\n").arg(from).arg(to);
+        static const QString format1("\nПереместить кольцо 1 с %1 на %2");
+        stepsList.append(format1.arg(from).arg(to));
         return;
     }
-    hanoi(n - 1, from, mid, to, steps);
-    steps += QString("Переместить кольцо %1 с %2 на %3\n").arg(n).arg(from).arg(to);
-    hanoi(n - 1, mid, to, from, steps);
+    
+    hanoiOptimized(n - 1, from, mid, to, stepsList);
+    
+    static const QString formatN("\nПереместить кольцо %1 с %2 на %3");
+    stepsList.append(formatN.arg(n).arg(from).arg(to));
+    
+    hanoiOptimized(n - 1, mid, to, from, stepsList);
+}
+
+void MainWindow::hanoiStringBuilder(int n, char from, char to, char mid, QStringList &stepsList)
+{
+    if (n == 1) {
+        stepsList.append(QStringLiteral("\nПереместить кольцо 1 с ") + 
+                        QChar(from) + QStringLiteral(" на ") + QChar(to));
+        return;
+    }
+    
+    hanoiStringBuilder(n - 1, from, mid, to, stepsList);
+    
+    stepsList.append(QStringLiteral("\nПереместить кольцо ") + 
+                    QString::number(n) + 
+                    QStringLiteral(" с ") + QChar(from) + 
+                    QStringLiteral(" на ") + QChar(to));
+    
+    hanoiStringBuilder(n - 1, mid, to, from, stepsList);
 }
 
 void MainWindow::solveHanoi()
 {
     int n = nSpinBox->value();
-    QString steps;
-    steps += QString("Решение для %1 колец:\n\n").arg(n);
-    hanoi(n, 'A', 'C', 'B', steps);
-    outputText->setPlainText(steps);
+    
+    outputText->setUpdatesEnabled(false);
+    outputText->clear();
+    
+    outputText->setPlainText(QString("Вычисление решения для %1 колец...\n").arg(n));
+    QApplication::processEvents();
+    
+    int totalSteps = (1 << n) - 1;
+    QStringList stepsList;
+    stepsList.reserve(totalSteps + 1);
+    
+    stepsList.append(QString("Решение для %1 колец:\n").arg(n));
+    
+    hanoiOptimized(n, 'A', 'C', 'B', stepsList);
+    
+    QString result = stepsList.join(QString());
+    outputText->setPlainText(result);
+    
+    outputText->setUpdatesEnabled(true);
 }
