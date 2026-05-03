@@ -1,6 +1,5 @@
 using System;
 
-// Абстрактный базовый класс
 public abstract class ComputerTech
 {
     public string Manufacturer { get; set; }
@@ -8,7 +7,6 @@ public abstract class ComputerTech
     public int Year { get; set; }
     public decimal Price { get; set; }
 
-    // Конструктор родительского класса – будет вызываться при создании наследников
     public ComputerTech(string manufacturer, string model, int year, decimal price)
     {
         Manufacturer = manufacturer;
@@ -17,42 +15,35 @@ public abstract class ComputerTech
         Price = price;
     }
 
-    // Абстрактный метод – обязателен к реализации в неабстрактных наследниках
     public abstract void DisplayInfo();
 
-    // Обычный метод с реализацией
     public void UpdatePrice(decimal newPrice)
     {
         Price = newPrice;
         Console.WriteLine($"Цена обновлена: {Price} руб.");
     }
 
-    // Виртуальный метод – может быть переопределён в наследниках
     public virtual void Repair()
     {
-        Console.WriteLine("Выполняется стандартный ремонт компьютерной техники.");
+        Console.WriteLine("Выполняется ремонт.");
     }
 
-    // Метод, который в одном из наследников будет скрыт (new)
     public void ShowPrice()
     {
         Console.WriteLine($"Цена: {Price} руб.");
     }
 
-    // Виртуальный метод, перегружаемый (overload) в наследнике
     public virtual void Diagnose()
     {
-        Console.WriteLine("Диагностика устройства...");
+        Console.WriteLine("Диагностика.");
     }
 }
 
-// Класс Laptop – наследует ComputerTech
 public class Laptop : ComputerTech
 {
-    public double ScreenSize { get; set; } // дюймы
-    public int BatteryLife { get; set; }   // часы
+    public double ScreenSize { get; set; }
+    public int BatteryLife { get; set; }
 
-    // Вызов конструктора родительского класса через base
     public Laptop(string manufacturer, string model, int year, decimal price,
                   double screenSize, int batteryLife)
         : base(manufacturer, model, year, price)
@@ -61,30 +52,26 @@ public class Laptop : ComputerTech
         BatteryLife = batteryLife;
     }
 
-    // Реализация абстрактного метода
     public override void DisplayInfo()
     {
-        Console.WriteLine($"Ноутбук: {Manufacturer} {Model}, {Year} г., " +
-                          $"Экран: {ScreenSize}\", Батарея: {BatteryLife} ч, Цена: {Price} руб.");
+        Console.WriteLine($"{Manufacturer}, {Model}, {Year} г, " +
+                          $"Экран: {ScreenSize}\", Батарея: {BatteryLife} ч, Цена: {Price} руб");
     }
 
-    // Переопределение виртуального метода Repair
     public override void Repair()
     {
-        Console.WriteLine("Ремонт ноутбука: замена клавиатуры, чистка системы охлаждения.");
+        Console.WriteLine("Ремонт ноутбука.");
     }
 
-    // Перегрузка метода Diagnose (overload) – другой набор параметров
     public void Diagnose(bool quick)
     {
         if (quick)
-            Console.WriteLine("Быстрая диагностика ноутбука: проверка температуры и ОЗУ.");
+            Console.WriteLine("Быстрая диагностика: проверка температуры.");
         else
-            Console.WriteLine("Полная диагностика ноутбука: тест SSD, батареи, стресс-тест CPU.");
+            Console.WriteLine("Полная диагностика: тест SSD, батареи, стресс-тест CPU.");
     }
 }
 
-// Sealed-класс – закрыт для наследования
 public sealed class GamingLaptop : Laptop
 {
     public string GraphicsCard { get; set; }
@@ -98,12 +85,11 @@ public sealed class GamingLaptop : Laptop
 
     public override void DisplayInfo()
     {
-        Console.WriteLine($"Игровой ноутбук: {Manufacturer} {Model}, {Year} г., " +
-                          $"GPU: {GraphicsCard}, Экран: {ScreenSize}\", Батарея: {BatteryLife} ч, Цена: {Price} руб.");
+        Console.WriteLine($"{Manufacturer}, {Model}, {Year} г, " +
+                          $"GPU: {GraphicsCard}, Экран: {ScreenSize}\", Батарея: {BatteryLife} ч, Цена: {Price} руб");
     }
 }
 
-// Класс Tablet – наследует ComputerTech
 public class Tablet : ComputerTech
 {
     public double ScreenSize { get; set; }
@@ -120,54 +106,38 @@ public class Tablet : ComputerTech
     public override void DisplayInfo()
     {
         string stylus = StylusSupport ? "есть" : "нет";
-        Console.WriteLine($"Планшет: {Manufacturer} {Model}, {Year} г., " +
-                          $"Экран: {ScreenSize}\", Стилус: {stylus}, Цена: {Price} руб.");
+        Console.WriteLine($"{Manufacturer}, {Model}, {Year} г, " +
+                          $"Экран: {ScreenSize}\", Стилус: {stylus}, Цена: {Price} руб");
     }
 
-    // Repair НЕ переопределяется – используется базовая реализация
-    // (виртуальный метод остался без изменений)
-
-    // Сокрытие (new) метода родительского класса ShowPrice
+    // new
     public new void ShowPrice()
     {
         Console.WriteLine("Информация о цене недоступна. Обратитесь к продавцу.");
-        // Демонстрация вызова скрытого метода родительского класса
-        Console.Write("Скрытая реализация: ");
         base.ShowPrice();
     }
 }
 
-// Точка входа
 class Program
 {
     static void Main()
     {
-        Console.WriteLine("~~~~~~~~~~~~НОУТБУК~~~~~~~~~~~~");
-        Laptop laptop = new Laptop("Dell", "XPS 15", 2023, 120000m, 15.6, 10);
+        Console.WriteLine("\n||| Ноутбук |||");
+        Laptop laptop = new Laptop("Dell", "XPS 15", 2023, 2100m, 15.6, 10);
         laptop.DisplayInfo();
-        laptop.UpdatePrice(115000m);
+        laptop.UpdatePrice(2000m);
         laptop.Repair();
-        laptop.Diagnose();            // базовая версия
-        laptop.Diagnose(quick: true); // перегруженная версия
-        laptop.ShowPrice();
+        laptop.Diagnose(true);
 
-        Console.WriteLine("\n~~~~~~~~~~~~ПЛАНШЕТ~~~~~~~~~~~~");
-        Tablet tablet = new Tablet("Apple", "iPad Pro", 2022, 90000m, 12.9, true);
+        Console.WriteLine("\n||| Планшет |||");
+        Tablet tablet = new Tablet("Apple", "iPad Pro", 2022, 1200, 12.9, true);
         tablet.DisplayInfo();
-        tablet.Repair();             // используется базовая реализация Repair
-        tablet.ShowPrice();          // вызов скрытого метода (с new), внутри вызывается base.ShowPrice()
+        tablet.Repair();
 
-        Console.WriteLine("\n~~~~~~~~~~~~ИГРОВОЙ НОУТБУК (sealed)~~~~~~~~~~~~");
-        GamingLaptop gl = new GamingLaptop("ASUS", "ROG Zephyrus", 2024, 200000m, 16.0, 8, "RTX 4070");
+        Console.WriteLine("\n||| Игровой ноутбук |||");
+        GamingLaptop gl = new GamingLaptop("ASUS", "ROG Zephyrus", 2024, 4000m, 16.0, 8, "RTX 4070");
         gl.DisplayInfo();
-        gl.Repair();                 // унаследован от Laptop
-        gl.Diagnose();
+        gl.Repair();
         gl.Diagnose(false);
-
-        // Проверка, что sealed-класс действительно нельзя наследовать
-        // Следующая строка вызовет ошибку компиляции, поэтому закомментирована:
-        // class SuperLaptop : GamingLaptop { } // Error CS0509
-
-        Console.WriteLine("\nВсе методы продемонстрированы.");
     }
 }

@@ -4,11 +4,7 @@ public class Matrix
 {
     private int[,] data = new int[2, 2];
 
-    // --- Конструкторы ---
-    public Matrix()
-    {
-        // нулевая матрица
-    }
+    public Matrix() { }
 
     public Matrix(int a11, int a12, int a21, int a22)
     {
@@ -28,7 +24,6 @@ public class Matrix
         data[1, 1] = matrix[1, 1];
     }
 
-    // --- Индексатор ---
     public int this[int row, int col]
     {
         get
@@ -45,16 +40,13 @@ public class Matrix
         }
     }
 
-    // --- Определитель ---
     public int Determinant() => data[0, 0] * data[1, 1] - data[0, 1] * data[1, 0];
 
-    // --- ToString() ---
     public override string ToString()
     {
         return $"[{data[0, 0]}, {data[0, 1]}]\n[{data[1, 0]}, {data[1, 1]}]";
     }
 
-    // --- Математические операторы ---
     public static Matrix operator +(Matrix a, Matrix b)
     {
         return new Matrix(
@@ -73,7 +65,6 @@ public class Matrix
 
     public static Matrix operator *(Matrix a, Matrix b)
     {
-        // Матричное умножение
         int r00 = a[0, 0] * b[0, 0] + a[0, 1] * b[1, 0];
         int r01 = a[0, 0] * b[0, 1] + a[0, 1] * b[1, 1];
         int r10 = a[1, 0] * b[0, 0] + a[1, 1] * b[1, 0];
@@ -100,7 +91,6 @@ public class Matrix
         );
     }
 
-    // --- Инкремент / декремент ---
     public static Matrix operator ++(Matrix m)
     {
         m[0, 0]++; m[0, 1]++;
@@ -115,7 +105,6 @@ public class Matrix
         return m;
     }
 
-    // --- Операторы отношений ---
     public static bool operator ==(Matrix a, Matrix b)
     {
         if (ReferenceEquals(a, b)) return true;
@@ -126,29 +115,26 @@ public class Matrix
 
     public static bool operator !=(Matrix a, Matrix b) => !(a == b);
 
-    public static bool operator <(Matrix a, Matrix b)
+    public static bool operator <(Matrix? a, Matrix? b)
     {
         if (a is null || b is null) throw new ArgumentNullException();
         return a.Determinant() < b.Determinant();
     }
 
-    public static bool operator >(Matrix a, Matrix b)
+    public static bool operator >(Matrix? a, Matrix? b)
     {
         if (a is null || b is null) throw new ArgumentNullException();
         return a.Determinant() > b.Determinant();
     }
 
-    // --- Логические операторы ---
     public static bool operator true(Matrix m) => m.Determinant() != 0;
     public static bool operator false(Matrix m) => m.Determinant() == 0;
 
-    // --- Явные преобразования ---
     public static explicit operator int(Matrix m) => m.Determinant();
 
     public static explicit operator Matrix(int a) => new Matrix(a, 0, 0, a);
 
-    // Переопределение Equals и GetHashCode (рекомендовано при перегрузке ==)
-    public override bool Equals(object obj)
+    public override bool Equals(object? obj)
     {
         if (obj is Matrix other)
             return this == other;

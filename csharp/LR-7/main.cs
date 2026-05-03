@@ -4,7 +4,7 @@ class Program
 {
     static void Main()
     {
-        Console.WriteLine("~~~~~~~~~~~~СОЗДАНИЕ МАТРИЦ~~~~~~~~~~~~");
+        Console.WriteLine("||| Матрицы |||");
         Matrix A = new Matrix(2, 3, 5, 7);
         Matrix B = new Matrix(1, 0, 0, 1);
         Matrix C = new Matrix();
@@ -17,7 +17,7 @@ class Program
         Matrix D = new Matrix(arr);
         Console.WriteLine("Матрица D (из массива):\n" + D);
 
-        Console.WriteLine("\n~~~~~~~~~~~~ИНДЕКСАТОР~~~~~~~~~~~~");
+        Console.WriteLine("\n||| Индексаторы |||");
         Console.WriteLine($"A[0,1] = {A[0, 1]}");
         A[0, 1] = 99;
         Console.WriteLine("После изменения A[0,1] = 99:\n" + A);
@@ -25,7 +25,7 @@ class Program
         Console.WriteLine($"\nОпределитель A ={A.Determinant()}");
         Console.WriteLine($"Определитель C = {C.Determinant()}");
 
-        Console.WriteLine("\n~~~~~~~~~~~~МАТЕМАТИЧЕСКИЕ ОПЕРАТОРЫ~~~~~~~~~~~~");
+        Console.WriteLine("\n||| Математические Операторы |||");
         Matrix sum = A + B;
         Console.WriteLine("A + B:\n" + sum);
         Matrix diff = A - B;
@@ -37,14 +37,14 @@ class Program
         Matrix scalarDiv = A / 2;
         Console.WriteLine("\nA / 2:\n" + scalarDiv);
 
-        Console.WriteLine("\n~~~~~~~~~~~~ИНКРЕМЕНТ / ДЕКРЕМЕНТ~~~~~~~~~~~~");
+        Console.WriteLine("\n||| Инкремент Декремент |||");
         Console.WriteLine("Исходная B:\n" + B);
         B++;
         Console.WriteLine("\nПосле B++:\n" + B);
         B--;
         Console.WriteLine("\nПосле B--:\n" + B);
 
-        Console.WriteLine("\n~~~~~~~~~~~~ОПЕРАТОРЫ СРАВНЕНИЯ~~~~~~~~~~~~");
+        Console.WriteLine("\n||| Операторы Сравнения |||");
         Matrix E = new Matrix(2, 3, 5, 7);
         Console.WriteLine("Новая матрица E:\n" + E + "\n\nТекущая матрица A:\n" + A);
         Console.WriteLine($"A == E ? {A == E}");
@@ -59,16 +59,16 @@ class Program
         Console.WriteLine($"A < B ? {A < B}");
         Console.WriteLine($"A > B ? {A > B}");
 
-        Console.WriteLine("\n~~~~~~~~~~~~ЛОГИЧЕСКИЕ ОПЕРАТОРЫ~~~~~~~~~~~~");
+        Console.WriteLine("\n||| Логические Операторы |||");
         Console.Write("det(A) != 0: ");
         if (A) {Console.WriteLine("true");
         }else{Console.WriteLine("false");}
         Console.Write("det(C) == 0: ");
-        if (!C) {Console.WriteLine("true");
-        }else{Console.WriteLine("false");}
+        if (C) {Console.WriteLine("false");
+        }else{Console.WriteLine("true");}
 
 
-        Console.WriteLine("\n~~~~~~~~~~~~ЯВНЫЕ ПРЕОБРАЗОВАНИЯ~~~~~~~~~~~~");
+        Console.WriteLine("\n||| Явные Преобразования |||");
         int detA = (int)A;
         Console.WriteLine($"det(A) через (int)A = {detA}");
 
