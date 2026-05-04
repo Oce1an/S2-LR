@@ -108,7 +108,7 @@ public class Matrix
     public static bool operator ==(Matrix a, Matrix b)
     {
         if (ReferenceEquals(a, b)) return true;
-        if (a is null || b is null) return false;
+        if (a is null || b is null) return false; // a == null - нельзя тк рекурсия
         return a[0, 0] == b[0, 0] && a[0, 1] == b[0, 1] &&
                a[1, 0] == b[1, 0] && a[1, 1] == b[1, 1];
     }
@@ -128,6 +128,7 @@ public class Matrix
     }
 
     public static bool operator true(Matrix m) => m.Determinant() != 0;
+
     public static bool operator false(Matrix m) => m.Determinant() == 0;
 
     public static explicit operator int(Matrix m) => m.Determinant();
