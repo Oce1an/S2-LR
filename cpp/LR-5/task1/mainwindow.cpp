@@ -23,7 +23,6 @@ MainWindow::MainWindow(QWidget *parent)
     
     setWindowTitle("Клавиатурный тренажёр");
 
-    // Проверяем, что keyboardWidget существует
     if (!ui->keyboardWidget) {
         qDebug() << "ERROR: keyboardWidget is null after setupUi!";
         return;
@@ -155,18 +154,15 @@ void MainWindow::buildKeyboard()
     
     qDebug() << "keyboardWidget OK";
     
-    // Безопасная очистка виджета клавиатуры
     if (kbWidget->layout()) {
         QLayout *oldLayout = kbWidget->layout();
         
-        // Удаляем все дочерние виджеты
         QList<QWidget*> childWidgets = kbWidget->findChildren<QWidget*>(QString(), Qt::FindDirectChildrenOnly);
         for (QWidget *child : childWidgets) {
             child->setParent(nullptr);
             delete child;
         }
         
-        // Очищаем и удаляем старый layout
         while (oldLayout->count() > 0) {
             QLayoutItem *item = oldLayout->takeAt(0);
             if (item) {
@@ -186,14 +182,12 @@ void MainWindow::buildKeyboard()
     QList<QStringList> rows = Trainer::keyboardLayout(m_lang);
     qDebug() << "Got" << rows.size() << "keyboard rows";
     
-    // Проверяем, что rows не пустой
     if (rows.isEmpty()) {
         qDebug() << "ERROR: No keyboard layout data!";
         kbWidget->setLayout(mainLayout);
         return;
     }
     
-    // Отступы для разных рядов
     QList<int> rowOffsets = {0, 15, 25, 10, 0};
     
     for (int rowIdx = 0; rowIdx < rows.size(); ++rowIdx) {
@@ -207,7 +201,6 @@ void MainWindow::buildKeyboard()
         QHBoxLayout *rowLayout = new QHBoxLayout();
         rowLayout->setSpacing(2);
         
-        // Добавляем отступ в начале ряда
         if (rowIdx < rowOffsets.size()) {
             rowLayout->addSpacing(rowOffsets[rowIdx]);
         }
@@ -222,7 +215,6 @@ void MainWindow::buildKeyboard()
             
             QPushButton *btn = new QPushButton(key);
             
-            // Определение ширины кнопки
             int width = 34; // стандартная ширина
             if (key == "Space" || key.contains("Space")) {
                 width = 200;
@@ -247,7 +239,6 @@ void MainWindow::buildKeyboard()
             btn->setFixedSize(width, 32);
             btn->setFocusPolicy(Qt::NoFocus);
             
-            // Стиль для разных типов клавиш
             QString style;
             if (key == "Space" || key.contains("Space") || 
                 key == "←" || key == "Tab" || key == "Caps" || 
@@ -280,7 +271,6 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         return;
     }
     
-    // Игнорируем модификаторы
     if (event->key() == Qt::Key_Shift || 
         event->key() == Qt::Key_Control ||
         event->key() == Qt::Key_Alt ||
@@ -297,7 +287,6 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
     QChar ch = text.at(0);
     
-    // Фильтруем непечатные символы
     if (!ch.isPrint() && ch != ' ') {
         QMainWindow::keyPressEvent(event);
         return;

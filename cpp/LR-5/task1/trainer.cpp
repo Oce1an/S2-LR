@@ -12,7 +12,7 @@ void Trainer::setText(const QString &text)
     m_mistakes = 0;
     m_correct  = 0;
     m_results.clear();
-    m_lastError = false;  // сбрасываем флаг ошибки
+    m_lastError = false;
 }
 
 QString Trainer::text() const { return m_text; }
@@ -23,7 +23,7 @@ void Trainer::reset()
     m_mistakes = 0;
     m_correct  = 0;
     m_results.clear();
-    m_lastError = false;  // сбрасываем флаг ошибки
+    m_lastError = false;
 }
 
 bool Trainer::typeChar(QChar ch)
@@ -36,16 +36,13 @@ bool Trainer::typeChar(QChar ch)
     bool ok = (ch == m_text.at(m_pos));
 
     if (ok) {
-        // Верный символ — фиксируем и продвигаем курсор
         m_results.append({m_text.at(m_pos), true});
         ++m_correct;
         ++m_pos;
-        m_lastError = false;  // сбрасываем флаг ошибки при правильном вводе
+        m_lastError = false;
     } else {
-        // Ошибка — увеличиваем счётчик ошибок, курсор НЕ двигаем.
-        // Устанавливаем флаг ошибки для временной подсветки в UI
         ++m_mistakes;
-        m_lastError = true;   // устанавливаем флаг ошибки для визуальной индикации
+        m_lastError = true;
     }
 
     return ok;
@@ -78,8 +75,6 @@ double Trainer::wordsPerMinute(int elapsedMs) const
     double  minutes = elapsedMs / 60000.0;
     return words / minutes;
 }
-
-// ---- Static helpers ----
 
 QString Trainer::languageName(Language lang)
 {
@@ -143,7 +138,7 @@ QList<QStringList> Trainer::keyboardLayout(Language lang)
     case Language::German:
         return {
             {"^","1","2","3","4","5","6","7","8","9","0","ß","´","←"},
-            {"Tab","q","w","e","r","t","z","u","i","o","p","ü","+","↵"},
+            {"Tab","q","w","e","r","t","z","u","i","o","p","ü","+"},
             {"Caps","a","s","d","f","g","h","j","k","l","ö","ä","#","↵"},
             {"Shift","<","y","x","c","v","b","n","m",",",".","-","Shift"},
             {"Strg","","Alt","Space","AltGr","","Strg"}
@@ -151,7 +146,7 @@ QList<QStringList> Trainer::keyboardLayout(Language lang)
     case Language::French:
         return {
             {"²","&","é","\"","'","(","§","è","!","ç","à",")","=","←"},
-            {"Tab","a","z","e","r","t","y","u","i","o","p","^","$","↵"},
+            {"Tab","a","z","e","r","t","y","u","i","o","p","^","$"},
             {"Caps","q","s","d","f","g","h","j","k","l","m","ù","*","↵"},
             {"Shift","<","w","x","c","v","b","n",",",";",":","!","Shift"},
             {"Ctrl","","Alt","Space","AltGr","","Ctrl"}
@@ -159,7 +154,7 @@ QList<QStringList> Trainer::keyboardLayout(Language lang)
     case Language::Arabic:
         return {
             {"ذ","1","2","3","4","5","6","7","8","9","0","-","=","←"},
-            {"Tab","ض","ص","ث","ق","ف","غ","ع","ه","خ","ح","ج","د","↵"},
+            {"Tab","ض","ص","ث","ق","ف","غ","ع","ه","خ","ح","ج","د"},
             {"Caps","ش","س","ي","ب","ل","ا","ت","ن","م","ك","ط","ذ","↵"},
             {"Shift","ئ","ء","ؤ","ر","لا","ى","ة","و","ز","ظ","Shift"},
             {"Ctrl","","Alt","Space","AltGr","","Ctrl"}
@@ -167,7 +162,7 @@ QList<QStringList> Trainer::keyboardLayout(Language lang)
     case Language::Chinese:
         return {
             {"`","1","2","3","4","5","6","7","8","9","0","-","=","←"},
-            {"Tab","q","w","e","r","t","y","u","i","o","p","[","]","\\","↵"},
+            {"Tab","q","w","e","r","t","y","u","i","o","p","[","]","\\"},
             {"Caps","a","s","d","f","g","h","j","k","l",";","'","↵"},
             {"Shift","z","x","c","v","b","n","m",",",".","/","Shift"},
             {"Ctrl","","Alt","Space","AltGr","","Ctrl"}
@@ -175,7 +170,7 @@ QList<QStringList> Trainer::keyboardLayout(Language lang)
     case Language::Belarusian:
         return {
             {"ё","1","2","3","4","5","6","7","8","9","0","-","=","←"},
-            {"Tab","й","ц","у","к","е","н","г","ш","ў","з","х","'","↵"},
+            {"Tab","й","ц","у","к","е","н","г","ш","ў","з","х","'"},
             {"Caps","ф","ы","в","а","п","р","о","л","д","ж","э","↵"},
             {"Shift","\\","я","ч","с","м","і","т","ь","б","ю",".","Shift"},
             {"Ctrl","","Alt","Space","AltGr","","Ctrl"}
@@ -183,7 +178,7 @@ QList<QStringList> Trainer::keyboardLayout(Language lang)
     case Language::Hebrew:
         return {
             {"`","1","2","3","4","5","6","7","8","9","0","-","=","←"},
-            {"Tab","/","'","ק","ר","א","ט","ו","ן","ם","פ","[","]","↵"},
+            {"Tab","/","'","ק","ר","א","ט","ו","ן","ם","פ","[","]"},
             {"Caps","ש","ד","ג","כ","ע","י","ח","ל","ך","ף",",","↵"},
             {"Shift","ז","ס","ב","ה","נ","מ","צ","ת","ץ",".","Shift"},
             {"Ctrl","","Alt","Space","AltGr","","Ctrl"}

@@ -4,7 +4,17 @@
 #include <cstddef>
 #include <memory>
 
-class MyString
+#ifdef _WIN32
+    #ifdef STRINGLIB_EXPORTS
+        #define STRINGLIB_API __declspec(dllexport)
+    #else
+        #define STRINGLIB_API __declspec(dllimport)
+    #endif
+#else
+    #define STRINGLIB_API
+#endif
+
+class STRINGLIB_API MyString
 {
 public:
     using iterator       = char*;
@@ -18,7 +28,7 @@ public:
     const_iterator cend()   const { return end();   }
 
     MyString();
-    MyString(const char* s);
+    explicit MyString(const char* s);
     MyString(const MyString& other);
     MyString& operator=(const MyString& other);
     ~MyString() = default;
