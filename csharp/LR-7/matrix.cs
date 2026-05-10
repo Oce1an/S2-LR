@@ -108,7 +108,7 @@ public class Matrix
     public static bool operator ==(Matrix a, Matrix b)
     {
         if (ReferenceEquals(a, b)) return true;
-        if (a is null || b is null) return false; // a == null - нельзя тк рекурсия
+        if (a is null || b is null) return false;
         return a[0, 0] == b[0, 0] && a[0, 1] == b[0, 1] &&
                a[1, 0] == b[1, 0] && a[1, 1] == b[1, 1];
     }

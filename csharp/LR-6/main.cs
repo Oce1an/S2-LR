@@ -110,7 +110,6 @@ public class Tablet : ComputerTech
                           $"Экран: {ScreenSize}\", Стилус: {stylus}, Цена: {Price} руб");
     }
 
-    // new
     public new void ShowPrice()
     {
         Console.WriteLine("Информация о цене недоступна. Обратитесь к продавцу.");
