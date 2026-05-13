@@ -6,7 +6,6 @@
 #include <string>
 #include <sstream>
 
-// --- Вспомогательные функции из task2.cpp (адаптированы для возврата строк) ---
 static long long binpow(long long digit, long long powder, long long mod) {
     long long res = 1 % mod;
     digit %= mod;
@@ -29,7 +28,6 @@ static int binsearch(const int* arr, int n, int digit) {
     return -1;
 }
 
-// Выполняет интерполяционную сортировку и записывает пошаговый вывод в строку
 static std::string interpolationSortWithSteps(int* arr, int n) {
     std::ostringstream out;
     if (n <= 1) {
@@ -76,7 +74,6 @@ static std::string interpolationSortWithSteps(int* arr, int n) {
     }
     return out.str();
 }
-// ----------------------------------------------------------------
 
 Task2Widget::Task2Widget(QWidget* parent)
     : QWidget(parent)
@@ -140,14 +137,12 @@ void Task2Widget::onRun()
         }
     }
 
-    // Пошаговая сортировка (изменяет массив)
     std::string steps = interpolationSortWithSteps(arr, n);
     QString report = QString::fromStdString(steps);
 
     report += "\nFinal sorted array: ";
     for (int i = 0; i < n; ++i) report += QString::number(arr[i]) + " ";
 
-    // Поиск и binpow
     int searchDigit = searchEdit->text().toInt(&ok);
     if (!ok) {
         report += "\n\nInvalid search value.";

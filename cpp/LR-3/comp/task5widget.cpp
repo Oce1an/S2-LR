@@ -28,9 +28,7 @@ void Task5Widget::traverse(const QString &path, int &folderCount, int &fileCount
                           QTreeWidgetItem *parentItem)
 {
     QDir dir(path);
-    QFileInfoList entries = dir.entryInfoList(
-    QDir::NoDotAndDotDot | QDir::AllEntries | QDir::Hidden | QDir::System
-    );
+    QFileInfoList entries = dir.entryInfoList(QDir::NoDotAndDotDot | QDir::AllEntries | QDir::Hidden | QDir::System);
 
     for (const QFileInfo &info : entries) {
         if (info.isDir()) {

@@ -49,6 +49,8 @@ MainWindow::MainWindow(QWidget *parent)
     });
     qDebug() << "Error timer setup done";
 
+    setFocusPolicy(Qt::StrongFocus);
+    
     qDebug() << "Calling applyLanguage";
     applyLanguage(m_lang);
     qDebug() << "Constructor end";
@@ -64,6 +66,10 @@ void MainWindow::applyLanguage(Language lang)
 {
     qDebug() << "applyLanguage start" << (int)lang;
     m_lang = lang;
+    
+    m_keyMap = Trainer::keyMapping(lang);
+    qDebug() << "Key mapping loaded, size:" << m_keyMap.size();
+    
     QStringList samples = Trainer::sampleText(lang);
     QString text = samples.isEmpty() ? "Test" : samples.join(" ");
     qDebug() << "Sample text:" << text;
@@ -215,7 +221,7 @@ void MainWindow::buildKeyboard()
             
             QPushButton *btn = new QPushButton(key);
             
-            int width = 34; // стандартная ширина
+            int width = 34;
             if (key == "Space" || key.contains("Space")) {
                 width = 200;
             } else if (key == "←" || key == "Backspace") {
@@ -266,6 +272,8 @@ void MainWindow::buildKeyboard()
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
+    qDebug() << "keyPressEvent called, key:" << event->key() << "text:" << event->text();
+    
     if (!event) {
         QMainWindow::keyPressEvent(event);
         return;
@@ -279,26 +287,45 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         return;
     }
 
-    QString text = event->text();
-    if (text.isEmpty()) {
+    int key = event->key();
+    QString mappedText;
+    
+    qDebug() << "Looking for key:" << key << "in keyMap, map size:" << m_keyMap.size();
+    
+    if (m_keyMap.contains(key)) {
+        mappedText = m_keyMap[key];
+        qDebug() << "Found in keyMap:" << mappedText;
+    } else {
+        mappedText = event->text();
+        qDebug() << "Not found in keyMap, using event text:" << mappedText;
+    }
+    
+    if (mappedText.isEmpty()) {
+        qDebug() << "Empty mapped text, ignoring";
         QMainWindow::keyPressEvent(event);
         return;
     }
 
-    QChar ch = text.at(0);
+    QChar ch = mappedText.at(0);
     
-    if (!ch.isPrint() && ch != ' ') {
+    if (ch != ' ' && !ch.isPrint()) {
+        qDebug() << "Non-printable character, ignoring";
         QMainWindow::keyPressEvent(event);
         return;
     }
+    
+    qDebug() << "Got character:" << ch;
     
     if (!m_started && !m_trainer.finished()) {
         m_started = true;
         m_elapsed.restart();
         m_timer.start();
+        qDebug() << "Timer started";
     }
 
     bool correct = m_trainer.typeChar(ch);
+    qDebug() << "Char typed, correct:" << correct;
+    
     refreshTextDisplay();
     updateStats();
 
@@ -311,6 +338,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     if (m_trainer.finished()) {
         m_timer.stop();
         updateStats();
+        qDebug() << "Training finished!";
     }
 }
 

@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     tabs.setWindowTitle("Лабораторная работа №3 – Рекурсия");
     tabs.resize(900, 600);
 
-    tabs.addTab(new Task1Widget, "Задание 1 (Dec → Bin)");
+    tabs.addTab(new Task1Widget, "Задание 1");
     tabs.addTab(new Task2Widget, "Задание 2 (Аккерман)");
     tabs.addTab(new Task3Widget, "Задание 3 (Переворот)");
     tabs.addTab(new Task4Widget, "Задание 4 (Ханой)");

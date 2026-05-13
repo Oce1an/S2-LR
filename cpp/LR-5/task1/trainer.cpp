@@ -1,5 +1,7 @@
 #include "trainer.h"
 #include <QStringList>
+#include <QMap>
+#include <Qt>
 
 Trainer::Trainer()
     : m_pos(0), m_mistakes(0), m_correct(0)
@@ -94,38 +96,26 @@ QStringList Trainer::sampleText(Language lang)
     switch (lang) {
     case Language::German:
         return {
-            "Die Sonne scheint hell am blauen Himmel.",
-            "Ein guter Freund ist schwer zu finden.",
             "Das Buch liegt auf dem Tisch neben der Lampe."
         };
     case Language::French:
         return {
-            "Le soleil brille dans le ciel bleu.",
-            "Un bon ami est difficile a trouver.",
             "Le livre est sur la table a cote de la lampe."
         };
     case Language::Arabic:
         return {
-            "\u0627\u0644\u0634\u0645\u0633 \u062a\u0633\u0637\u0639 \u0641\u064a \u0627\u0644\u0633\u0645\u0627\u0621 \u0627\u0644\u0632\u0631\u0642\u0627\u0621.",
-            "\u0635\u062f\u064a\u0642 \u062c\u064a\u062f \u0635\u0639\u0628 \u0627\u0644\u0625\u064a\u062c\u0627\u062f.",
             "\u0627\u0644\u0643\u062a\u0627\u0628 \u0639\u0644\u0649 \u0627\u0644\u0637\u0627\u0648\u0644\u0629."
         };
     case Language::Chinese:
         return {
-            "\u592a\u9633\u5728\u84dd\u5929\u4e0a\u95ea\u8000\u3002",
-            "\u597d\u670b\u53cb\u96be\u4ee5\u5bfb\u627e\u3002",
             "\u4e66\u5728\u684c\u5b50\u4e0a\u7684\u706f\u65c1\u3002"
         };
     case Language::Belarusian:
         return {
-            "\u0421\u043e\u043d\u0446\u0430 \u0441\u0432\u0435\u0446\u0456\u0446\u044c \u044f\u0440\u043a\u0430 \u045e \u0441\u0456\u043d\u0456\u043c \u043d\u0435\u0431\u0435.",
-            "\u0414\u043e\u0431\u0440\u044b \u0441\u0441\u044f\u0431\u0440 \u0446\u044f\u0436\u043a\u0430 \u0437\u043d\u0430\u0439\u0441\u0446\u0456.",
             "\u041a\u043d\u0456\u0433\u0430 \u043b\u0430\u0436\u044b\u0446\u044c \u043d\u0430 \u0441\u0442\u0430\u043b\u0435 \u043f\u0430\u0440\u0430\u0434 \u043b\u044e\u0441\u0442\u0440\u0430\u043c."
         };
     case Language::Hebrew:
         return {
-            "\u05d4\u05e9\u05de\u05e9 \u05d6\u05d5\u05e8\u05d7\u05ea \u05d1\u05e9\u05de\u05d9\u05d9\u05dd \u05d4\u05db\u05d7\u05d5\u05dc\u05d9\u05dd.",
-            "\u05d7\u05d1\u05e8 \u05d8\u05d5\u05d1 \u05e7\u05e9\u05d4 \u05dc\u05de\u05e6\u05d5\u05d0.",
             "\u05d4\u05e1\u05e4\u05e8 \u05e0\u05de\u05e6\u05d0 \u05e2\u05dc \u05d4\u05e9\u05d5\u05dc\u05d7\u05df \u05dc\u05d9\u05d3 \u05d4\u05de\u05e0\u05d5\u05e8\u05d4."
         };
     }
@@ -185,4 +175,178 @@ QList<QStringList> Trainer::keyboardLayout(Language lang)
         };
     }
     return {};
+}
+
+QMap<int, QString> Trainer::keyMapping(Language lang)
+{
+    QMap<int, QString> map;
+    
+    map[Qt::Key_0] = "0"; map[Qt::Key_1] = "1"; map[Qt::Key_2] = "2";
+    map[Qt::Key_3] = "3"; map[Qt::Key_4] = "4"; map[Qt::Key_5] = "5";
+    map[Qt::Key_6] = "6"; map[Qt::Key_7] = "7"; map[Qt::Key_8] = "8";
+    map[Qt::Key_9] = "9";
+    map[Qt::Key_Minus] = "-"; map[Qt::Key_Equal] = "=";
+    map[Qt::Key_Backslash] = "\\";
+    map[Qt::Key_Space] = " ";
+    
+    switch (lang) {
+    case Language::German:
+        map[Qt::Key_Q] = "q"; map[Qt::Key_W] = "w"; map[Qt::Key_E] = "e";
+        map[Qt::Key_R] = "r"; map[Qt::Key_T] = "t"; map[Qt::Key_Z] = "z";
+        map[Qt::Key_U] = "u"; map[Qt::Key_I] = "i"; map[Qt::Key_O] = "o";
+        map[Qt::Key_P] = "p"; map[Qt::Key_A] = "a"; map[Qt::Key_S] = "s";
+        map[Qt::Key_D] = "d"; map[Qt::Key_F] = "f"; map[Qt::Key_G] = "g";
+        map[Qt::Key_H] = "h"; map[Qt::Key_J] = "j"; map[Qt::Key_K] = "k";
+        map[Qt::Key_L] = "l"; map[Qt::Key_Y] = "y"; map[Qt::Key_X] = "x";
+        map[Qt::Key_C] = "c"; map[Qt::Key_V] = "v"; map[Qt::Key_B] = "b";
+        map[Qt::Key_N] = "n"; map[Qt::Key_M] = "m";
+
+        map[Qt::Key_Udiaeresis] = QString::fromUtf8("ü");
+        map[Qt::Key_Odiaeresis] = QString::fromUtf8("ö");
+        map[Qt::Key_Adiaeresis] = QString::fromUtf8("ä");
+        map[Qt::Key_ssharp] = QString::fromUtf8("ß");
+        map[Qt::Key_BracketLeft] = QString::fromUtf8("ü");
+        map[Qt::Key_BracketRight] = "+";
+        map[Qt::Key_Semicolon] = QString::fromUtf8("ö");
+        map[Qt::Key_Apostrophe] = QString::fromUtf8("ä");
+        map[Qt::Key_Comma] = ",";
+        map[Qt::Key_Period] = ".";
+        map[Qt::Key_Slash] = "-";
+        break;
+        
+    case Language::Belarusian:
+        map[Qt::Key_Q] = QString::fromUtf8("й");
+        map[Qt::Key_W] = QString::fromUtf8("ц");
+        map[Qt::Key_E] = QString::fromUtf8("у");
+        map[Qt::Key_R] = QString::fromUtf8("к");
+        map[Qt::Key_T] = QString::fromUtf8("е");
+        map[Qt::Key_Y] = QString::fromUtf8("н");
+        map[Qt::Key_U] = QString::fromUtf8("г");
+        map[Qt::Key_I] = QString::fromUtf8("ш");
+        map[Qt::Key_O] = QString::fromUtf8("ў");
+        map[Qt::Key_P] = QString::fromUtf8("з");
+        map[Qt::Key_BracketLeft] = QString::fromUtf8("х");
+        map[Qt::Key_BracketRight] = "'";
+        map[Qt::Key_A] = QString::fromUtf8("ф");
+        map[Qt::Key_S] = QString::fromUtf8("ы");
+        map[Qt::Key_D] = QString::fromUtf8("в");
+        map[Qt::Key_F] = QString::fromUtf8("а");
+        map[Qt::Key_G] = QString::fromUtf8("п");
+        map[Qt::Key_H] = QString::fromUtf8("р");
+        map[Qt::Key_J] = QString::fromUtf8("о");
+        map[Qt::Key_K] = QString::fromUtf8("л");
+        map[Qt::Key_L] = QString::fromUtf8("д");
+        map[Qt::Key_Semicolon] = QString::fromUtf8("ж");
+        map[Qt::Key_Apostrophe] = QString::fromUtf8("э");
+        map[Qt::Key_Z] = QString::fromUtf8("я");
+        map[Qt::Key_X] = QString::fromUtf8("ч");
+        map[Qt::Key_C] = QString::fromUtf8("с");
+        map[Qt::Key_V] = QString::fromUtf8("м");
+        map[Qt::Key_B] = QString::fromUtf8("і");
+        map[Qt::Key_N] = QString::fromUtf8("т");
+        map[Qt::Key_M] = QString::fromUtf8("ь");
+        map[Qt::Key_Comma] = QString::fromUtf8("б");
+        map[Qt::Key_Period] = QString::fromUtf8("ю");
+        map[Qt::Key_Slash] = ".";
+        map[Qt::Key_QuoteLeft] = QString::fromUtf8("ё");
+        break;
+        
+    case Language::French:
+        map[Qt::Key_A] = "a"; map[Qt::Key_Z] = "z"; map[Qt::Key_E] = "e";
+        map[Qt::Key_R] = "r"; map[Qt::Key_T] = "t"; map[Qt::Key_Y] = "y";
+        map[Qt::Key_U] = "u"; map[Qt::Key_I] = "i"; map[Qt::Key_O] = "o";
+        map[Qt::Key_P] = "p"; map[Qt::Key_Q] = "q"; map[Qt::Key_S] = "s";
+        map[Qt::Key_D] = "d"; map[Qt::Key_F] = "f"; map[Qt::Key_G] = "g";
+        map[Qt::Key_H] = "h"; map[Qt::Key_J] = "j"; map[Qt::Key_K] = "k";
+        map[Qt::Key_L] = "l"; map[Qt::Key_M] = "m";
+        map[Qt::Key_W] = "w"; map[Qt::Key_X] = "x"; map[Qt::Key_C] = "c";
+        map[Qt::Key_V] = "v"; map[Qt::Key_B] = "b"; map[Qt::Key_N] = "n";
+        map[Qt::Key_Comma] = ",";
+        map[Qt::Key_Period] = ".";
+        map[Qt::Key_Semicolon] = "m";
+        map[Qt::Key_Apostrophe] = QString::fromUtf8("ù");
+        break;
+        
+    case Language::Hebrew:
+        map[Qt::Key_Q] = "/"; map[Qt::Key_W] = "'"; 
+        map[Qt::Key_E] = QString::fromUtf8("ק");
+        map[Qt::Key_R] = QString::fromUtf8("ר");
+        map[Qt::Key_T] = QString::fromUtf8("א");
+        map[Qt::Key_Y] = QString::fromUtf8("ט");
+        map[Qt::Key_U] = QString::fromUtf8("ו");
+        map[Qt::Key_I] = QString::fromUtf8("ן");
+        map[Qt::Key_O] = QString::fromUtf8("ם");
+        map[Qt::Key_P] = QString::fromUtf8("פ");
+        map[Qt::Key_A] = QString::fromUtf8("ש");
+        map[Qt::Key_S] = QString::fromUtf8("ד");
+        map[Qt::Key_D] = QString::fromUtf8("ג");
+        map[Qt::Key_F] = QString::fromUtf8("כ");
+        map[Qt::Key_G] = QString::fromUtf8("ע");
+        map[Qt::Key_H] = QString::fromUtf8("י");
+        map[Qt::Key_J] = QString::fromUtf8("ח");
+        map[Qt::Key_K] = QString::fromUtf8("ל");
+        map[Qt::Key_L] = QString::fromUtf8("ך");
+        map[Qt::Key_Semicolon] = QString::fromUtf8("ף");
+        map[Qt::Key_Comma] = QString::fromUtf8("ת");
+        map[Qt::Key_Z] = QString::fromUtf8("ז");
+        map[Qt::Key_X] = QString::fromUtf8("ס");
+        map[Qt::Key_C] = QString::fromUtf8("ב");
+        map[Qt::Key_V] = QString::fromUtf8("ה");
+        map[Qt::Key_B] = QString::fromUtf8("נ");
+        map[Qt::Key_N] = QString::fromUtf8("מ");
+        map[Qt::Key_M] = QString::fromUtf8("צ");
+        map[Qt::Key_Period] = QString::fromUtf8("ץ");
+        break;
+        
+    case Language::Arabic:
+        map[Qt::Key_Q] = QString::fromUtf8("ض");
+        map[Qt::Key_W] = QString::fromUtf8("ص");
+        map[Qt::Key_E] = QString::fromUtf8("ث");
+        map[Qt::Key_R] = QString::fromUtf8("ق");
+        map[Qt::Key_T] = QString::fromUtf8("ف");
+        map[Qt::Key_Y] = QString::fromUtf8("غ");
+        map[Qt::Key_U] = QString::fromUtf8("ع");
+        map[Qt::Key_I] = QString::fromUtf8("ه");
+        map[Qt::Key_O] = QString::fromUtf8("خ");
+        map[Qt::Key_P] = QString::fromUtf8("ح");
+        map[Qt::Key_BracketLeft] = QString::fromUtf8("ج");
+        map[Qt::Key_BracketRight] = QString::fromUtf8("د");
+        map[Qt::Key_A] = QString::fromUtf8("ش");
+        map[Qt::Key_S] = QString::fromUtf8("س");
+        map[Qt::Key_D] = QString::fromUtf8("ي");
+        map[Qt::Key_F] = QString::fromUtf8("ب");
+        map[Qt::Key_G] = QString::fromUtf8("ل");
+        map[Qt::Key_H] = QString::fromUtf8("ا");
+        map[Qt::Key_J] = QString::fromUtf8("ت");
+        map[Qt::Key_K] = QString::fromUtf8("ن");
+        map[Qt::Key_L] = QString::fromUtf8("م");
+        map[Qt::Key_Semicolon] = QString::fromUtf8("ك");
+        map[Qt::Key_Apostrophe] = QString::fromUtf8("ط");
+        map[Qt::Key_Z] = QString::fromUtf8("ئ");
+        map[Qt::Key_X] = QString::fromUtf8("ء");
+        map[Qt::Key_C] = QString::fromUtf8("ؤ");
+        map[Qt::Key_V] = QString::fromUtf8("ر");
+        map[Qt::Key_B] = QString::fromUtf8("لا");
+        map[Qt::Key_N] = QString::fromUtf8("ى");
+        map[Qt::Key_M] = QString::fromUtf8("ة");
+        map[Qt::Key_Comma] = QString::fromUtf8("و");
+        map[Qt::Key_Period] = QString::fromUtf8("ز");
+        map[Qt::Key_Slash] = QString::fromUtf8("ظ");
+        break;
+        
+    case Language::Chinese:
+        for (int key = Qt::Key_A; key <= Qt::Key_Z; ++key) {
+            map[key] = QChar(key).toLower();
+        }
+        map[Qt::Key_Comma] = ",";
+        map[Qt::Key_Period] = ".";
+        map[Qt::Key_Slash] = "/";
+        map[Qt::Key_Semicolon] = ";";
+        map[Qt::Key_Apostrophe] = "'";
+        map[Qt::Key_BracketLeft] = "[";
+        map[Qt::Key_BracketRight] = "]";
+        break;
+    }
+    
+    return map;
 }

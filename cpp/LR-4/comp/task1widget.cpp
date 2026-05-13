@@ -6,7 +6,6 @@
 #include <chrono>
 #include <vector>
 
-// --- Вспомогательные функции (почти без изменений из исходного task1.cpp) ---
 static void heapify(int* arr, int n, int i) {
     int largest = i;
     int left = 2 * i + 1;
@@ -74,7 +73,6 @@ static int binsearch(const int* arr, int n, int digit) {
     }
     return -1;
 }
-// ----------------------------------------------------------------
 
 Task1Widget::Task1Widget(QWidget* parent)
     : QWidget(parent)
@@ -142,33 +140,28 @@ void Task1Widget::onSortAndSearch()
 
     QString report;
 
-    // Heap sort
     auto t1 = std::chrono::high_resolution_clock::now();
     heapSort(arrHeap, n);
     auto t2 = std::chrono::high_resolution_clock::now();
     double heapMs = std::chrono::duration<double, std::milli>(t2 - t1).count();
     report += QString("Heap sort time: %1 ms\n").arg(heapMs, 0, 'f', 6);
 
-    // Quick sort
     t1 = std::chrono::high_resolution_clock::now();
     quickSort(arrQuick, 0, n - 1);
     t2 = std::chrono::high_resolution_clock::now();
     double quickMs = std::chrono::duration<double, std::milli>(t2 - t1).count();
     report += QString("Quick sort time: %1 ms\n").arg(quickMs, 0, 'f', 6);
 
-    // Merge sort
     t1 = std::chrono::high_resolution_clock::now();
     mergeSort(arrMerge, 0, n - 1);
     t2 = std::chrono::high_resolution_clock::now();
     double mergeMs = std::chrono::duration<double, std::milli>(t2 - t1).count();
     report += QString("Merge sort time: %1 ms\n").arg(mergeMs, 0, 'f', 6);
 
-    // Sorted array (merge result)
     report += "\nSorted array (merge sort):\n";
     for (int i = 0; i < n; ++i)
         report += QString::number(arrMerge[i]) + " ";
 
-    // Search
     bool searchOk;
     int digit = searchEdit->text().toInt(&searchOk);
     if (searchOk) {

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QTimer>
 #include <QElapsedTimer>
+#include <QMap>
 #include "trainer.h"
 
 QT_BEGIN_NAMESPACE
@@ -32,15 +33,16 @@ private:
     Trainer         m_trainer;
     Language        m_lang;
     QTimer          m_timer;
-    QTimer          *m_errorTimer;  // таймер для сброса индикации ошибки
+    QTimer          *m_errorTimer;
     QElapsedTimer   m_elapsed;
     bool            m_started;
+    QMap<int, QString> m_keyMap;
 
     void applyLanguage(Language lang);
-    void resetState();  // единый метод сброса состояния
+    void resetState();
     void refreshTextDisplay();
     void buildKeyboard();
     void updateStats();
 };
 
-#endif // MAINWINDOW_H
+#endif

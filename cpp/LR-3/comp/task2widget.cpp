@@ -48,7 +48,7 @@ long long Task2Widget::ackermann(long long m, long long n)
         return n + 2;
     }
     else if (m == 2){
-        return (m * n) + 3;   // в оригинале было (m * n) + 3, оставляем
+        return (m * n) + 3;
     }
     else if (m == 3 && n > 60){
         return 0;

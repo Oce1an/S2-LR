@@ -4,6 +4,7 @@
 #include <QString>
 #include <QStringList>
 #include <QVector>
+#include <QMap>
 
 enum class Language { German, French, Arabic, Chinese, Belarusian, Hebrew };
 
@@ -24,10 +25,8 @@ public:
     static QStringList        sampleText(Language lang);
     static QString            languageName(Language lang);
     static QList<QStringList> keyboardLayout(Language lang);
+    static QMap<int, QString> keyMapping(Language lang);
 
-    // Возвращает true если символ верный.
-    // При ошибке позиция НЕ продвигается — пользователь должен ввести
-    // правильный символ, чтобы перейти дальше.
     bool   typeChar(QChar ch);
     int    position()     const;
     bool   finished()     const;
@@ -38,10 +37,8 @@ public:
     double wordsPerMinute(int elapsedMs) const;
     int    wordCount(const QString &s) const;
 
-    // Доступ к истории результатов (для подсветки)
     const QVector<CharResult>& results() const { return m_results; }
     
-    // Флаг последней ошибки для визуальной индикации
     bool   hasLastError() const;
     void   clearLastError() { m_lastError = false; }
 
@@ -51,7 +48,7 @@ private:
     int                 m_mistakes;
     int                 m_correct;
     QVector<CharResult> m_results;
-    bool                m_lastError = false;  // флаг последней ошибки
+    bool                m_lastError = false;
 };
 
-#endif // TRAINER_H
+#endif
