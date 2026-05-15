@@ -4,14 +4,12 @@
 #include <QString>
 #include <QVector>
 
-// Узел стека (односвязный список)
 struct StackNode {
     int key;
     StackNode *next;
     StackNode(int k) : key(k), next(nullptr) {}
 };
 
-// Стек (вставка в начало для простоты)
 class Stack {
 private:
     StackNode *top;
@@ -70,7 +68,6 @@ public:
         return res.trimmed();
     }
 
-    // Получить минимальный ключ в стеке (если не пуст)
     int minKey() const {
         if (!top) throw std::runtime_error("Empty stack");
         int min = top->key;
@@ -82,7 +79,6 @@ public:
         return min;
     }
 
-    // Получить все ключи в виде QVector (для обхода)
     QVector<int> keys() const {
         QVector<int> vec;
         StackNode *cur = top;
@@ -102,14 +98,13 @@ public:
     }
 };
 
-// Родительский класс хеш-таблицы (массив стеков)
 class HashTable {
 protected:
     int tableSize;
-    Stack *table;   // динамический массив стеков
+    Stack *table;  
 
     int hashFunction(int key) const {
-        return abs(key) % tableSize; // простая хеш-функция
+        return abs(key) % tableSize;
     }
 
 public:
@@ -123,7 +118,7 @@ public:
 
     void insert(int key) {
         int idx = hashFunction(key);
-        if (!table[idx].search(key)) // проверка на дубликат (опционально)
+        if (!table[idx].search(key)) 
             table[idx].push(key);
     }
 
@@ -137,7 +132,6 @@ public:
         return table[idx].remove(key);
     }
 
-    // Печать в виде строки: "0: 12 5\n1: \n2: 7 ..."
     QString print() const {
         QString result;
         for (int i = 0; i < tableSize; ++i) {
@@ -152,12 +146,10 @@ public:
     int getSize() const { return tableSize; }
 };
 
-// Производный класс с методом решения варианта
 class ExtendedHashTable : public HashTable {
 public:
     ExtendedHashTable(int size = 10) : HashTable(size) {}
 
-    // Найти номер стека (индекс), содержащего минимальный ключ во всей таблице
     int findStackWithMinKey() const {
         int minKey = 0;
         int minStackIndex = -1;
@@ -173,8 +165,8 @@ public:
                 }
             }
         }
-        return minStackIndex; // если таблица пуста, вернёт -1
+        return minStackIndex;
     }
 };
 
-#endif // HASHTABLE_H
+#endif

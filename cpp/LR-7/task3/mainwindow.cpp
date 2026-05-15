@@ -9,18 +9,16 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    setWindowTitle("Лаб. работа №7 – Хеш-таблица (задание 3)");
+    setWindowTitle("Хеш-таблица");
 
     QWidget *central = new QWidget(this);
     setCentralWidget(central);
     QVBoxLayout *layout = new QVBoxLayout(central);
 
-    // Поле вывода (Memo)
     output = new QTextEdit();
     output->setReadOnly(true);
     layout->addWidget(output);
 
-    // Управление размером таблицы и создание случайных данных
     QHBoxLayout *sizeLayout = new QHBoxLayout();
     spinSize = new QSpinBox();
     spinSize->setRange(2, 50);
@@ -32,7 +30,6 @@ MainWindow::MainWindow(QWidget *parent)
     sizeLayout->addWidget(btnFill);
     layout->addLayout(sizeLayout);
 
-    // Вставка / удаление / поиск
     QHBoxLayout *opLayout = new QHBoxLayout();
     spinKey = new QSpinBox();
     spinKey->setRange(-9999, 9999);
@@ -50,17 +47,14 @@ MainWindow::MainWindow(QWidget *parent)
     opLayout->addWidget(btnSearch);
     layout->addLayout(opLayout);
 
-    // Печать таблицы
     QPushButton *btnPrint = new QPushButton("Печать хеш-таблицы");
     connect(btnPrint, &QPushButton::clicked, this, &MainWindow::printTable);
     layout->addWidget(btnPrint);
 
-    // Индивидуальное задание
     QPushButton *btnMinStack = new QPushButton("Номер стека с минимальным ключом");
     connect(btnMinStack, &QPushButton::clicked, this, &MainWindow::findMinStack);
     layout->addWidget(btnMinStack);
 
-    // Начальная таблица
     ht = ExtendedHashTable(spinSize->value());
     fillRandom();
 }
@@ -71,12 +65,10 @@ void MainWindow::fillRandom() {
     int size = spinSize->value();
     ht = ExtendedHashTable(size);
     
-    // Use C++11 random number generator
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<int> dis(-100, 99); // Range [-100, 99]
+    std::uniform_int_distribution<int> dis(-100, 99);
     
-    // Fill with 20 random elements
     for (int i = 0; i < 20; ++i) {
         int key = dis(gen);
         ht.insert(key);

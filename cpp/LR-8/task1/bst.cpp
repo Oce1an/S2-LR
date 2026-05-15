@@ -18,7 +18,6 @@ void BST::clearTree(BSTNode* node) {
     }
 }
 
-// Добавление узла
 bool BST::add(int key) {
     BSTNode* newNode = new BSTNode(key);
     if (!root) {
@@ -35,7 +34,7 @@ bool BST::add(int key) {
             cur = cur->right;
         else {
             delete newNode;
-            return false; // дубликат
+            return false;
         }
     }
     newNode->parent = parent;
@@ -46,7 +45,6 @@ bool BST::add(int key) {
     return true;
 }
 
-// Поиск узла
 BSTNode* BST::find(int key) const {
     return findNode(root, key);
 }
@@ -61,14 +59,12 @@ BSTNode* BST::findNode(BSTNode* node, int key) const {
     return node;
 }
 
-// Вспомогательная: поиск минимального узла
 BSTNode* BST::findMin(BSTNode* node) const {
     while (node && node->left)
         node = node->left;
     return node;
 }
 
-// Трансплантация (замена поддерева)
 void BST::transplant(BSTNode* u, BSTNode* v) {
     if (!u->parent)
         root = v;
@@ -80,7 +76,6 @@ void BST::transplant(BSTNode* u, BSTNode* v) {
         v->parent = u->parent;
 }
 
-// Удаление узла
 bool BST::remove(int key) {
     BSTNode* z = find(key);
     if (!z) return false;
@@ -104,7 +99,6 @@ bool BST::remove(int key) {
     return true;
 }
 
-// Обход (inorder)
 void BST::traverse(std::function<void(BSTNode*)> visit) const {
     std::function<void(BSTNode*)> inorder = [&](BSTNode* n) {
         if (n) {
@@ -116,7 +110,6 @@ void BST::traverse(std::function<void(BSTNode*)> visit) const {
     inorder(root);
 }
 
-// Клонирование дерева
 BSTNode* BST::cloneTree(BSTNode* node, BSTNode* parent) {
     if (!node) return nullptr;
     BSTNode* n = new BSTNode(node->key);
@@ -126,16 +119,13 @@ BSTNode* BST::cloneTree(BSTNode* node, BSTNode* parent) {
     return n;
 }
 
-// Вставка целого поддерева
 bool BST::insertSubtree(BSTNode* subtree) {
     if (!subtree) return false;
-    // Клонируем, чтобы не зависеть от внешней памяти
     BSTNode* clone = cloneTree(subtree, nullptr);
     if (!root) {
         root = clone;
         return true;
     }
-    // Вставляем как обычно
     BSTNode* cur = root;
     BSTNode* parent = nullptr;
     while (cur) {
@@ -157,7 +147,6 @@ bool BST::insertSubtree(BSTNode* subtree) {
     return true;
 }
 
-// Удаление поддерева (возвращает корень, вызывающий должен удалить память)
 BSTNode* BST::removeSubtree(int key) {
     BSTNode* node = find(key);
     if (!node) return nullptr;
@@ -173,19 +162,17 @@ BSTNode* BST::removeSubtree(int key) {
     return node;
 }
 
-// Вставка ветви (левой или правой)
 bool BST::insertBranch(int parentKey, int key, bool asLeft) {
     BSTNode* parent = find(parentKey);
     if (!parent) return false;
     BSTNode** target = asLeft ? &parent->left : &parent->right;
-    if (*target) return false; // уже занято
+    if (*target) return false;
     BSTNode* node = new BSTNode(key);
     node->parent = parent;
     *target = node;
     return true;
 }
 
-// Удаление ветви
 BSTNode* BST::removeBranch(int parentKey, bool leftBranch) {
     BSTNode* parent = find(parentKey);
     if (!parent) return nullptr;
@@ -197,18 +184,15 @@ BSTNode* BST::removeBranch(int parentKey, bool leftBranch) {
     return branch;
 }
 
-// Вставка в определённую позицию
 bool BST::insertAtPosition(int parentKey, int key, bool asLeft) {
     return insertBranch(parentKey, key, asLeft);
 }
 
-// Наименьший общий предок (LCA)
 int BST::lowestCommonAncestor(int key1, int key2) const {
     BSTNode* n1 = find(key1);
     BSTNode* n2 = find(key2);
     if (!n1 || !n2) throw std::runtime_error("Один или оба ключа не найдены");
 
-    // Поднимаем n1 до корня, запоминая путь
     QList<BSTNode*> path;
     BSTNode* cur = n1;
     while (cur) {
@@ -222,5 +206,5 @@ int BST::lowestCommonAncestor(int key1, int key2) const {
             return cur->key;
         cur = cur->parent;
     }
-    return root->key; // на всякий случай
+    return root->key; 
 }

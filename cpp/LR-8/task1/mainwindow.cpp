@@ -14,17 +14,14 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
     setCentralWidget(central);
     QVBoxLayout* mainLayout = new QVBoxLayout(central);
 
-    // Визуализация дерева
     treeWidget = new QTreeWidget();
     treeWidget->setHeaderLabel("Ключ");
     mainLayout->addWidget(treeWidget, 1);
 
-    // Лог
     output = new QTextEdit();
     output->setReadOnly(true);
     mainLayout->addWidget(output);
 
-    // Общие поля
     QHBoxLayout* keyLayout = new QHBoxLayout();
     spinKey = new QSpinBox();  spinKey->setRange(-999, 999); spinKey->setValue(50);
     spinKey2 = new QSpinBox(); spinKey2->setRange(-999, 999); spinKey2->setValue(75);
@@ -40,7 +37,6 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
     keyLayout->addWidget(checkAsLeft);
     mainLayout->addLayout(keyLayout);
 
-    // Кнопки операций
     auto addButton = [&](const QString& text, auto slot) {
         QPushButton* btn = new QPushButton(text);
         connect(btn, &QPushButton::clicked, this, slot);
@@ -69,7 +65,6 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
     row4->addWidget(addButton("LCA (key1, key2)", &MainWindow::onLCA));
     mainLayout->addLayout(row4);
 
-    // Начальное дерево
     for (int k : {50, 30, 70, 20, 40, 60, 80})
         tree.add(k);
     updateTreeView();
@@ -119,7 +114,6 @@ void MainWindow::onTraverse() {
 }
 
 void MainWindow::onInsertSubtree() {
-    // Создаём маленькое поддерево для демонстрации
     BST subtree;
     subtree.add(spinKey->value());
     subtree.add(spinKey->value() - 10);
@@ -134,7 +128,6 @@ void MainWindow::onRemoveSubtree() {
     BSTNode* removed = tree.removeSubtree(spinKey->value());
     if (removed) {
         output->append(QString("Поддерево с корнем %1 удалено").arg(spinKey->value()));
-        // Освобождаем память
         std::function<void(BSTNode*)> del = [&](BSTNode* n) {
             if (n) { del(n->left); del(n->right); delete n; }
         };
@@ -170,7 +163,6 @@ void MainWindow::onRemoveBranch() {
 }
 
 void MainWindow::onInsertAtPosition() {
-    // Аналогично insertBranch
     onInsertBranch();
 }
 

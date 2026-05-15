@@ -20,19 +20,18 @@ public:
     ~MainWindow();
 
 private slots:
-    // Map
     void mapInsert();
     void mapErase();
     void mapFind();
     void mapBuildList();
     void mapDisplayListIter();
-    // Set
+
     void setInsert();
     void setErase();
     void setFind();
     void setBuildList();
     void setDisplayListIter();
-    // Hash Map
+
     void hashInsert();
     void hashErase();
     void hashContains();
@@ -50,16 +49,15 @@ private:
 
     QTabWidget *tabs;
 
-    // Map widgets
     QSpinBox *mapKey;
     QLineEdit *mapValue;
     QTreeWidget *mapTree;
     QTreeWidget *mapListTree;
-    // Set widgets
+
     QSpinBox *setKey;
     QTreeWidget *setTree;
     QTreeWidget *setListTree;
-    // Hash widgets
+
     QSpinBox *hashKey;
     QLineEdit *hashValue;
     QTableWidget *hashTable;

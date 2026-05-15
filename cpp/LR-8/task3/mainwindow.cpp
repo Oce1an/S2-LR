@@ -13,7 +13,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     tabs = new QTabWidget(this);
     setCentralWidget(tabs);
 
-    // ---------- Вкладка Map ----------
     QWidget *mapTab = new QWidget();
     QVBoxLayout *mapLayout = new QVBoxLayout(mapTab);
     QHBoxLayout *mapCtrl = new QHBoxLayout();
@@ -47,7 +46,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     connect(mapBuild, &QPushButton::clicked, this, &MainWindow::mapBuildList);
     connect(mapListIt, &QPushButton::clicked, this, &MainWindow::mapDisplayListIter);
 
-    // ---------- Вкладка Set ----------
     QWidget *setTab = new QWidget();
     QVBoxLayout *setLayout = new QVBoxLayout(setTab);
     QHBoxLayout *setCtrl = new QHBoxLayout();
@@ -78,7 +76,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     connect(setBuild, &QPushButton::clicked, this, &MainWindow::setBuildList);
     connect(setListIt, &QPushButton::clicked, this, &MainWindow::setDisplayListIter);
 
-    // ---------- Вкладка Hash Map ----------
     QWidget *hashTab = new QWidget();
     QVBoxLayout *hashLayout = new QVBoxLayout(hashTab);
     QHBoxLayout *hashCtrl = new QHBoxLayout();
@@ -119,7 +116,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
 MainWindow::~MainWindow() {}
 
-// --- Map ---
 void MainWindow::mapInsert() {
     map.insert(mapKey->value(), mapValue->text());
     updateMapTree();
@@ -144,7 +140,6 @@ void MainWindow::mapDisplayListIter() {
     map.buildList();
     mapListTree->clear();
     for (auto it = map.list_begin(); it != map.list_end(); ++it) {
-        // Итератор – это объект, используем (*it) для доступа к паре
         auto& pair = *it;
         mapListTree->addTopLevelItem(
             new QTreeWidgetItem({QString("%1 -> %2").arg(pair.first).arg(pair.second)}));
@@ -159,7 +154,6 @@ void MainWindow::updateMapTree() {
     mapDisplayListIter();
 }
 
-// --- Set ---
 void MainWindow::setInsert() {
     set.insert(setKey->value());
     updateSetTree();
@@ -184,7 +178,6 @@ void MainWindow::setDisplayListIter() {
     set.buildList();
     setListTree->clear();
     for (auto it = set.list_begin(); it != set.list_end(); ++it) {
-        // Итератор – это объект, используем (*it)
         auto& pair = *it;
         setListTree->addTopLevelItem(
             new QTreeWidgetItem({QString::number(pair.first)}));
@@ -199,7 +192,6 @@ void MainWindow::updateSetTree() {
     setDisplayListIter();
 }
 
-// --- Hash Map ---
 void MainWindow::hashInsert() {
     hashMap.insert(hashKey->value(), hashValue->text());
     updateHashTable();

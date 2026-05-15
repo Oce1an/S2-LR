@@ -6,13 +6,12 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    setWindowTitle("Лаб. работа №7 – Двухсвязная очередь и кольца");
+    setWindowTitle("Двухсвязная очередь и кольца");
 
     QWidget *central = new QWidget(this);
     setCentralWidget(central);
     QVBoxLayout *mainLayout = new QVBoxLayout(central);
 
-    // --- Секция очереди ---
     QLabel *labelDeque = new QLabel("Очередь (Deque):");
     mainLayout->addWidget(labelDeque);
     dequeList = new QListWidget();
@@ -58,12 +57,10 @@ MainWindow::MainWindow(QWidget *parent)
     ctrlLayout3->addWidget(btnClear);
     mainLayout->addLayout(ctrlLayout3);
 
-    // Разделитель и кнопка разделения на кольца
     QPushButton *btnSplit = new QPushButton("Разделить на кольца (вариант 7)");
     connect(btnSplit, &QPushButton::clicked, this, &MainWindow::splitToRings);
     mainLayout->addWidget(btnSplit);
 
-    // Кольца
     QLabel *labelRing1 = new QLabel("Первое кольцо (между мин и макс):");
     mainLayout->addWidget(labelRing1);
     ring1List = new QListWidget();
@@ -74,7 +71,6 @@ MainWindow::MainWindow(QWidget *parent)
     ring2List = new QListWidget();
     mainLayout->addWidget(ring2List);
 
-    // Инициализация случайными данными
     createRandomDeque();
 }
 
@@ -140,30 +136,24 @@ void MainWindow::updateDequeDisplay() {
     delete[] arr;
 }
 
-// Выполнение варианта 7
 void MainWindow::splitToRings() {
     if (m_deque.isEmpty()) {
         QMessageBox::warning(this, "Ошибка", "Очередь пуста, невозможно разделить.");
         return;
     }
 
-    // Очищаем старые кольца
     m_ring1.clear();
     m_ring2.clear();
 
-    // Получаем массив элементов для удобства поиска индексов мин/макс
     int size;
     int *arr = m_deque.toArray(size);
     if (size == 1) {
-        // Один элемент: и мин, и макс – между ними пусто? По логике помещаем его в одно кольцо?
-        // Сделаем так: первое кольцо – этот элемент, второе – пустое.
         m_ring1.append(arr[0]);
         delete[] arr;
         updateRingDisplays();
         return;
     }
 
-    // Находим минимальный и максимальный элементы и их первые вхождения (индексы)
     int minVal = arr[0], maxVal = arr[0];
     int minIdx = 0, maxIdx = 0;
     for (int i = 1; i < size; ++i) {
@@ -177,22 +167,17 @@ void MainWindow::splitToRings() {
         }
     }
 
-    // Определяем диапазон "между мин и макс" в порядке следования.
-    // Берём от minIdx до maxIdx включительно (или наоборот, если maxIdx < minIdx).
     int start = minIdx;
     int end = maxIdx;
     if (start > end) {
-        // Если минимальный правее максимального, то участок от maxIdx до minIdx
         start = maxIdx;
         end = minIdx;
     }
 
-    // Первое кольцо: элементы с индексами [start, end] включительно
     for (int i = start; i <= end; ++i) {
         m_ring1.append(arr[i]);
     }
 
-    // Второе кольцо: все элементы до start и после end (в исходном порядке)
     for (int i = 0; i < start; ++i) {
         m_ring2.append(arr[i]);
     }

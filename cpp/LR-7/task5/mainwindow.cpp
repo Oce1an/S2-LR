@@ -12,11 +12,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     setCentralWidget(central);
     QVBoxLayout *mainLayout = new QVBoxLayout(central);
 
-    // Список для отображения элементов
     listWidget = new QListWidget();
     mainLayout->addWidget(listWidget);
 
-    // Информация о размере и пустоте
     QHBoxLayout *infoLayout = new QHBoxLayout();
     labelSize = new QLabel("Size: 0");
     labelEmpty = new QLabel("Empty: true");
@@ -24,7 +22,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     infoLayout->addWidget(labelEmpty);
     mainLayout->addLayout(infoLayout);
 
-    // Панель управления
     QHBoxLayout *ctrlLayout = new QHBoxLayout();
     spinValue = new QSpinBox();
     spinValue->setRange(-999, 999);
@@ -50,7 +47,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     ctrlLayout2->addWidget(btnClear);
     mainLayout->addLayout(ctrlLayout2);
 
-    // Random Access
     QHBoxLayout *raLayout = new QHBoxLayout();
     spinIndex = new QSpinBox();
     spinIndex->setRange(0, 0);
@@ -61,7 +57,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     raLayout->addWidget(btnAccess);
     mainLayout->addLayout(raLayout);
 
-    // Тест итератора после resize
     QPushButton *btnIterTest = new QPushButton("Тест: итератор после resize");
     connect(btnIterTest, &QPushButton::clicked, this, &MainWindow::onIteratorTest);
     mainLayout->addWidget(btnIterTest);
@@ -133,15 +128,12 @@ void MainWindow::onIteratorTest() {
         QMessageBox::information(this, "Тест", "Добавьте хотя бы один элемент");
         return;
     }
-    // Захватываем итератор на первый элемент
     Deque<int>::iterator it = deque.begin();
     int firstVal = *it;
 
-    // Добавляем много элементов, чтобы гарантированно произошло несколько resize
     for (int i = 0; i < 200; ++i)
         deque.push_back(1000 + i);
 
-    // Проверяем, что итератор всё ещё указывает на первый элемент
     bool valid = (*it == firstVal);
     updateDisplay();
     QMessageBox::information(this, "Тест итератора",

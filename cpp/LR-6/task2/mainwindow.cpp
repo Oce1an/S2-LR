@@ -13,7 +13,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    setWindowTitle("Лаб. работа №6 – Файлы (графическое меню)");
+    setWindowTitle("Файлы");
     resize(700, 500);
 
     QWidget *central = new QWidget(this);
@@ -82,7 +82,6 @@ void MainWindow::executeCommand()
     inputLine->clear();
 }
 
-// Вспомогательная функция форматирования структуры
 QString MainWindow::stateToString(const State &s)
 {
     QString gdpStr;
@@ -97,7 +96,6 @@ QString MainWindow::stateToString(const State &s)
         .arg(gdpStr);
 }
 
-// Диалог ввода структуры (использует InputDialog)
 State MainWindow::inputState()
 {
     InputDialog dlg(this);
@@ -116,7 +114,6 @@ State MainWindow::inputState()
     return s;
 }
 
-// ========== 1. Запись wchar_t текста ==========
 void MainWindow::case1_writeWcharText()
 {
     QString text = QInputDialog::getText(this, "Ввод текста", "Введите абзац текста:");
@@ -127,16 +124,15 @@ void MainWindow::case1_writeWcharText()
         output->append("Ошибка открытия файла для записи.");
         return;
     }
-    file.imbue(std::locale("en_US.UTF-8")); // для корректного широкого вывода
+    file.imbue(std::locale("en_US.UTF-8"));
     for (const QChar &qc : text) {
-        wchar_t wc = qc.unicode(); // QChar -> wchar_t (осторожно с суррогатами, но для примера достаточно)
+        wchar_t wc = qc.unicode();
         file << wc;
     }
     file.close();
     output->append("Текст сохранён посимвольно (wchar_t) в ФамилияЛаб20.txt");
 }
 
-// ========== 2. Чтение wchar_t текста ==========
 void MainWindow::case2_readWcharText()
 {
     std::wifstream file("ФамилияЛаб20.txt");
@@ -154,7 +150,6 @@ void MainWindow::case2_readWcharText()
     output->append("Содержимое ФамилияЛаб20.txt:\n" + result);
 }
 
-// ========== 3. Запись массива float с разделителем '$' ==========
 void MainWindow::case3_writeFloatArray()
 {
     bool ok;
@@ -182,7 +177,6 @@ void MainWindow::case3_writeFloatArray()
     output->append("Массив записан в ФамилияЛаб20_0.txt");
 }
 
-// ========== 4. Чтение массива float ==========
 void MainWindow::case4_readFloatArray()
 {
     QFile file("ФамилияЛаб20_0.txt");
@@ -204,7 +198,6 @@ void MainWindow::case4_readFloatArray()
     output->append("Массив из файла (разделены пробелом):\n" + result.trimmed());
 }
 
-// ========== 5. Дозапись структуры в текстовый файл ==========
 void MainWindow::case5_appendTextStruct()
 {
     State s = inputState();
@@ -226,7 +219,6 @@ void MainWindow::case5_appendTextStruct()
     output->append("Структура добавлена в текстовый файл.");
 }
 
-// ========== 6. Чтение всех структур из текстового файла ==========
 void MainWindow::case6_readTextStructs()
 {
     QFile file("ФамилияЛаб20_1.txt");
@@ -243,7 +235,7 @@ void MainWindow::case6_readTextStructs()
 
     QString result = "Структуры из текстового файла:\n";
     int i = 0;
-    while (i + 5 < lines.size()) { // минимум 6 строк на структуру
+    while (i + 5 < lines.size()) {
         State s;
         s.population = lines[i++].toInt();
         s.area = lines[i++].toDouble();
@@ -260,7 +252,6 @@ void MainWindow::case6_readTextStructs()
     output->append(result);
 }
 
-// ========== 7. Дозапись структуры в бинарный файл ==========
 void MainWindow::case7_appendBinaryStruct()
 {
     State s = inputState();
@@ -274,7 +265,6 @@ void MainWindow::case7_appendBinaryStruct()
     output->append("Структура добавлена в бинарный файл.");
 }
 
-// ========== 8. Чтение всех структур из бинарного файла ==========
 void MainWindow::case8_readBinaryStructs()
 {
     QFile file("ФамилияЛаб20_2.bin");
@@ -300,7 +290,6 @@ void MainWindow::case8_readBinaryStructs()
     output->append(result);
 }
 
-// ========== 9. Дописать предложение в текстовый файл ==========
 void MainWindow::case9_appendLine()
 {
     QString sentence = QInputDialog::getText(this, "Предложение", "Введите предложение:");
@@ -317,7 +306,6 @@ void MainWindow::case9_appendLine()
     output->append("Предложение добавлено в ФамилияЛаб20_3.txt");
 }
 
-// ========== 10. Построчное чтение файла ==========
 void MainWindow::case10_readLines()
 {
     QFile file("ФамилияЛаб20_3.txt");

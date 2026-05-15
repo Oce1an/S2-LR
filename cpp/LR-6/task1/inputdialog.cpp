@@ -3,6 +3,7 @@
 #include <QLabel>
 #include <QMessageBox>
 
+// 4
 InputDialog::InputDialog(QWidget *parent) : QDialog(parent)
 {
     setWindowTitle("Введите данные о государстве");

@@ -92,7 +92,6 @@ private:
     Node* findMin(Node* node) const;
 };
 
-// =============== Реализация ===============
 
 template<typename K, typename V>
 typename BST<K,V>::iterator& BST<K,V>::iterator::operator++() {
@@ -136,7 +135,6 @@ typename BST<K,V>::iterator BST<K,V>::tree_end() {
     return iterator(nullptr, root.get());
 }
 
-// Вставка
 template<typename K, typename V>
 bool BST<K,V>::insert(const K& key, const V& value) {
     Node* ins = insertNode(root, nullptr, key, value);
@@ -162,7 +160,6 @@ typename BST<K,V>::Node* BST<K,V>::insertNode(std::unique_ptr<Node>& node, Node*
         return nullptr;
 }
 
-// Удаление
 template<typename K, typename V>
 bool BST<K,V>::erase(const K& key) {
     bool deleted = false;
@@ -187,7 +184,6 @@ typename BST<K,V>::Node* BST<K,V>::eraseNode(std::unique_ptr<Node>& node, const 
     }
     else {
         deleted = true;
-        // Узел найден
         if (!node->left) {
             Node* ret = node->right.release();
             if (ret) ret->parent = node->parent;
@@ -198,12 +194,9 @@ typename BST<K,V>::Node* BST<K,V>::eraseNode(std::unique_ptr<Node>& node, const 
             if (ret) ret->parent = node->parent;
             return ret;
         }
-        // Два потомка
         Node* min = findMin(node->right.get());
-        // Перемещаем данные из min
         const_cast<K&>(node->data.first) = min->data.first;
         node->data.second = min->data.second;
-        // Удаляем минимальный узел в правом поддереве
         bool dummy = false;
         node->right.reset(eraseNode(node->right, min->data.first, dummy));
         if (node->right) node->right->parent = node.get();
@@ -263,4 +256,4 @@ void BST<K,V>::inorder(Node* node, std::function<void(const K&, const V&)> visit
     inorder(node->right.get(), visit);
 }
 
-#endif // BST_H
+#endif

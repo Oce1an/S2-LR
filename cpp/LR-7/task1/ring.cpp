@@ -13,7 +13,6 @@ Ring::~Ring() {
 
 void Ring::append(int value) {
     RNode *node = new RNode(value);
-    // вставка перед sentinel
     RNode *last = sentinel->prev;
     node->next = sentinel;
     node->prev = last;

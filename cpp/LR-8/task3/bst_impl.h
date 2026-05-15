@@ -1,4 +1,3 @@
-// Реализация Node итераторов
 template<typename K, typename V>
 BST<K,V>::iterator::iterator(Node* ptr, Node* root) : current(ptr), treeRoot(root) {}
 
@@ -28,13 +27,11 @@ bool BST<K,V>::iterator::operator!=(const iterator& other) const { return !(*thi
 template<typename K, typename V>
 typename BST<K,V>::Node* BST<K,V>::iterator::successor(Node* node) const {
     if (!node) return nullptr;
-    // Если есть правое поддерево – минимальный элемент в нём
     if (node->right) {
         Node* cur = node->right.get();
         while (cur->left) cur = cur->left.get();
         return cur;
     }
-    // Иначе поднимаемся к родителю, пока не выйдем из левого поддерева
     Node* par = node->parent;
     while (par && node == par->right.get()) {
         node = par;
@@ -53,7 +50,6 @@ typename BST<K,V>::iterator BST<K,V>::tree_begin() {
 template<typename K, typename V>
 typename BST<K,V>::iterator BST<K,V>::tree_end() { return iterator(nullptr, root.get()); }
 
-// list_iterator
 template<typename K, typename V>
 BST<K,V>::list_iterator::list_iterator(Node* ptr) : current(ptr) {}
 template<typename K, typename V>
@@ -79,13 +75,11 @@ typename BST<K,V>::list_iterator BST<K,V>::list_begin() { return list_iterator(l
 template<typename K, typename V>
 typename BST<K,V>::list_iterator BST<K,V>::list_end() { return list_iterator(nullptr); }
 
-// Вставка
 template<typename K, typename V>
 bool BST<K,V>::insert(const K& key, const V& value) {
     Node* ins = insertNode(root, nullptr, key, value);
     if (ins) {
         ++sz;
-        // сброс списковых указателей (потом перестроим)
         return true;
     }
     return false;
@@ -102,10 +96,9 @@ typename BST<K,V>::Node* BST<K,V>::insertNode(std::unique_ptr<Node>& node, Node*
         return insertNode(node->left, node.get(), key, value);
     else if (key > node->data.first)
         return insertNode(node->right, node.get(), key, value);
-    else return nullptr; // дубликат
+    else return nullptr;
 }
 
-// Удаление
 template<typename K, typename V>
 bool BST<K,V>::erase(const K& key) {
     bool deleted = false;
@@ -125,7 +118,6 @@ typename BST<K,V>::Node* BST<K,V>::eraseNode(std::unique_ptr<Node>& node, const 
         if (node->right) node->right->parent = node.get();
     } else {
         deleted = true;
-        // сохранение узла для возврата, пока unique_ptr его удалит
         Node* ret = nullptr;
         if (!node->left) {
             ret = node->right.release();
@@ -135,8 +127,7 @@ typename BST<K,V>::Node* BST<K,V>::eraseNode(std::unique_ptr<Node>& node, const 
             if (ret) ret->parent = node->parent;
         } else {
             Node* min = findMin(node->right.get());
-            // Копируем данные, затем рекурсивно удаляем минимальный
-            node->data.~pair(); // снять const
+            node->data.~pair();
             new (&node->data) std::pair<const K,V>(min->data);
             node->right = std::unique_ptr<Node>(eraseNode(std::move(node->right), min->data.first, deleted));
             if (node->right) node->right->parent = node.get();
@@ -168,7 +159,6 @@ typename BST<K,V>::Node* BST<K,V>::findMin(Node* node) const {
     return node;
 }
 
-// Построение двусвязного списка (inorder обход)
 template<typename K, typename V>
 void BST<K,V>::buildList() {
     listHead = listTail = nullptr;
@@ -176,7 +166,7 @@ void BST<K,V>::buildList() {
     std::function<void(Node*)> link = [&](Node* node) {
         if (!node) return;
         link(node->left.get());
-        // связываем
+
         node->prev = prev;
         if (prev) prev->next = node;
         else listHead = node;

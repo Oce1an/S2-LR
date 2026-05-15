@@ -10,8 +10,8 @@ public:
     static const size_t BLOCK_SIZE = 8;
 
 private:
-    T** blocks;            // массив указателей на блоки
-    size_t block_count;    // размер массива blocks (ёмкость в блоках)
+    T** blocks;         
+    size_t block_count;  
     size_t begin_block;
     size_t begin_idx;
     size_t end_block;
@@ -33,18 +33,16 @@ private:
         T** new_blocks = new T*[new_cap]();
         size_t old_logical = begin_block * BLOCK_SIZE + begin_idx;
         size_t new_size = size_;
-        // копируем блоки в новые, располагая начало в индексе 0
         for (size_t i = 0; i < (size_ + BLOCK_SIZE - 1) / BLOCK_SIZE; ++i) {
             size_t old_block = (begin_block + i) % block_count;
             new_blocks[i] = blocks[old_block];
         }
-        // остальные блоки nullptr
         delete[] blocks;
         blocks = new_blocks;
         block_count = new_cap;
         begin_block = 0;
         begin_idx = 0;
-        // вычисляем новый end
+
         end_block = size_ / BLOCK_SIZE;
         end_idx = size_ % BLOCK_SIZE;
     }
@@ -52,7 +50,7 @@ private:
 public:
     Deque() : blocks(nullptr), block_count(0), begin_block(0), begin_idx(0),
               end_block(0), end_idx(0), size_(0) {
-        resize_blocks(1); // начальная ёмкость 1 блок
+        resize_blocks(1); 
     }
 
     ~Deque() {
@@ -62,7 +60,6 @@ public:
         delete[] blocks;
     }
 
-    // запрет копирования (для простоты)
     Deque(const Deque&) = delete;
     Deque& operator=(const Deque&) = delete;
 
@@ -130,15 +127,13 @@ public:
     bool empty() const { return size_ == 0; }
 
     void clear() {
-        while (!empty()) pop_back(); // или прямой сброс
-        // освобождать блоки не будем, чтобы сохранить capacity
+        while (!empty()) pop_back();
     }
 
-    // ---------- итератор ----------
     class iterator {
         friend class Deque;
         Deque* deque;
-        size_t pos;   // логическая позиция от начала (0..size)
+        size_t pos; 
         iterator(Deque* d, size_t p) : deque(d), pos(p) {}
     public:
         T& operator*() const { return (*deque)[pos]; }
@@ -169,4 +164,4 @@ public:
     iterator end() { return iterator(this, size_); }
 };
 
-#endif // DEQUE_H
+#endif 

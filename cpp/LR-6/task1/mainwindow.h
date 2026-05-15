@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
+// 1
 struct State {
     int population;
     double area;

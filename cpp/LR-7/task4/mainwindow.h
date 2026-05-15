@@ -26,4 +26,4 @@ private:
     QTextEdit *textOutput;
 };
 
-#endif // MAINWINDOW_H
+#endif

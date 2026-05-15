@@ -32,7 +32,6 @@ void BST::insertNode(TreeNode *&node, int key, const QString &str) {
     } else if (key > node->key) {
         insertNode(node->right, key, str);
     } else {
-        // Ключ уже существует – заменяем строку
         node->str = str;
     }
 }
@@ -77,7 +76,6 @@ TreeNode* BST::removeNode(TreeNode *node, int key, bool &deleted) {
         node->right = removeNode(node->right, key, deleted);
     } else {
         deleted = true;
-        // Узел найден
         if (!node->left) {
             TreeNode *right = node->right;
             delete node;
@@ -87,7 +85,6 @@ TreeNode* BST::removeNode(TreeNode *node, int key, bool &deleted) {
             delete node;
             return left;
         } else {
-            // Два потомка: найти минимальный в правом поддереве
             TreeNode *minNode = findMin(node->right);
             node->key = minNode->key;
             node->str = minNode->str;
@@ -105,8 +102,8 @@ TreeNode* BST::findMin(TreeNode *node) const {
 
 void BST::balance() {
     QList<TreeNode*> nodes;
-    inorderArray(root, nodes); // получаем отсортированный список узлов
-    clearTree(root); // очищаем старые связи, но не удаляем сами узлы (мы их переиспользуем)
+    inorderArray(root, nodes);
+    clearTree(root);
     root = buildBalanced(nodes, 0, nodes.size() - 1);
 }
 
@@ -127,7 +124,6 @@ TreeNode* BST::buildBalanced(QList<TreeNode*> &list, int start, int end) {
     return node;
 }
 
-// Обходы
 QString BST::preorder() const {
     QString result;
     preorderRec(root, result);
@@ -170,7 +166,6 @@ void BST::postorderRec(TreeNode *node, QString &result) const {
     }
 }
 
-// Визуализация в QTreeWidget
 void BST::populateTreeWidget(QTreeWidget *treeWidget) const {
     treeWidget->clear();
     if (root) {
@@ -190,10 +185,8 @@ void BST::populateTreeRec(TreeNode *node, QTreeWidgetItem *parent) const {
     }
 }
 
-// Метод производного класса
 int ExtendedBST::totalStringLength() const {
     int total = 0;
-    // Обходим всё дерево (любым способом)
     std::function<void(TreeNode*)> sumLength = [&](TreeNode *node) {
         if (node) {
             total += node->str.length();

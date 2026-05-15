@@ -16,10 +16,8 @@ public:
     UnorderedMap(size_t bucketCount = 8, const Hash& hash = Hash())
         : buckets(bucketCount), hashFunc(hash), sz(0) {}
 
-    // Вставка
     std::pair<typename bucket_type::iterator, bool> insert(const KeyType& key, const ValueType& value);
 
-    // Доступ (создаёт при отсутствии)
     ValueType& operator[](const KeyType& key);
     ValueType& at(const KeyType& key);
     const ValueType& at(const KeyType& key) const;
@@ -33,7 +31,6 @@ public:
     bool empty() const { return sz == 0; }
     size_t bucket_count() const { return buckets.size(); }
 
-    // Визуализация: вернуть все элементы
     std::vector<std::pair<KeyType, ValueType>> items() const;
 
 private:

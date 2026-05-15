@@ -6,7 +6,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    setWindowTitle("Лаб. работа №6 – Государство");
+    setWindowTitle("Государство");
     resize(600, 500);
 
     QWidget *central = new QWidget(this);
@@ -57,20 +57,20 @@ QString MainWindow::stateToString(const State &s)
 
 void MainWindow::showDefaultInit()
 {
-    // 1. Инициализация агрегатной строкой
+    // 2
     State s = { 146, 17100.0, 'E', true, "Россия", {2, -3, 1} };
     output->append("=== 1. Инициализация через { } ===\n" + stateToString(s) + "\n");
 }
 
 void MainWindow::showSeparateAssignment()
 {
-    // 2. Присваивание каждого поля отдельно
+    // 3
     State s;
     s.population = 83;
     s.area = 357.0;
     s.continentCode = 'E';
     s.isUNMember = true;
-    // копирование строки в статический массив
+
     std::strncpy(s.name, "Германия", sizeof(s.name) - 1);
     s.name[sizeof(s.name)-1] = '\0';
     s.gdpGrowth[0] = 1; s.gdpGrowth[1] = 2; s.gdpGrowth[2] = 0;
@@ -80,7 +80,6 @@ void MainWindow::showSeparateAssignment()
 
 void MainWindow::showUserInput()
 {
-    // 3. Ввод через диалог
     InputDialog dlg(this);
     if (dlg.exec() == QDialog::Accepted) {
         State s;
@@ -100,7 +99,7 @@ void MainWindow::showUserInput()
 
 void MainWindow::showPointerInit()
 {
-    // 4. Указатель на структуру: инициализация через указатель, вывод через указатель
+    // 5
     State s;
     State *ptr = &s;
     ptr->population = 38;
@@ -116,7 +115,7 @@ void MainWindow::showPointerInit()
 
 void MainWindow::showReferenceInit()
 {
-    // 5. Ссылка на структуру: инициализация через ссылку, вывод через ссылку
+    // 6
     State s;
     State &ref = s;
     ref.population = 10;

@@ -8,13 +8,12 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    setWindowTitle("Лаб. работа №7 – Дерево поиска (задание 2)");
+    setWindowTitle("Дерево поиска");
 
     QWidget *central = new QWidget(this);
     setCentralWidget(central);
     QVBoxLayout *mainLayout = new QVBoxLayout(central);
 
-    // Исходная таблица
     QLabel *lblTable = new QLabel("Исходный массив (ключ, строка):");
     mainLayout->addWidget(lblTable);
     table = new QTableWidget(0, 2);
@@ -22,7 +21,6 @@ MainWindow::MainWindow(QWidget *parent)
     table->horizontalHeader()->setStretchLastSection(true);
     mainLayout->addWidget(table);
 
-    // Кнопки таблицы
     QHBoxLayout *tableBtns = new QHBoxLayout();
     QPushButton *btnAddRow = new QPushButton("Добавить строку");
     QPushButton *btnDelRow = new QPushButton("Удалить строку");
@@ -43,19 +41,16 @@ MainWindow::MainWindow(QWidget *parent)
     tableBtns->addWidget(btnLoad);
     mainLayout->addLayout(tableBtns);
 
-    // Дерево
     QLabel *lblTree = new QLabel("Дерево (TreeView):");
     mainLayout->addWidget(lblTree);
     treeView = new QTreeWidget();
     treeView->setHeaderHidden(true);
     mainLayout->addWidget(treeView);
 
-    // Балансировка
     QPushButton *btnBalance = new QPushButton("Сбалансировать дерево");
     connect(btnBalance, &QPushButton::clicked, this, &MainWindow::balanceTree);
     mainLayout->addWidget(btnBalance);
 
-    // Добавление записи
     QHBoxLayout *addLayout = new QHBoxLayout();
     addKeyInput = new QSpinBox();
     addKeyInput->setRange(-999999, 999999);
@@ -69,7 +64,6 @@ MainWindow::MainWindow(QWidget *parent)
     addLayout->addWidget(btnAdd);
     mainLayout->addLayout(addLayout);
 
-    // Поиск
     QHBoxLayout *searchLayout = new QHBoxLayout();
     searchKeyInput = new QSpinBox();
     searchKeyInput->setRange(-999999, 999999);
@@ -80,7 +74,6 @@ MainWindow::MainWindow(QWidget *parent)
     searchLayout->addWidget(btnSearch);
     mainLayout->addLayout(searchLayout);
 
-    // Удаление
     QHBoxLayout *deleteLayout = new QHBoxLayout();
     deleteKeyInput = new QSpinBox();
     deleteKeyInput->setRange(-999999, 999999);
@@ -91,7 +84,6 @@ MainWindow::MainWindow(QWidget *parent)
     deleteLayout->addWidget(btnDelete);
     mainLayout->addLayout(deleteLayout);
 
-    // Обходы
     QHBoxLayout *travLayout = new QHBoxLayout();
     QPushButton *btnPre = new QPushButton("Прямой обход");
     connect(btnPre, &QPushButton::clicked, this, &MainWindow::showPreorder);
@@ -104,17 +96,14 @@ MainWindow::MainWindow(QWidget *parent)
     travLayout->addWidget(btnPost);
     mainLayout->addLayout(travLayout);
 
-    // Индивидуальное задание
     QPushButton *btnTotalStr = new QPushButton("Суммарная длина строк (производный класс)");
     connect(btnTotalStr, &QPushButton::clicked, this, &MainWindow::showTotalStringLength);
     mainLayout->addWidget(btnTotalStr);
 
-    // Memo для вывода
     output = new QTextEdit();
     output->setReadOnly(true);
     mainLayout->addWidget(output);
 
-    // Исходные данные
     table->setRowCount(5);
     QStringList keys = {"100", "50", "150", "30", "70"};
     QStringList strs = {"Иванов И.И.", "Петров П.П.", "Сидоров С.С.", "Козлов К.К.", "Смирнов А.А."};

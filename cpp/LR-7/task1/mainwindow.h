@@ -24,7 +24,7 @@ private slots:
     void showBack();
     void showSize();
     void clearDeque();
-    void splitToRings();   // выполнение варианта 7
+    void splitToRings();
 
 private:
     void updateDequeDisplay();

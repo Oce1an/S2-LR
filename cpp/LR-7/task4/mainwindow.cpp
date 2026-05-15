@@ -19,7 +19,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     setCentralWidget(central);
     QVBoxLayout *layout = new QVBoxLayout(central);
 
-    // График
     chart = new QChart();
     chart->setTitle("Среднее время поиска (универсальное хеширование)");
     chart->legend()->setVisible(true);
@@ -27,7 +26,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     chartView->setRenderHint(QPainter::Antialiasing);
     layout->addWidget(chartView, 1);
 
-    // Кнопки
     QHBoxLayout *btnLayout = new QHBoxLayout();
     btnResearch = new QPushButton("Запустить исследование");
     btnShowTable = new QPushButton("Показать таблицу (m=16, загрузка 0.9)");
@@ -35,7 +33,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     btnLayout->addWidget(btnShowTable);
     layout->addLayout(btnLayout);
 
-    // Текстовый вывод (Memo)
     textOutput = new QTextEdit();
     textOutput->setReadOnly(true);
     layout->addWidget(textOutput, 1);
@@ -47,7 +44,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 MainWindow::~MainWindow() {}
 
 void MainWindow::runResearch() {
-    // Очистка предыдущего графика
     chart->removeAllSeries();
     const auto axes = chart->axes();
     for (QAbstractAxis *axis : axes) {
@@ -59,7 +55,6 @@ void MainWindow::runResearch() {
     const QVector<double> loads = {0.5, 0.75, 0.9};
     const int queryCount = 10000;
 
-    // Создаём оси
     QValueAxis *axisY = new QValueAxis();
     axisY->setTitleText("Среднее время поиска (мкс)");
     QCategoryAxis *axisX = new QCategoryAxis();
@@ -71,7 +66,6 @@ void MainWindow::runResearch() {
     chart->addAxis(axisX, Qt::AlignBottom);
     chart->addAxis(axisY, Qt::AlignLeft);
 
-    // Серии для каждой загрузки
     QMap<double, QLineSeries*> seriesMap;
     for (double lf : loads) {
         QLineSeries *series = new QLineSeries();
@@ -91,9 +85,8 @@ void MainWindow::runResearch() {
             OpenAddrHashTable ht(m);
             int n = qFloor(m * lf);
             int inserted = 0;
-            QVector<int> presentKeys;   // вставленные ключи
+            QVector<int> presentKeys; 
 
-            // Заполнение таблицы уникальными случайными ключами
             while (inserted < n) {
                 int key = rand() % 100000 + 1;
                 if (ht.insert(key)) {
@@ -102,7 +95,6 @@ void MainWindow::runResearch() {
                 }
             }
 
-            // Подготовка тестовых запросов (половина – существующие, половина – новые)
             QVector<int> testKeys;
             for (int i = 0; i < queryCount / 2; ++i) {
                 int idx = rand() % presentKeys.size();
@@ -112,17 +104,16 @@ void MainWindow::runResearch() {
                 int key;
                 do {
                     key = rand() % 100000 + 1;
-                } while (ht.search(key));   // проверяем, что ключ отсутствует
+                } while (ht.search(key)); 
                 testKeys.append(key);
             }
 
-            // Замер времени поиска
             QElapsedTimer timer;
             timer.start();
             for (int key : testKeys)
                 ht.search(key);
             qint64 elapsed = timer.nsecsElapsed();
-            double avgMicro = (elapsed / 1000.0) / queryCount;   // среднее в мкс
+            double avgMicro = (elapsed / 1000.0) / queryCount;
 
             textOutput->append(QString("m=%1, загрузка %2: среднее время поиска %3 мкс")
                                    .arg(m)
@@ -133,7 +124,6 @@ void MainWindow::runResearch() {
         }
     }
 
-    // Автоматический диапазон оси Y (с небольшим запасом)
     double maxTime = 0;
     for (QLineSeries *s : seriesMap) {
         for (const QPointF &p : s->points())
